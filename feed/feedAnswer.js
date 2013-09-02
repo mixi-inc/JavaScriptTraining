@@ -19,7 +19,7 @@
 /*jshint browser:true, strict:true*/
 /*global jQuery:false, _:false*/
 
-(function($j, _) {
+(function($, _) {
     "use strict";
 
     /*
@@ -27,7 +27,7 @@
      */
     var LIKE_BUTTON_SELECTOR = ".likeButton";
 
-    $j(document).on("click", LIKE_BUTTON_SELECTOR, function() {
+    $(document).on("click", LIKE_BUTTON_SELECTOR, function() {
         this.disabled = true;
     });
 
@@ -35,7 +35,7 @@
      * つぶやき
      */
     var voiceForm = {
-        element: $j("#voiceForm"),
+        element: $("#voiceForm"),
 
         init: function() {
             var el = this.element;
@@ -62,7 +62,7 @@
 
             // post
             this.button.on("click", function() {
-                $j(window).trigger("addFeed", [
+                $(window).trigger("addFeed", [
                     self.nickname.val(),
                     self.text.val()
                 ]);
@@ -73,7 +73,7 @@
 
 
     var feedList = {
-        element: $j("#feedList"),
+        element: $("#feedList"),
 
         renderFeed: function(nickname, text) {
             var html = [
@@ -89,7 +89,7 @@
 
         setEventListener: function() {
             var self = this;
-            $j(window).on("addFeed", function(event, nickname, text) {
+            $(window).on("addFeed", function(event, nickname, text) {
                 self.renderFeed(nickname, text);
             });
         }

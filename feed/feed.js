@@ -12,7 +12,7 @@
 
 /*
  * strict mode
- * JSの落とし穴にはまるのを防ぐため、許可された書き方の一部をエラーにする
+ * JSの落とし穴にはまるのを防ぐため、許可された書き方の一部をエラーにします
  * 例外を設けたい場合は以下の様にコメントで記述できます
  * mixiのコーディングガイドラインでも新規コードはstrict mode必須となっています
  */
@@ -20,19 +20,4 @@
 /*global $j:false, _:false*/
 "use strict";
 
-/*
- * イイネボタン
- */
-var LIKE_BUTTON_SELECTOR = ".likeButton";
-
-$j(document).on("click", LIKE_BUTTON_SELECTOR, function() {
-    this.disabled = true;
-});
-
-// input
-var textarea = $j("textarea");
-var countEl = $j(".count");
-textarea.on("keyup", function() {
-    var count = textarea.val().length;
-    countEl.text(count);
-});
+window.alert("まだ動きません。このJSファイルにコードを追加してください");

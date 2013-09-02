@@ -48,12 +48,12 @@ var array = [0, 1, 2];
 array[0]; // => 0
 
 console.dir(array); //オブジェクトのプロパティが見れます
-                    //prototypeチェーンをたどると、Arrayクラスのプロパティも見れます
+                    //prototypeチェーンをたどると、Arrayクラスのプロパティも見られます
 
 array.length;  // => 3
 array.push;    // => function push() { [native code] }
                // 関数も変数に代入できる（後述）
-array.push(3); // ()で関数呼び出し
+array.push(3); // ()で関数呼び出し。返り値は配列の要素数（length）なので４
 array;         // => [0, 1, 2, 3]
 
 /* 連想配列もオブジェクト */
@@ -121,8 +121,8 @@ for (var i = 0; i < array.length; i++) {
 
 // for in
 // 連想配列の走査
-for (var key in color) {
-    console.log(key + ":" + color[key]);
+for (var key in colors) {
+    console.log(key + ":" + colors[key]);
 }
 
 // while
