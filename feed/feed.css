@@ -1,0 +1,74 @@
+#voiceForm {
+    border-bottom: 5px dotted #AAA;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    width: 500px;
+}
+
+#voiceForm input {
+    display: block;
+    font-size: 15px;
+    margin: 0;
+    padding: 5px;
+}
+
+#voiceForm textarea {
+    width: 100%;
+    margin: 10px 0;
+    font-size: 15px;
+    padding: 5px;
+}
+
+#voiceForm .charCount {
+    float: right;
+}
+
+#voiceForm button {
+    font-size: 15px;
+    padding: 5px;
+}
+
+
+.feed {
+    width: 500px;
+    border: 1px solid #AAA;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.nickname {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #777;
+}
+
+.likeButton {
+    background-image: url("images/like-on.png");
+    background-color: white;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 30px;
+    border: 1px solid #AAA;
+    border-radius: 5px;
+    float: right;
+    cursor: pointer;
+}
+
+.likeButton:disabled {
+    background-image: url("images/like-off.png");
+}
+
+.likeButton::after {
+    clear: both;
+}
+
+/* floatがついてる要素の高さも反映する */
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}

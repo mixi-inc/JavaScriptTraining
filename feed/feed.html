@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>簡易イイネボタン</title>
+        <link rel="stylesheet" type="text/css" href="feed.css">
+    </head>
+    <body>
+        <div id="voiceForm">
+            <input type="text" placeholder="ニックネーム">
+            <textarea placeholder="研修どんな感じ？"></textarea>
+            <div class="charCount"><span class="count">0</span>文字</div>
+            <button>つぶやく</button>
+        </div>
+
+        <div id="feedList">
+            <div class="feed clearfix">
+                <div class="nickname">hogehoge</div>
+                <div class="text">JS研修の課題です。</div>
+                <button class="likeButton"></button>
+            </div>
+
+            <div class="feed clearfix">
+                <div class="nickname">fugafuga</div>
+                <div class="text">ゴールデンウィークが終わってしまった</div>
+                <button class="likeButton"></button>
+            </div>
+
+            <div class="feed clearfix">
+                <div class="nickname">piyopiyo</div>
+                <div class="text">JSたのしい</div>
+                <button class="likeButton"></button>
+            </div>
+        </div>
+
+        <script src="../lib/jquery-1.9.1.js"></script>
+        <script src="../lib/underscore-1.4.4.js"></script>
+        <script>
+            window.$j = window.jQuery; //社内の環境にあわせる
+        </script>
+        <script src="feedAnswer.js"></script>
+    </body>
+</html>
