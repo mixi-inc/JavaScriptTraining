@@ -1,0 +1,27 @@
+{
+  "name": "JavaScriptTraining",
+  "version": "0.0.0",
+  "description": "Training course repository for JavaScript",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mixi-inc/JavaScriptTraining"
+  },
+  "keywords": [
+    "JavaScript",
+    "Training"
+  ],
+  "author": "Shigeta Keisei",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "9ec6e0be8120d819d8bd0b9de5983c68486d3c1b",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "matchdep": "~0.1.2",
+    "grunt-open": "~0.2.2",
+    "grunt-contrib-connect": "~0.4.0"
+  }
+}
