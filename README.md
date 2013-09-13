@@ -3,7 +3,7 @@
 JavaScript初心者が基礎をひととおり身に付けるための資料です。
 
 スライドはSpeakerDeckにアップロードしています。
-（URLは後ほど記述します）
+[https://speakerdeck.com/mixi_engineers/2013nian-xin-zu-yan-xiu-javascriptji-chu](https://speakerdeck.com/mixi_engineers/2013nian-xin-zu-yan-xiu-javascriptji-chu)
 
 
 
