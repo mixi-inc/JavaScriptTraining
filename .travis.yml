@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - "latest"
+  - "iojs"
+
+sudo: false
+
+notifications:
+  email: false
