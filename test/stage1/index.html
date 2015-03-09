@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mocha</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/modules/mocha/mocha.css" />
+    <link rel="stylesheet" href="../common/mocha-patch.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <ul class="js-training">
+      <li id="firebrick" title="firebrick">1</li>
+      <li id="chocolate" title="chocolate">2</li>
+      <li class="mediumseagreen" title="mediumseagreen">3</li>
+      <li class="turquoise" title="turquoise">4</li>
+      <li class="turquoise" title="turquoise">4</li>
+      <li><blockquote title="steelblue">5</blockquote></li>
+      <li name="blueviolet" title="blueviolet">6</li>
+    </ul>
+    <ul class="js-training">
+      <li id="brown">7</li>
+      <li id="darkorange">8</li>
+      <li class="limegreen">9</li>
+      <li class="mediumturquoise">10</li>
+      <li class="mediumturquoise">10</li>
+      <li><p>11</p></li>
+      <li name="darkorchid">12</li>
+    </ul>
+    <div id="mocha"></div>
+    <script src="/modules/mocha/mocha.js"></script>
+    <script src="/modules/chai/chai.js"></script>
+    <script>
+      mocha.ui('bdd');
+      mocha.reporter('html');
+      expect = chai.expect;
+    </script>
+    <script>mocha.setup('bdd')</script>
+    <script src="tests.js"></script>
+    <script>
+      mocha.run();
+    </script>
+  </body>
+</html>

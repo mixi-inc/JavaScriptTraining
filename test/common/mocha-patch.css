@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+#mocha {
+  position: relative;
+}
+
+#mocha-stats {
+  position: absolute !important;
+  top: -45px !important;
+}
+
+#mocha .suite {
+  margin-bottom: 0.8em;
+}
+
+#mocha .suite h1 {
+  margin-bottom: 0.5em;
+}
+
+#mocha .suite .suite h1 {
+  margin-bottom: 0.5em;
+}
+
+#mocha .test {
+  margin-bottom: 0.5em;
+}

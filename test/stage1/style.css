@@ -1,0 +1,75 @@
+.js-training {
+  display: flex;
+  list-style: none;
+  margin: 10px;
+  padding: 0;
+}
+
+.js-training li {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 130%;
+  text-shadow: 0 1px 0 hsla(0, 0%, 0%, 0.3);
+}
+
+.js-training #firebrick {
+  background-color: firebrick;
+}
+
+.js-training #chocolate {
+  background-color: chocolate;
+}
+
+.js-training .mediumseagreen {
+  background-color: mediumseagreen;
+}
+
+.js-training .turquoise {
+  flex: 0.5;
+  background-color: turquoise;
+}
+
+.js-training blockquote {
+  background-color: steelblue;
+  margin: 0;
+  height: 40px;
+  font-weight: bold;
+  font-size: 130%;
+}
+
+.js-training [name=blueviolet] {
+  background-color: blueviolet;
+}
+
+.js-training #brown {
+  background-color: brown;
+}
+
+.js-training #darkorange {
+  background-color: darkorange;
+}
+
+.js-training .limegreen {
+  background-color: limegreen;
+}
+
+.js-training .mediumturquoise {
+  flex: 0.5;
+  background-color: mediumturquoise;
+}
+
+.js-training p {
+  margin: 0;
+  padding: 0;
+  background-color: cornflowerblue;
+}
+
+.js-training [name="darkorchid"] {
+  background-color: darkorchid;
+}
