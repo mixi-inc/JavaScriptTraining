@@ -16,7 +16,7 @@
       <li class="turquoise" title="turquoise">4</li>
       <li class="turquoise" title="turquoise">4</li>
       <li><blockquote title="steelblue">5</blockquote></li>
-      <li name="blueviolet" title="blueviolet">6</li>
+      <li data-js-training="blueviolet" title="blueviolet">6</li>
     </ul>
     <ul class="js-training">
       <li id="brown">7</li>
@@ -25,11 +25,13 @@
       <li class="mediumturquoise">10</li>
       <li class="mediumturquoise">10</li>
       <li><p>11</p></li>
-      <li name="darkorchid">12</li>
+      <li data-js-training="darkorchid">12</li>
     </ul>
     <div id="mocha"></div>
+    <script src="/modules/jquery/dist/jquery.js"></script>
     <script src="/modules/mocha/mocha.js"></script>
     <script src="/modules/chai/chai.js"></script>
+    <script src="/modules/chai-jquery/chai-jquery.js"></script>
     <script>
       mocha.ui('bdd');
       mocha.reporter('html');

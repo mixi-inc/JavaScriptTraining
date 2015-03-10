@@ -43,7 +43,7 @@
   font-size: 130%;
 }
 
-.js-training [name=blueviolet] {
+.js-training [data-js-training="blueviolet"] {
   background-color: blueviolet;
 }
 
@@ -70,6 +70,6 @@
   background-color: cornflowerblue;
 }
 
-.js-training [name="darkorchid"] {
+.js-training [data-js-training="darkorchid"] {
   background-color: darkorchid;
 }
