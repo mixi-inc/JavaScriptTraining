@@ -7,7 +7,7 @@ describe('ステージ1（意図した DOM 要素を取得できるようにな�
 
       // チュートリアル
       //
-      // 'change me!' を document.getElementById(elementId) に
+      // 'change me!' を document.getElementById(elementId); に
       // 書き換えてください。
       var element = 'change me!';
 
@@ -214,7 +214,7 @@ describe('ステージ1（意図した DOM 要素を取得できるようにな�
 
       // チュートリアル
       //
-      // 'change me!' を document.querySelector('.js-training:nth-child(2) li')
+      // 'change me!' を document.querySelector('.js-training:nth-child(2) li');
       // に書き換えてください。
       var selector = 'change me!';
 

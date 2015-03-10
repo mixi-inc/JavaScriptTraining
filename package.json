@@ -33,6 +33,7 @@
     "mocha-phantomjs": "^3.5.3"
   },
   "dependencies": {
+    "bootstrap": "^3.3.2",
     "chai-jquery": "^2.0.0",
     "jquery": "^2.1.3"
   }
