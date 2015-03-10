@@ -1,57 +1,67 @@
 'use strict';
 
+var util = require('util');
 var gulp = require('gulp-help')(require('gulp'));
-var mocha = require('gulp-mocha');
-var eslint = require('gulp-eslint');
-var nodemon = require('gulp-nodemon');
+
+var PORT = 8000;
+var BASE_URL = util.format('http://localhost:%d/', PORT);
 
 var tasks = [
   {
-    cmd: 'test:all',
-    help: 'すべてのテストを実行します',
-    src: 'test/**/*.js'
-  }, {
-    cmd: 'test:stage1',
+    cmd: 'stage1',
     help: '意図した DOM を取得できているかテストします',
+    url: BASE_URL + 'stage1',
     src: 'test/stage1.js'
   }, {
-    cmd: 'test:stage2',
+    cmd: 'stage2',
     help: '意図通りに DOM の構造・スタイルが変更できているかテストします',
+    url: BASE_URL + 'stage2',
     src: 'test/stage2.js'
   }, {
-    cmd: 'test:stage3',
+    cmd: 'stage3',
     help: '意図通りにイベントを利用できているかテストします',
+    url: BASE_URL + 'stage3',
     src: 'test/stage3.js'
   }, {
-    cmd: 'test:stage4',
+    cmd: 'stage4',
     help: '意図通りにサーバーと通信できているかテストします',
+    url: BASE_URL + 'stage4',
     src: 'test/stage4.js'
   }, {
-    cmd: 'test:stage5',
+    cmd: 'stage5',
     help: '意図通りにモジュールを実装できているかテストします',
+    url: BASE_URL + 'stage5',
     src: 'test/stage5.js'
   }, {
-    cmd: 'test:stage6',
+    cmd: 'stage6',
     help: 'よくあるイディオムを読み書きできているかテストします',
+    url: BASE_URL + 'stage6',
     src: 'test/stage6.js'
   }
 ];
 
 
 tasks.forEach(function(task) {
-  gulp.task(task.cmd, task.help, function() {
-    return gulp.src(task.src, { read: false }).
-      pipe(eslint()).
-      pipe(eslint.format()).
-      pipe(mocha());
+  var run = require('gulp-run');
+
+  gulp.task(task.cmd, task.help, ['lint'], function() {
+    // We expected that mocha-phantomjs print colorized results, but it isn't.
+    // So, I take a fast way that is using gulp-run.
+    return run('`npm bin`/mocha-phantomjs ' + task.url + ' || true').exec();
   });
 });
 
 
+gulp.task('lint', 'ミスのおこりやすいコード・可読性の低いコードがないか検査します', function() {
+  var eslint = require('gulp-eslint');
+
+  return gulp.src('test/**/*.js')
+    .pipe(eslint())
+    .pipe(eslint.format());
+});
+
+
 gulp.task('serve', 'サーバーを起動し、ブラウザでテストを確認できるようにします', function(){
-  nodemon({
-    script: './server.js',
-    watch: ['server.js'],
-    env: { PORT: 8000 }
-  });
+  var serve = require('./gulp/serve.js');
+  return serve();
 });
