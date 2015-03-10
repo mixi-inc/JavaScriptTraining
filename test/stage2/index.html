@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>mixi JS Training</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="http://img.mixi.net/img/basic/favicon.ico" type="image/vnd.microsoft.icon" rel="icon">
+  <link href="http://img.mixi.net/img/basic/favicon.ico" type="image/vnd.microsoft.icon" rel="shortcut icon">
+  <link rel="stylesheet" href="/modules/mocha/mocha.css">
+  <link rel="stylesheet" href="../common/mocha-patch.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="js-training-container">
+    <ul class="js-training">
+      <li id="firebrick">&#x1f363;</li>
+      <li id="chocolate">&#x1f36b;</li>
+      <li class="mediumseagreen">3</li>
+      <li class="turquoise">4</li>
+      <li><blockquote>5</blockquote></li>
+      <li data-js-training="blueviolet">6</li>
+    </ul>
+    <div class="js-training-trick">&#x1f420;&#x1f420;</div>
+  </div>
+  <div class="js-training-container">
+    <ul class="js-training">
+      <li id="brown">&#x1f363;</li>
+      <li id="darkorange">&#x1f36b;</li>
+      <li class="limegreen">9</li>
+      <li class="mediumturquoise">10</li>
+      <li><p>11</p></li>
+      <li data-js-training="darkorchid">12</li>
+    </ul>
+  <div class="js-training-trick">&#x1f420;&#x1f420;</div>
+  </div>
+  <div id="mocha"></div>
+  <script src="/modules/jquery/dist/jquery.js"></script>
+  <script src="/modules/mocha/mocha.js"></script>
+  <script src="/modules/chai/chai.js"></script>
+  <script src="/modules/chai-jquery/chai-jquery.js"></script>
+  <script>
+    mocha.ui('bdd');
+    mocha.reporter('html');
+    expect = chai.expect;
+  </script>
+  <script>mocha.setup('bdd')</script>
+  <script src="tests.js"></script>
+  <script>
+    if (window.mochaPhantomJS) { mochaPhantomJS.run(); }
+    else { mocha.run(); }
+  </script>
+</body>
+</html>
