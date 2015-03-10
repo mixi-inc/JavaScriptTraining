@@ -1,4 +1,3 @@
-/* global $, jQuery, HTMLCollection */
 'use strict';
 
 describe('ステージ1（意図した DOM 要素を取得できるようになる）', function(){

@@ -4,7 +4,7 @@
   "description": "Training course repository for JavaScript by mixi",
   "main": "index.js",
   "scripts": {
-    "test": "$(npm bin)/gulp test:all"
+    "help": "$(npm bin)/gulp help"
   },
   "repository": {
     "type": "git",
@@ -26,11 +26,14 @@
     "gulp": "^3.8.11",
     "gulp-eslint": "^0.6.0",
     "gulp-help": "^1.3.3",
-    "gulp-mocha": "^2.0.0",
     "gulp-nodemon": "^1.0.5",
+    "gulp-run": "^1.6.6",
     "gulp-util": "^3.0.4",
     "mocha": "^2.2.0",
-    "mocha-phantomjs": "^3.5.3",
-    "phantomjs": "^1.9.16"
+    "mocha-phantomjs": "^3.5.3"
+  },
+  "dependencies": {
+    "chai-jquery": "^2.0.0",
+    "jquery": "^2.1.3"
   }
 }

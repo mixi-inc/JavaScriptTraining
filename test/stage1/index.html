@@ -42,7 +42,8 @@
     <script>mocha.setup('bdd')</script>
     <script src="tests.js"></script>
     <script>
-      mocha.run();
+      if (window.mochaPhantomJS) { mochaPhantomJS.run(); }
+      else { mocha.run(); }
     </script>
   </body>
 </html>

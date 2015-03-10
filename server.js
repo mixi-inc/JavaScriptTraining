@@ -18,5 +18,5 @@ var server = require('http').createServer(app);
 var PORT = 8000;
 var HOSTNAME = 'localhost';
 server.listen(PORT, HOSTNAME, function () {
-  console.log(util.format('ブラウザで http://%s:%d/stage1 にアクセスしてください', HOSTNAME, PORT));
+  console.log(util.format('SERVER_READY on http://%s:%d', HOSTNAME, PORT));
 });
