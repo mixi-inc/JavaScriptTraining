@@ -1,6 +1,6 @@
 'use strict';
 
-describe('ステージ2（意図した通りに DOM 要素の構造・スタイルを変更できるようになる）', function(){
+describe('ステージ2（意図した通りに DOM 要素のスタイルを変更できるようになる）', function(){
   describe('DOMインターフェース編', function() {
     it('寿司が表示されている要素の寿司を2つに増やす', function(){
       var element;

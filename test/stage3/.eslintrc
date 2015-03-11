@@ -1,0 +1,11 @@
+{
+  "env": {
+    "browser": true,
+    "mocha": true
+  },
+  "globals": {
+    "$": false,
+    "jQuery": false,
+    "HTMLCollection": false
+  }
+}
