@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>mixi JS Training</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="http://img.mixi.net/img/basic/favicon.ico" type="image/vnd.microsoft.icon" rel="icon">
+  <link href="http://img.mixi.net/img/basic/favicon.ico" type="image/vnd.microsoft.icon" rel="shortcut icon">
+  <link rel="stylesheet" href="/modules/mocha/mocha.css">
+  <link rel="stylesheet" href="../common/mocha-patch.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="js-training-container">
+    <ul class="js-training">
+      <li id="firebrick">1<span class="firebrick-ghost">&#x1f47b;</span></li>
+      <li id="chocolate">2<span class="chocolate-space-invader">&#x1f47e;</span></li>
+      <li class="mediumseagreen">3<span class="mediumseagreen-ghosts">&#x1f47b;&#x1f47b;</span>&#x1f33f;<span class="mediumseagreen-ghosts">&#x1f47b;&#x1f47b;</span></li>
+      <li class="turquoise">4</li>
+      <li><blockquote>5</blockquote></li>
+    </ul>
+    <div class="js-training-trick">&#x1f420;&#x1f420;</div>
+  </div>
+  <div class="js-training-container">
+    <ul class="js-training">
+      <li id="brown">6<span class="brown-ghost">&#x1f47b;</span></li>
+      <li id="darkorange">7<span class="darkorange-space-invader">&#x1f47e;</span></li>
+      <li class="limegreen">8<span class="limegreen-ghosts">&#x1f47b;&#x1f47b;</span>&#x1f33f;<span class="limegreen-ghosts">&#x1f47b;&#x1f47b;</span></li>
+      <li class="mediumturquoise">9</li>
+      <li><p>10</p></li>
+    </ul>
+  <div class="js-training-trick">&#x1f420;&#x1f420;</div>
+  </div>
+  <div id="mocha"></div>
+  <script src="/modules/jquery/dist/jquery.js"></script>
+  <script src="/modules/mocha/mocha.js"></script>
+  <script src="/modules/chai/chai.js"></script>
+  <script src="/modules/chai-jquery/chai-jquery.js"></script>
+  <script>
+    mocha.ui('bdd');
+    mocha.reporter('html');
+    expect = chai.expect;
+  </script>
+  <script>mocha.setup('bdd')</script>
+  <script src="tests.js"></script>
+  <script>
+    if (window.mochaPhantomJS) { mochaPhantomJS.run(); }
+    else { mocha.run(); }
+  </script>
+</body>
+</html>
