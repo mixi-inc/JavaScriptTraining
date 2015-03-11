@@ -77,3 +77,24 @@
 .js-training [data-js-training="darkorchid"] {
   background-color: darkorchid;
 }
+
+@-webkit-keyframes moveHorizontal {
+  from {
+    left: -20%;
+  }
+
+  to {
+    left: 110%;
+  }
+}
+
+
+@-moz-keyframes moveHorizontal {
+  from {
+    left: -20%;
+  }
+
+  to {
+    left: 110%;
+  }
+}

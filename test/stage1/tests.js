@@ -323,6 +323,18 @@ describe('ステージ1（意図した DOM 要素を取得できるようにな�
                                     secret('qnexbepuvq'));
     });
   });
+
+
+  describe('エクストラステージ', function(){
+    it('動いている寿司要素を取得する', function(){
+
+      // 'change me!' を書き換えてください。
+      var element = 'change me!';
+
+      expect(element).to.have.deep.property(
+        secret('grkgPbagrag'), '\uD83C\uDF63');
+    });
+  });
 });
 
 
