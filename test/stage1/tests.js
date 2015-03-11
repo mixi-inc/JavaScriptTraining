@@ -1,5 +1,7 @@
 'use strict';
 
+
+
 describe('ステージ1（意図した DOM 要素を取得できるようになる）', function(){
   describe('DOM インターフェース編', function() {
     it('1 番の赤色の要素（ID は "firebrick"）が1つ取得できる', function(){
@@ -39,8 +41,8 @@ describe('ステージ1（意図した DOM 要素を取得できるようにな�
       // 参考資料
       // https://developer.mozilla.org/ja/docs/Web/API/Document/getElementsByClassName
 
-      expect(elements).to.be.instanceof(HTMLCollection);
-      expect(elements).to.have.property('class', elementClassName);
+      expect(elements).to.have.length(1);
+      expect(elements[0]).to.have.property('className', elementClassName);
     });
 
 
@@ -53,7 +55,7 @@ describe('ステージ1（意図した DOM 要素を取得できるようにな�
       // 参考資料
       // https://developer.mozilla.org/ja/docs/Web/API/Document/getElementsByClassName
 
-      expect(elements).to.be.instanceof(HTMLCollection);
+      expect(elements).to.have.length(2);
       expect(elements[0]).to.have.property('className', elementClassName);
       expect(elements[1]).to.have.property('className', elementClassName);
     });
@@ -68,7 +70,7 @@ describe('ステージ1（意図した DOM 要素を取得できるようにな�
       // 参考資料
       // https://developer.mozilla.org/ja/docs/Web/API/Document/getElementsByTagName
 
-      expect(elements).to.be.instanceof(HTMLCollection);
+      expect(elements).to.have.length(1);
       expect(elements[0]).to.have.property('tagName', elementTagName.toUpperCase());
     });
 
@@ -214,7 +216,7 @@ describe('ステージ1（意図した DOM 要素を取得できるようにな�
 
       // チュートリアル
       //
-      // 'change me!' を document.querySelector('.js-training:nth-child(2) li');
+      // 'change me!' を '.js-training:nth-child(2) li';
       // に書き換えてください。
       var selector = 'change me!';
 
@@ -325,7 +327,7 @@ describe('ステージ1（意図した DOM 要素を取得できるようにな�
   });
 
 
-  describe('エクストラステージ', function(){
+  describe.skipWhenPhantomJS('エクストラステージ', function(){
     it('動いている寿司要素を取得する', function(){
 
       // 'change me!' を書き換えてください。

@@ -43,8 +43,9 @@ var tasks = [
 
 tasks.forEach(function(task) {
   var run = require('gulp-run');
+  // var require('stream').Writable({ objectMode: true });
 
-  gulp.task(task.cmd, task.help, ['lint'], function() {
+  gulp.task(task.cmd, task.help, ['lint-' + task.cmd], function() {
     // We expected that mocha-phantomjs print colorized results, but it isn't.
     // So, I take a fast way that is using gulp-run.
     return run('`npm bin`/mocha-phantomjs ' + task.url + ' || true').exec();
@@ -52,12 +53,14 @@ tasks.forEach(function(task) {
 });
 
 
-gulp.task('lint', 'ミスのおこりやすいコード・可読性の低いコードがないか検査します', function() {
-  var eslint = require('gulp-eslint');
+tasks.forEach(function(task) {
+  gulp.task('lint-' + task.cmd, 'ミスのおこりやすいコード・可読性の低いコードがないか検査します', function() {
+    var eslint = require('gulp-eslint');
 
-  return gulp.src('test/**/*.js')
-    .pipe(eslint())
-    .pipe(eslint.format());
+    return gulp.src(task.src)
+      .pipe(eslint())
+      .pipe(eslint.format());
+  });
 });
 
 

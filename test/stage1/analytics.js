@@ -1,5 +1,9 @@
 (function() {
   'use strict';
+  // PhantomJS s not supporting web components yet.
+  // And some polyfills (as webcomponents/webcomponents.js) are not worked well.
+  if (!('registerElement' in document)) { return; }
+
   var XFlyingSushiMonsterProto = Object.create(HTMLDivElement.prototype);
   XFlyingSushiMonsterProto.createdCallback = function() {
     this.textContent = '\uD83C\uDF63';
