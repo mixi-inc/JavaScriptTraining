@@ -43,7 +43,6 @@ var tasks = [
 
 tasks.forEach(function(task) {
   var run = require('gulp-run');
-  // var require('stream').Writable({ objectMode: true });
 
   gulp.task(task.cmd, task.help, ['lint-' + task.cmd], function() {
     // We expected that mocha-phantomjs print colorized results, but it isn't.
