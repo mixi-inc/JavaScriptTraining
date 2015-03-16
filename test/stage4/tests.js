@@ -1,8 +1,9 @@
 'use strict';
 
-describe('ステージ4（意図した通りに DOM 要素の構造を変更できるようになる）', function() {
-  describe('DOMインターフェース編', function() {
+describe('ステージ4（意図通りにイベントを利用できる）', function() {
+  describe('イベント編', function() {
     it('1 番の要素の click イベントで要素内の数字を 1 ずつ大きくできる', function() {
+
       // チュートリアル
       //
       // 2 通りの代表的な書き方があります。
@@ -16,10 +17,10 @@ describe('ステージ4（意図した通りに DOM 要素の構造を変更で�
       //
       // jQuery 版:
       //
-      $('#firebrick').on('click', function(event) {
-        var $target = $(event.target);
-        $target.text(Number($target.text()) + 1);
-      });
+      // $('#firebrick').on('click', function(event) {
+      //   var $target = $(event.target);
+      //   $target.text(Number($target.text()) + 1);
+      // });
       //
       // ここに上記のどちらかのコードを記述してください。
 
@@ -37,10 +38,6 @@ describe('ステージ4（意図した通りに DOM 要素の構造を変更で�
 
       // ここにコードを記述してください。
 
-      $('#chocolate').on('click', function(event) {
-        var $target = $(event.target);
-        $target.text(Number($target.text()) - 1);
-      });
 
       var chocolate = document.getElementById('chocolate');
       chocolate.dispatchEvent(createClickEvent());
@@ -55,11 +52,6 @@ describe('ステージ4（意図した通りに DOM 要素の構造を変更で�
 
       // ここにコードを記述してください。
 
-      var deg = 0;
-      $('.mediumseagreen').on('click', function(event) {
-        deg += 10;
-        $(event.target).css('transform', 'rotate(' + deg + 'deg)');
-      });
 
       var mediumseagreen = document.querySelector('.mediumseagreen');
       mediumseagreen.dispatchEvent(createClickEvent());
@@ -76,10 +68,6 @@ describe('ステージ4（意図した通りに DOM 要素の構造を変更で�
 
       // ここにコードを記述してください。
 
-      $('input').on('change', function() {
-        var deg = $('input').val();
-        $('.turquoise').css('transform', 'rotate(' + deg + 'deg)');
-      });
 
       var turquoise = document.querySelector('.turquoise');
       var turquoiseInput = turquoise.querySelector('input');
@@ -103,10 +91,12 @@ function createClickEvent() {
   return event;
 }
 
+
 function simulateChangeEvent(inputElement, newValue) {
   inputElement.value = newValue;
   inputElement.dispatchEvent(createChangeEvent());
 }
+
 
 function createChangeEvent() {
   var event = document.createEvent('HTMLEvents');
