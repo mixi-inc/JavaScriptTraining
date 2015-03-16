@@ -8,22 +8,15 @@
   <link href="http://img.mixi.net/img/basic/favicon.ico" type="image/vnd.microsoft.icon" rel="shortcut icon">
   <link rel="stylesheet" href="/modules/mocha/mocha.css">
   <link rel="stylesheet" href="../common/mocha-patch.css">
-  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="js-training-container">
-    <ul class="js-training">
-      <li id="firebrick">1</li>
-      <li id="chocolate">2</li>
-      <li class="mediumseagreen">3</li>
-      <li class="turquoise">4<input type="number" value="0"></li>
-    </ul>
-  </div>
   <div id="mocha"></div>
   <script src="/modules/jquery/dist/jquery.js"></script>
   <script src="/modules/mocha/mocha.js"></script>
   <script src="/modules/chai/chai.js"></script>
   <script src="/modules/chai-jquery/chai-jquery.js"></script>
+  <script src="/modules/chai-as-promised/lib/chai-as-promised.js"></script>
+  <script src="/modules/whatwg-fetch/fetch.js"></script>
   <script>
     mocha.ui('bdd');
     mocha.reporter('html');
@@ -35,11 +28,5 @@
     if (window.mochaPhantomJS) { mochaPhantomJS.run(); }
     else { mocha.run(); }
   </script>
-  <script src="/api/heavy"></script>
-  <div class="js-training-container">
-    <ul class="js-training">
-      <li class="steelblue">5 &#x1f433;</li>
-    </ul>
-  </div>
 </body>
 </html>

@@ -14,6 +14,14 @@ var MODULE_DIR = path.join(__dirname, 'node_modules');
 app.use(express.static(PUBLIC_DIR));
 app.use('/modules', express.static(MODULE_DIR));
 
+
+app.get('/api/heavy', function(req, res) {
+  setTimeout(function() {
+    res.send('// do nothing');
+  }, 1000);
+});
+
+
 var server = require('http').createServer(app);
 var PORT = 8000;
 var HOSTNAME = 'localhost';

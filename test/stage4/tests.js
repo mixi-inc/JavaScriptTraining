@@ -64,7 +64,7 @@ describe('ステージ4（意図通りにイベントを利用できる）', fun
     });
 
 
-    it('4 番の要素のに入力された角度に回転できる', function() {
+    it('4 番の要素を入力された角度に回転できる', function() {
 
       // ここにコードを記述してください。
 
@@ -79,6 +79,23 @@ describe('ステージ4（意図通りにイベントを利用できる）', fun
       simulateChangeEvent(turquoiseInput, 20);
       expect(turquoise).to.have.deep.property(
         secret('fglyr.genafsbez'), secret('ebgngr(20qrt)'));
+    });
+
+
+    it('5 番の要素の内容を取得できる', function(done) {
+
+      // このテストは、画面下部の .steelblue 要素の内容が "5 (クジラの絵文字)" で
+      // あることを確認する意図があります。画面上は 5 とクジラの絵文字が正しく
+      // 表示されています。しかし、テストは失敗しているようです。
+      //
+      // このテストが意図通り成功するようにテストコードを修正してください。
+      //
+      // なお、expect(steelblue).to.be.null は上記のテストの要件を満たして
+      // いないので、正解ではありません。
+
+      var steelblue = document.querySelector('.steelblue');
+      expect(steelblue).to.have.property('textContent', '5 \uD83D\uDC33');
+      done();
     });
   });
 });
