@@ -13,7 +13,7 @@ JavaScript 初心者が JS の未来を見据えつつ、基礎をひととお�
 
 		git clone https://github.com/mixi-inc/JavaScriptTraining.git
 		cd JavaScriptTraining
-		npm install
+		npm run setup
 
 
 2. webサーバーを立ち上げる
@@ -21,7 +21,7 @@ JavaScript 初心者が JS の未来を見据えつつ、基礎をひととお�
 	下のコマンドを端末で実行してください。なお、トレーニング中は
 	このコマンドを終了しないでください。
 
-		$(npm bin)/gulp serve
+		npm run serve
 
 
 3. トップページにアクセスする

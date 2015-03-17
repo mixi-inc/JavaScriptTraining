@@ -4,7 +4,9 @@
   "description": "Training course repository for JavaScript by mixi",
   "main": "index.js",
   "scripts": {
-    "help": "$(npm bin)/gulp help"
+    "setup": "npm install; (cd public; bower install)",
+    "help": "$(npm bin)/gulp help",
+    "serve": "$(npm bin)/gulp serve"
   },
   "repository": {
     "type": "git",
