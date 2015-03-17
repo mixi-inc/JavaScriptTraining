@@ -10,9 +10,7 @@ app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({extended: true, limit: '50mb' }));
 
 var PUBLIC_DIR = path.join(__dirname, 'public');
-var MODULE_DIR = path.join(__dirname, 'node_modules');
 app.use(express.static(PUBLIC_DIR));
-app.use('/modules', express.static(MODULE_DIR));
 
 
 app.get('/api/heavy', function(req, res) {
