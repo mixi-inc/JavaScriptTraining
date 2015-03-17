@@ -1,0 +1,17 @@
+{
+  "env": {
+    "browser": true,
+    "mocha": true
+  },
+  "rules": {
+    "no-unused-expressions": 0,
+    "no-undef-init": 0
+  },
+  "globals": {
+    "$": false,
+    "jQuery": false,
+    "fetch": false,
+    "Promise": false,
+    "HTMLCollection": false
+  }
+}

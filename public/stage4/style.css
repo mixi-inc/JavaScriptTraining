@@ -20,6 +20,7 @@
   padding: 0;
   height: 40px;
   line-height: 40px;
+
   text-align: center;
   color: white;
   font-weight: bold;
@@ -49,17 +50,20 @@
 }
 
 .js-training .turquoise input {
+  background-color: turquoise;
   background-color: hsla(0, 0%, 0%, 0.1);
-  width: 3em;
+  box-sizing: border-box;
+  width: 60px;
   height: 40px;
   border: none;
-  margin-left: 15%;
+  margin-left: 30%;
   padding: 0 0 0 12px;
 
-  font-size: inherit;
+  font-size: 50%;
   color: inherit;
   text-shadow: inherit;
   text-align: center;
+	vertical-align: top;
 }
 
 .js-training .steelblue {

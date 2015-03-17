@@ -1,11 +1,11 @@
 /* eslint no-underscore-dangle:0 */
 'use strict';
 
+var path = require('path');
 var stream = require('stream');
 var gutil = require('gulp-util');
 
-var SERVER_SCRIPT = './server.js';
-var PORT = 8000;
+var SERVER_SCRIPT = path.join(__dirname, '../server.js');
 
 
 var serve = function() {
@@ -18,7 +18,7 @@ var serve = function() {
     nodemon({
       script: SERVER_SCRIPT,
       watch: [SERVER_SCRIPT],
-      env: { PORT: PORT },
+      env: { PORT: serve.PORT },
       stdout: false
     })
     .on('readable', function() {
@@ -31,12 +31,21 @@ var serve = function() {
       });
 
       this.stderr.on('data', function(buf) {
-        gutil.log(gutil.colors.red(buf));
+        var stderr = String(buf);
+        var isAddressAlreadyInUse = Boolean(stderr.match(/EADDRINUSE/));
+
+        var msg = 'サーバーを起動できませんでした。\n' + (isAddressAlreadyInUse ?
+            '既にサーバーが立ち上がっているか、8000 番ポートが既に使用されています。' : stderr);
+
+        gutil.log(gutil.colors.red(msg));
       });
     });
   };
 
   return readable;
 };
+
+
+serve.PORT = 8000;
 
 module.exports = serve;
