@@ -1,0 +1,7 @@
+{
+  "//": "querySelector の練習のために、あえて ID セレクタでしかひけない要素を入れている",
+  "ids": false,
+
+  "//": "querySelector の練習のために、あえて属性セレクタでしかひけない要素を入れている",
+  "unqualified-attributes": false
+}

@@ -1,0 +1,10 @@
+.js-training-playground {
+  box-sizing: border-box;
+  padding: 100px 0;
+  height: 100px;
+}
+
+.js-training-button {
+  display: block;
+  margin: 0 auto;
+}
