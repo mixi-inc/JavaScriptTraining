@@ -1,10 +1,11 @@
 /* eslint no-underscore-dangle:0 */
 'use strict';
 
+var path = require('path');
 var stream = require('stream');
 var gutil = require('gulp-util');
 
-var SERVER_SCRIPT = './server.js';
+var SERVER_SCRIPT = path.join(__dirname, '../server.js');
 
 
 var serve = function() {
