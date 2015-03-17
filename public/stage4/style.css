@@ -56,10 +56,11 @@
   margin-left: 15%;
   padding: 0 0 0 12px;
 
-  font-size: inherit;
+  font-size: 50%;
   color: inherit;
   text-shadow: inherit;
   text-align: center;
+	vertical-align: top;
 }
 
 .js-training .steelblue {
