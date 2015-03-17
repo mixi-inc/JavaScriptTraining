@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="/modules/whatwg-fetch/fetch.js"></script>
+</head>
+<body>
+  <a href="/api/heavy-10sec">FUUUUUUUU</a>
+  <script>
+    fetch('/api/heavy-15sec').then(function() {
+      console.log('FUUUUUUUUUUU');
+    });
+
+    var sec = 0;
+    setInterval(function() { console.log(++sec); }, 1000);
+  </script>
+</body>
+</html>

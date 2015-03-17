@@ -5,7 +5,6 @@ var stream = require('stream');
 var gutil = require('gulp-util');
 
 var SERVER_SCRIPT = './server.js';
-var PORT = 8000;
 
 
 var serve = function() {
@@ -18,7 +17,7 @@ var serve = function() {
     nodemon({
       script: SERVER_SCRIPT,
       watch: [SERVER_SCRIPT],
-      env: { PORT: PORT },
+      env: { PORT: serve.PORT },
       stdout: false
     })
     .on('readable', function() {
@@ -38,5 +37,8 @@ var serve = function() {
 
   return readable;
 };
+
+
+serve.PORT = 8000;
 
 module.exports = serve;
