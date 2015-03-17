@@ -30,7 +30,13 @@ var serve = function() {
       });
 
       this.stderr.on('data', function(buf) {
-        gutil.log(gutil.colors.red(buf));
+        var stderr = String(buf);
+        var isAddressAlreadyInUse = Boolean(stderr.match(/EADDRINUSE/));
+
+        var msg = 'サーバーを起動できませんでした。\n' + (isAddressAlreadyInUse ?
+            '既にサーバーが立ち上がっているか、8000 番ポートが既に使用されています。' : stderr);
+
+        gutil.log(gutil.colors.red(msg));
       });
     });
   };
