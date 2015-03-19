@@ -112,6 +112,11 @@ JavaScriptTraining リポジトリを fork します。
 - Web ブラウザ
 - Node.js, io.js
 
+JavaScript の特色のひとつは、ブラウザ上で  
+動作するということです。ブラウザ上で動作できる  
+言語はいくつかありますが、一般的に  
+JavaScript がよく使われます。
+
 
 ### いつ JavaScript を使うのか
 
@@ -258,8 +263,8 @@ Web ページが構成されていることがよくわかります。
 DOM (Document Object Model) は、この HTML のタグを  
 JavaScript の世界で操作することができる API です。
 
-JavaScript の世界にもってこられた HTML タグは、  
-DOM 要素と呼ばれています。
+HTML タグは、JavaScript の世界で  
+DOM 要素というオブジェクトとして扱われます。
 
 
 [<img src="http://mixi-inc.github.io/JavaScriptTraining/images/github-tree.png" height="300px" style="background-color: white">](http://mixi-inc.github.io/JavaScriptTraining/images/github-tree.png)
@@ -340,12 +345,20 @@ var div = document.querySelector('.foo div:last-child');
 
 というように、CSS クラスセレクタ `.foo` に  
 該当する要素の子要素を子孫セレクタ (スペース) で  
-取得し、このうち、CSS 疑似セレクタ `:last-child` に  
-マッチするものを取得するという操作になります。
+取得し、このうち `div` タグから CSS 疑似セレクタ
+`:last-child` にマッチするものを取得する  
+という操作になります。
 
+
+図にすると、このようになります。
+
+[<img src="http://mixi-inc.github.io/JavaScriptTraining/images/css-selector-example.png" height="300px" style="background-color: white">](http://mixi-inc.github.io/JavaScriptTraining/images/css-selector-example.png)
 
 CSS セレクタについては、[MDN のCSS リファレンス](https://developer.mozilla.org/ja/docs/Web/CSS/Reference#Selectors) が
 参考になります。
+
+仕様を見ないと我慢ならぬ！という立派な方は、  
+[セレクタ Level 3 仕様](http://standards.mitsue.co.jp/resources/w3c/TR/css3-selectors/) を見るとよいでしょう。
 
 
 #### 実習
@@ -360,7 +373,63 @@ CSS セレクタについては、[MDN のCSS リファレンス](https://develo
 
 ### ステージ2
 
-意図通りに DOM 要素のスタイルを変更するトレーニング
+意図通りに DOM 要素のスタイルを  
+変更するトレーニング
+
+
+#### DOM 要素のスタイル
+
+DOM 要素には、
+
+- 先ほど DOM API に渡した ID 属性
+- CSS クラス属性などの目印となる属性
+- 見た目を操作するスタイル属性
+
+などが付属しています。
+
+
+このうち、スタイル属性を編集すると、DOM 要素の  
+見た目を変化させることができます。
+
+たとえば、Github のヘッダの octocat の  
+style.color 属性を変更してみました。
+
+[<img src="http://mixi-inc.github.io/JavaScriptTraining/images/octocats.png" width="600px" style="background-color: white">](http://mixi-inc.github.io/JavaScriptTraining/images/octocats.png)
+
+
+このスタイル属性は CSS の仕様と対応するように  
+定められています。
+
+ただ、アニメーションを含め、見た目の変更は  
+CSS クラス名の追加/編集/削除によっておこなう  
+ことが推奨されてきています。
+
+（[レンダリングエンジンによる最適化が効くのです！](https://developer.mozilla.org/ja/docs/Web/Guide/CSS/Using_CSS_animations)）
+
+JavaScript は見た目の変更のきっかけを  
+与えるだけにとどめるのが、上手な  
+HTML/JavaScript/CSS 分業の基本です。
+
+
+残念なお知らせですが、  
+今回のトレーニングは CSS を  
+書けるようになることが目的ではないので、  
+レガシーな element.style を編集するやり方を  
+学びます。
+
+
+レガシー…  &#x1f631;
+
+
+まあ、肩を落とさないでください。
+
+レガシーとはいえ、レガシーブラウザーを  
+相手にするライブラリを読み書きするときには、  
+どうしても必要になります。
+
+ちなみに、「レガシー？帰らせていただきます」は  
+フロントエンドエンジニアとして大切な感覚ですので  
+大事にしてください。
 
 
 #### 実習
