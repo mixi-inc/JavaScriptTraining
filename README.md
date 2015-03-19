@@ -324,7 +324,7 @@ Web ページは HTML のタグによって
 [<img src="http://mixi-inc.github.io/JavaScriptTraining/images/github.png" height="300px">](http://mixi-inc.github.io/JavaScriptTraining/images/github.png)
 [<img src="http://mixi-inc.github.io/JavaScriptTraining/images/github-elements.png" height="300px">](http://mixi-inc.github.io/JavaScriptTraining/images/github-elements.png)
 
-この 3D ビューを見ると、複数の HTML タグから
+この 3D ビューを見ると、複数の HTML タグから  
 Web ページが構成されていることがよくわかります。
 
 
@@ -400,7 +400,7 @@ CSS セレクタがあります。
 var div = document.querySelector('#foo');
 ```
 
-というように、ID の先頭に `#` をつけた
+というように、ID の先頭に `#` をつけた  
 IDセレクタ `#foo` で、取得したい DOM 要素を指示します。
 
 
