@@ -387,6 +387,9 @@ DOM 要素には、
 
 などが付属しています。
 
+（DOM の属性の一覧は [MDN DOM リファレンス](https://developer.mozilla.org/ja/docs/DOM/DOM_Reference) を  
+参照してください）
+
 
 このうち、スタイル属性を編集すると、DOM 要素の  
 見た目を変化させることができます。
@@ -527,6 +530,167 @@ DOM 構造の操作が重要なのです。
 ### ステージ4
 
 意図通りに DOM イベントを利用するトレーニング
+
+
+### DOM イベント解説編
+
+ユーザーがボタンを押したり、  
+検索欄に入力したとき、JavaScript は  
+DOM イベントをうけとることができます。
+
+たとえば、下のボタンは click イベントを  
+引きがねとして、DOM 構造を書き換えます。
+
+<div style="font-size:200%"><button style="font-size:inherit" onclick="this.parentNode.textContent='\uD83C\uDF63'">Click me</button></div>
+
+
+click イベント以外にも多様なイベントがあります：
+
+- dblclick: 要素上でダブルクリックされたとき
+- mousemove: 要素上でポインタが移動しているとき
+- scroll: 画面がスクロールされたとき
+- unload: 次のページに遷移する直前
+- keydown: キーボードが押されたとき
+- animationstart: CSS アニメーションが開始したとき
+- offline: ブラウザがオフラインになったとき
+
+ここに載っていないイベントの一覧は  
+[MDN DOM イベントリファレンス](https://developer.mozilla.org/ja/docs/Web2/Reference/Events) を  
+参照するとよいでしょう。
+
+
+試しに、このページを制御する JavaScript が  
+監視しているイベントを見てみましょう。
+
+開発ツールを開き、Elements タブの中段にある  
+Event Listeners タブを開いてみてください。
+
+[<img src="http://mixi-inc.github.io/JavaScriptTraining/images/chrome-dev-tool-event-debugging.png" height="300px" style="background-color: white">](http://mixi-inc.github.io/JavaScriptTraining/images/chrome-dev-tool-event-debugging.png)
+
+
+#### DOM イベント実装編
+
+DOM のイベントを JavaScript 側で監視するには、  
+いくつかの方法があります。
+
+- addEventListener スタイル
+
+	```javascript
+	var button = document.getElementById('button');
+	button.addEventListener('click', function(event) {
+	  console.log(event);
+	});
+	```
+
+- インラインイベントハンドラースタイル
+
+	```html
+	<button onclick="console.log(this)"></button>
+	```
+
+- イベント属性スタイル（レガシー）
+
+	```javascript
+	var button = document.getElementById('button');
+	button.onclick = function(event) {
+	  console.log(event);
+	};
+	```
+
+
+このうち、 `addEventListener` スタイルが  
+お行儀のよい方法だといわれ、  
+推奨されてきました。
+
+```javascript
+// お行儀のよさ
+button.addEventListener('click', function(event) {
+  console.log(event);
+});
+```
+
+
+しかし、AngularJS という最近の  
+フレームワークでイベント属性スタイルを  
+積極的に採用する動きもあります。
+
+```html
+<!-- AngularJS 1.x -->
+<button ng-click="changeName(newname.value)"> Change Name </button>
+
+<!-- AngularJS 2.x -->
+<button (click)="changeName(newname.value)"> Change Name </button>
+```
+
+このような場合は、無理に `addEventListener` を  
+使わずに、そのフレームワークのしきたりに  
+従うとよいでしょう。
+
+
+### DOM イベント伝搬の仕組み
+
+次に、DOM のイベント伝搬（propagation）  
+について解説します。
+
+
+下のようなボタンを例に、伝搬の必要性を  
+考えていきます。このボタンは、アイコンつきで  
+表示されることを意図しています。
+
+```html
+<button><img src="icon.png">Click me</button>
+```
+
+この button 要素の click イベントを  
+監視することを考えます。
+
+button 要素に addEventListener すればよいように  
+見えますが、アイコン画像をクリックされた場合  
+どうなるのでしょうか？
+
+
+実は、個要素で発生した DOM イベントは  
+親要素からも監視することができます。
+
+この仕組みが DOM イベントの伝搬です。
+
+
+イベントの伝搬は4つのフェーズから構成されます。
+
+1. capturing フェーズ
+
+	ルート要素からイベントの対象要素まで降りていく
+
+2. target フェーズ
+
+	イベントの対象要素に到着
+
+3. bubbling フェーズ
+
+	イベントの対象要素からルート要素まで昇っていく
+
+4. ブラウザ既定の処理がおこなわれるフェーズ
+
+	リンクなどによる画面遷移がおこなわれる
+
+
+[<img src="http://www.w3.org/TR/DOM-Level-3-Events/images/eventflow.svg" style="background-color:white" height="500px">](http://www.w3.org/TR/DOM-Level-3-Events/#event-flow)
+
+
+先ほどのボタンの例では、img 要素の  
+click イベントは bubbling によって  
+button 要素まで通知されるのです。
+
+```html
+<button><img src="icon.png">Click me</button>
+```
+
+```javascript
+// button への addEventListener で OK
+button.addEventListener('click', function(event) {
+  // Do something
+});
+```
 
 
 #### 実習
