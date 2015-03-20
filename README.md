@@ -231,11 +231,26 @@ Chrome のタブ名が書き変わりました。
 開発環境道場
 ------------
 
+（あるいはポエム）
+
+
+JavaScript を効率的に書けるようにするために  
+最低限の開発環境を整えます。
+
+
+JavaScript に精通していない人に  
+「どんなツールを使ったらいいですか？」と  
+聞かれることがよくあります。
+
+私は、「構文ハイライトと lint を使うといいですよ」、  
+と答えることにしています。
+
+[<img src="http://mixi-inc.github.io/JavaScriptTraining/images/syntax-error.png" width="600px">](http://mixi-inc.github.io/JavaScriptTraining/images/syntax-error.png)
+
 
 JavaScript には静的型検査がないことや、  
-まずい仕様がいくつもあるので、ミスを  
-犯しやすい言語の一つです。開発環境に  
-気をつけなければならないということです。
+記号が多い構文や、まずい仕様がいくつもあるので、  
+ミスを犯しやすい言語の一つです。
 
 
 たとえば、JavaScript には `"use strict"` という  
@@ -277,15 +292,25 @@ JavaScript には静的型検査がないことや、
 なってしまっていたのでした。
 
 
-このミスはどのようにして防げるのでしょうか？
+この説明を読んで、「何それ意味わからない&#x1f631;」と  
+思いませんでしたか？
 
 
-ESLint や JSHint、 JSLint のようなリントを  
+悲しいことに、このような落とし穴は  
+JavaScript の仕様・文化に数多く  
+潜んでいます。
+
+これらのミスをどのようにしたら  
+防げるのでしょうか？
+
+
+ESLint や JSHint、 JSLint のような lint を  
 使いましょう。たとえば、ESLint を実行すると  
 下のような警告が出されます。これによって、  
 潜在的な不具合をだいぶ減らせるようになるのです。
 
 	Use the function form of "use strict".
+	（関数形式の "use strict" を使ってね）
 
 
 ミスを防ぐためには、「頑張る」とか  
