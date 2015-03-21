@@ -783,7 +783,7 @@ button 要素に addEventListener すればよいように
 	リンクなどによる画面遷移がおこなわれる
 
 
-[<img src="http://www.w3.org/TR/DOM-Level-3-Events/images/eventflow.svg" style="background-color:white" height="500px">](http://www.w3.org/TR/DOM-Level-3-Events/#event-flow)
+[<img src="http://www.w3.org/TR/DOM-Level-3-Events/eventflow.svg" style="background-color:white" height="500px">](http://www.w3.org/TR/DOM-Level-3-Events/#event-flow)
 
 
 先ほどのボタンの例では、img 要素の  
@@ -963,7 +963,7 @@ fetch('/api/foo')
 - [Promise に関する参考情報](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 - [Promise 参考情報（重量級）](http://azu.github.io/promises-book/)
 - [fetch API に関する参考情報](https://github.com/github/fetch)
-- [Github API に関する参考情報](https://developer.github.com/v3/search/)
+- [Github API に関する参考情報](https://developer.github.com/v3/)
 
 
 
