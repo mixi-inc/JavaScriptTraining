@@ -61,8 +61,26 @@ describe('ステージ5（意図通りに非同期処理を利用できる）', 
 
 
   describe('fetch API 編', function() {
+    it('/api/friends API を使って Sugar の友人を取得できる', function(){
+      var api = '/api/friends/';
+      var username = 'Sugar';
+
+      // チュートリアル
+      //
+      // ここに下記のコードを記述してください。
+      //
+      // var promisedFriends = fetch(api + username).then(function(res) {
+      //   return res.json();
+      // });
+
+
+      return expect(promisedFriends).to.eventually.deep.equal(['PYXC-PJ']);
+    });
+
+
     it('/api/friends API を使って Shen の友人を取得できる', function(){
-      var api = '/api/friends/Shen';
+      var api = '/api/friends/';
+      var username = 'Shen';
 
       // 作成した promise を promisedFriends 変数に代入してください。
       var promisedFriends;
@@ -75,7 +93,8 @@ describe('ステージ5（意図通りに非同期処理を利用できる）', 
 
 
     it('/api/friends API を使って Shen の友人の友人を取得できる', function(){
-      var api = '/api/friends/Shen';
+      var api = '/api/friends/';
+      var username = 'Shen';
 
       // 作成した promise を promisedFriends 変数に代入してください。
       var promisedFriends;
@@ -100,17 +119,9 @@ describe('ステージ5（意図通りに非同期処理を利用できる）', 
 
 
     it('Github の mixi-inc の organization の情報を取得できる', function() {
+
+      // 作成した promise を mixiOrg 変数に代入してください。
       var mixiOrg;
-
-      // チュートリアル
-      //
-      // ここに下記のコードを記述してください。
-      //
-      // mixiOrg = fetch('https://api.github.com/orgs/mixi-inc').
-      //   then(function(response) {
-      //     return response.json();
-      //   });
-
 
       return expect(mixiOrg).to.eventually.have.property('id', 1089312);
 
