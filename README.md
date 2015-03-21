@@ -1153,8 +1153,8 @@ Promise らしいやり方をとると `.then` で
 
 fetch('/api/foo')
   .then(doSomething)
-  .then(fetch('/api/bar'))
+  .then(function() { return fetch('/api/bar'); })
   .then(doSomething)
-  .then(fetch('/api/buz'))
+  .then(function() { return fetch('/api/buz'); })
   .then(doSomething);
 ```
