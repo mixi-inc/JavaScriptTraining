@@ -1,0 +1,649 @@
+{
+  "CoffeeScript": [
+    "Taijilang",
+    "purescript",
+    "Wind.js"
+  ],
+  "Coco": [],
+  "LiveScript": [
+    "Red"
+  ],
+  "IcedCoffeeScript": [
+    "JSX"
+  ],
+  "Parsec CoffeeScript": [
+    "Six"
+  ],
+  "Contracts.coffee": [
+    "jisp"
+  ],
+  "Uberscript": [
+    "ADsafe",
+    "Java2Script",
+    "Chlorinejs"
+  ],
+  "ToffeeScript": [],
+  "Caffeine": [],
+  "heap.coffee": [],
+  "EmberScript": [],
+  "Kaffeine": [
+    "Quby",
+    "O'Browser"
+  ],
+  "Jack": [
+    "Pyjs"
+  ],
+  "move": [
+    "asm.js",
+    "WootzJs"
+  ],
+  "Moescript": [],
+  "pogoscript": [
+    "Restrict Mode",
+    "Opal"
+  ],
+  "LispyScript": [
+    "Continuation.js",
+    "EdgeLisp"
+  ],
+  "wisp": [
+    "Uberscript",
+    "Mochiscript"
+  ],
+  "Hot Cocoa Lisp": [
+    "Whalesong"
+  ],
+  "Sibilant": [
+    "node-jvm"
+  ],
+  "ki": [
+    "Contracts.coffee",
+    "MoonScript",
+    "Caja"
+  ],
+  "jisp": [],
+  "Ham": [
+    "BiwaScheme"
+  ],
+  "GorillaScript": [],
+  "RedScript": [
+    "Mascara"
+  ],
+  "Daonode": [],
+  "LiteScript": [
+    "LispyScript",
+    "LZX (Laszlo XML)"
+  ],
+  "Radium": [
+    "LLJS"
+  ],
+  "ColaScript": [
+    "Reb2Static"
+  ],
+  "Taijilang": [],
+  "MoonScript": [
+    "uniter"
+  ],
+  "Earl Grey": [
+    "CirruScript",
+    "JSX"
+  ],
+  "Khepri": [],
+  "Spider": [
+    "Sibilant",
+    "jmacro",
+    "phype"
+  ],
+  "CirruScript": [],
+  "Stripes": [
+    "Cheerp",
+    "Gnusto"
+  ],
+  "Caja": [],
+  "ADsafe": [],
+  "FBJS": [
+    "Skulpt"
+  ],
+  "Jacaranda": [
+    "AtScript"
+  ],
+  "Microsoft Web Sandbox": [
+    "Flapjax"
+  ],
+  "Gatekeeper": [
+    "Local.js",
+    "MileScript",
+    "scalagwt"
+  ],
+  "Dojo Secure": [
+    "PythonJS"
+  ],
+  "Local.js": [
+    "JSPipe",
+    "PyCow",
+    "JScriptSuite"
+  ],
+  "Dart": [
+    "Moescript"
+  ],
+  "TypeScript": [],
+  "TeJaS": [
+    "TypeScript"
+  ],
+  "asm.js": [],
+  "JavaScript++": [
+    "Js_of_ocaml"
+  ],
+  "MileScript": [
+    "WebSharper",
+    "JsMaker",
+    "Meemoo"
+  ],
+  "Mascara": [
+    "Parsec CoffeeScript"
+  ],
+  "Roy": [
+    "Swym"
+  ],
+  "Elm": [
+    "Silver Smalltalk"
+  ],
+  "JSX": [
+    "Ralph",
+    "LispyScript"
+  ],
+  "Este.js": [
+    "Dart",
+    "ColdRuby",
+    "Go2js"
+  ],
+  "Swym": [
+    "GWT"
+  ],
+  "Typecast.js": [
+    "Oppo"
+  ],
+  "purescript": [
+    "ScriptBlocks"
+  ],
+  "AtScript": [
+    "EmberScript",
+    "Netjs",
+    "haste",
+    "Amber"
+  ],
+  "Flow": [],
+  "Streamline.js": [
+    "Objective-J",
+    "Mandreel",
+    "GopherJS"
+  ],
+  "mobl": [
+    "JavaScript++"
+  ],
+  "StratifiedJS": [
+    "Outlet"
+  ],
+  "NarrativeJS": [
+    "Flow"
+  ],
+  "jwacs": [
+    "sql-parser",
+    "Dogescript"
+  ],
+  "Wind.js": [],
+  "TameJS": [
+    "TIScript",
+    "jshaskell",
+    "Smart Mobile Studio",
+    "browserl"
+  ],
+  "Continuation.js": [
+    "wisp",
+    "FunScript"
+  ],
+  "Kal": [
+    "Streamline.js",
+    "rb2js",
+    "Ur",
+    "wForth"
+  ],
+  "JSPipe": [],
+  "promiseLand": [
+    "pythonscript"
+  ],
+  "ContextJS": [],
+  "Objective-J": [
+    "Elm"
+  ],
+  "Mochiscript": [],
+  "jangaroo": [],
+  "Flapjax": [],
+  "jLang": [
+    "move"
+  ],
+  "Restrict Mode": [],
+  "TIScript": [
+    "NemerleWeb"
+  ],
+  "Six": [
+    "qb.js"
+  ],
+  "js--": [
+    "IcedCoffeeScript",
+    "Radium"
+  ],
+  "Latte JS": [
+    "RapydScript",
+    "Blue Storm"
+  ],
+  "oj": [
+    "heap.coffee",
+    "Pit"
+  ],
+  "Opal": [],
+  "HotRuby": [],
+  "ColdRuby": [
+    "Jack"
+  ],
+  "rb2js": [
+    "ContextJS"
+  ],
+  "RubyJS": [],
+  "Red": [
+    "GorillaScript",
+    "QWT",
+    "Clamato"
+  ],
+  "Quby": [
+    "Moby Scheme"
+  ],
+  "8ball": [
+    "sqld3",
+    "uilang"
+  ],
+  "PYXC-PJ": [
+    "NarrativeJS"
+  ],
+  "Pyjamas": [],
+  "Pyjaco": [
+    "Typecast.js",
+    "Latte JS"
+  ],
+  "Pyjs": [
+    "js--",
+    "p2js"
+  ],
+  "Skulpt": [],
+  "PyCow": [
+    "LuvvieScript"
+  ],
+  "PyvaScript": [],
+  "RapydScript": [],
+  "Brython": [
+    "Plaid"
+  ],
+  "PythonScript": [
+    "E"
+  ],
+  "pythonscript": [
+    "mobl",
+    "jsForth"
+  ],
+  "PythonJS": [
+    "Gatekeeper",
+    "Clue"
+  ],
+  "PyPyJS": [
+    "RubyJS"
+  ],
+  "Shen": [
+    "jisp",
+    "TeJaS"
+  ],
+  "LuvvieScript": [],
+  "Perlito": [
+    "Processing"
+  ],
+  "GWT": [],
+  "Java2Script": [
+    "Topaz"
+  ],
+  "j2js": [
+    "jwacs",
+    "Fun"
+  ],
+  "BicaJVM": [
+    "Nimrod"
+  ],
+  "Doppio": [
+    "Shen"
+  ],
+  "Processing": [
+    "Perlito",
+    "NoFlo",
+    "Agda"
+  ],
+  "Kotlin": [],
+  "Ceylon": [
+    "DuoCode"
+  ],
+  "GrooScript": [
+    "jLang"
+  ],
+  "node-jvm": [
+    "LiteScript",
+    "JSIL"
+  ],
+  "Bck2Brwsr": [],
+  "QWT": [
+    "Spider",
+    "Ceylon",
+    "ErlyJS"
+  ],
+  "TeaVM": [
+    "Khepri"
+  ],
+  "Dragome SDK": [
+    "NGN APL"
+  ],
+  "Scala.js": [
+    "Jacaranda"
+  ],
+  "js-scala": [],
+  "scalagwt": [
+    "Opa",
+    "Waterbear"
+  ],
+  "JScala": [],
+  "jsc": [],
+  "JSIL": [
+    "HotRuby"
+  ],
+  "Script#": [
+    "forml"
+  ],
+  "Prefix": [
+    "Este.js",
+    "JScala"
+  ],
+  "Blade": [
+    "CoffeeScript",
+    "Kotlin"
+  ],
+  "SharpKit": [
+    "Scala.js",
+    "ki"
+  ],
+  "Saltarelle": [
+    "Script#",
+    "NS Basic/App Studio"
+  ],
+  "FunScript": [],
+  "Pit": [],
+  "WebSharper": [],
+  "NemerleWeb": [
+    "Illumination"
+  ],
+  "Blue Storm": [],
+  "JScriptSuite": [
+    "Brython"
+  ],
+  "DotNetWebToolkit": [
+    "Snap",
+    "Logo Interpreter"
+  ],
+  "Netjs": [],
+  "WootzJs": [],
+  "DuoCode": [
+    "Scriptjure",
+    "TARDISgo",
+    "XLCC"
+  ],
+  "ClojureScript": [],
+  "ClojureJS": [
+    "ghcjs",
+    "Wortel"
+  ],
+  "Chlorinejs": [
+    "Sibilant"
+  ],
+  "Scriptjure": [
+    "Microsoft Web Sandbox",
+    "Pyjamas"
+  ],
+  "BiwaScheme": [
+    "StratifiedJS",
+    "Blade"
+  ],
+  "Fargo": [
+    "Roy",
+    "Brozula"
+  ],
+  "Moby Scheme": [],
+  "nconc": [
+    "BicaJVM",
+    "Blockly"
+  ],
+  "scheme2js": [
+    "8ball"
+  ],
+  "Spock": [],
+  "Whalesong": [
+    "Daonode"
+  ],
+  "EdgeLisp": [],
+  "Parenscript": [
+    "Parenscript",
+    "Little Smallscript"
+  ],
+  "Ralph": [
+    "Kal"
+  ],
+  "Oppo": [
+    "Fantom",
+    "CobolScript"
+  ],
+  "Outlet": [
+    "Bck2Brwsr",
+    "lua.js"
+  ],
+  "Ocamljs": [],
+  "O'Browser": [
+    "defrac"
+  ],
+  "Js_of_ocaml": [
+    "TameJS"
+  ],
+  "UHC": [],
+  "ghcjs": [
+    "DotNetWebToolkit"
+  ],
+  "jmacro": [],
+  "YHC": [],
+  "jshaskell": [],
+  "haste": [],
+  "fay": [
+    "TeaVM"
+  ],
+  "forml": [],
+  "Amber": [
+    "ToffeeScript",
+    "PyvaScript",
+    "Dragome SDK",
+    "Fargo"
+  ],
+  "Clamato": [],
+  "Silver Smalltalk": [
+    "SqueakJS"
+  ],
+  "Lively Kernel": [
+    "php.js"
+  ],
+  "Little Smallscript": [],
+  "SqueakJS": [],
+  "Emscripten": [],
+  "Cheerp": [
+    "Spock",
+    "UHC"
+  ],
+  "maja": [
+    "ki",
+    "Pygmy"
+  ],
+  "Clue": [
+    "Coco"
+  ],
+  "LLJS": [
+    "oj",
+    "scheme2js"
+  ],
+  "Mandreel": [],
+  "NS Basic/App Studio": [
+    "promiseLand"
+  ],
+  "qb.js": [
+    "SMLtoJs"
+  ],
+  "Smart Mobile Studio": [
+    "RedScript"
+  ],
+  "Elevate Web Builder": [
+    "LiveScript",
+    "SharpKit"
+  ],
+  "Go2js": [
+    "FBJS",
+    "ClojureJS"
+  ],
+  "GopherJS": [
+    "ColaScript"
+  ],
+  "TARDISgo": [
+    "Monkey"
+  ],
+  "Haxe": [],
+  "Fantom": [],
+  "LZX (Laszlo XML)": [],
+  "Nimrod": [
+    "Ocamljs"
+  ],
+  "Monkey": [
+    "Emscripten"
+  ],
+  "defrac": [
+    "mobl"
+  ],
+  "Fun": [],
+  "Ur": [
+    "Pyjaco",
+    "Elevate Web Builder"
+  ],
+  "E": [
+    "Doppio",
+    "Jotlin"
+  ],
+  "Sugar": [
+    "PYXC-PJ"
+  ],
+  "Opa": [],
+  "Waterbear": [
+    "Oia"
+  ],
+  "Snap": [
+    "pogoscript",
+    "PyPyJS",
+    "jsc"
+  ],
+  "ScriptBlocks": [
+    "jangaroo"
+  ],
+  "Illumination": [],
+  "JsMaker": [],
+  "Meemoo": [
+    "maja"
+  ],
+  "NoFlo": [],
+  "Blockly": [],
+  "Maeda Block": [
+    "GrooScript"
+  ],
+  "sql-parser": [
+    "Caffeine"
+  ],
+  "sqld3": [
+    "ClojureScript"
+  ],
+  "Alasql": [
+    "Lively Kernel"
+  ],
+  "phype": [
+    "js-scala",
+    "Saltarelle"
+  ],
+  "uniter": [],
+  "php.js": [],
+  "Oia": [],
+  "Plaid": [],
+  "Quixe": [],
+  "Gnusto": [
+    "Dojo Secure",
+    "Idris"
+  ],
+  "Logo Interpreter": [],
+  "p2js": [
+    "Kaffeine",
+    "Haxe"
+  ],
+  "Reb2Static": [
+    "Earl Grey",
+    "Hot Cocoa Lisp",
+    "fay"
+  ],
+  "RPN": [
+    "Hot Cocoa Lisp"
+  ],
+  "jsForth": [
+    "PythonScript"
+  ],
+  "wForth": [
+    "Stripes",
+    "Prefix"
+  ],
+  "Agda": [],
+  "XLCC": [
+    "Alasql",
+    "Quixe"
+  ],
+  "SMLtoJs": [],
+  "lua.js": [
+    "nconc"
+  ],
+  "Brozula": [],
+  "Pygmy": [
+    "Maeda Block"
+  ],
+  "browserl": [
+    "wisp"
+  ],
+  "ErlyJS": [],
+  "Topaz": [],
+  "NGN APL": [],
+  "CobolScript": [],
+  "Idris": [
+    "Ham"
+  ],
+  "Dogescript": [],
+  "Wortel": [
+    "j2js"
+  ],
+  "JEnglish": [
+    "RPN",
+    "JEnglish"
+  ],
+  "Jotlin": [
+    "YHC",
+    "Sugar"
+  ],
+  "uilang": []
+}

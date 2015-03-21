@@ -228,6 +228,115 @@ Chrome のタブ名が書き変わりました。
 
 
 
+開発環境道場
+------------
+
+（あるいはポエム）
+
+
+JavaScript を効率的に書けるようにするために  
+最低限の開発環境を整えます。
+
+
+JavaScript に精通していない人に  
+「どんなツールを使ったらいいですか？」と  
+聞かれることがよくあります。
+
+私は、「構文ハイライトと lint を使うといいですよ」、  
+と答えることにしています。
+
+[<img src="http://mixi-inc.github.io/JavaScriptTraining/images/syntax-error.png" width="600px">](http://mixi-inc.github.io/JavaScriptTraining/images/syntax-error.png)
+
+
+JavaScript には静的型検査がないことや、  
+記号が多い構文や、まずい仕様がいくつもあるので、  
+ミスを犯しやすい言語の一つです。
+
+
+たとえば、JavaScript には `"use strict"` という  
+宣言があります。この宣言は JavaScript の  
+まずい仕様の一部をエラーにすることで修正を  
+促す効果があり、よく記述を推奨される宣言です。
+
+
+あるプロジェクトで気を利かした  
+プログラマーが `"use strict"` を  
+新しいスクリプトで使い始めました。
+
+```javascript
+"use strict";
+
+// Do something...
+```
+
+これは、開発時のミスを早期発見できるように  
+するよい方法です！
+
+
+しかし、リリース後、新しいスクリプトとは  
+関係ないはずの JavaScript による  
+メニューが動作しなくなっていました。
+
+なぜでしょうか？
+
+
+これは、パフォーマンスチューニングの一環で  
+複数の JavaScript ファイルを結合していたこと、  
+ファイルに対する `"use strict"` を利用していた  
+ことの2つが原因となって起きた不具合です。 
+
+`"use strict"` が結合された  
+すべてのファイル全体に効くように  
+なり、`"use strict"` に対応していない  
+古いファイルがエラーを出すように  
+なってしまっていたのでした。
+
+
+この説明を読んで、「何それ意味わからない&#x1f631;」と  
+思いませんでしたか？
+
+
+悲しいことに、このような落とし穴は  
+JavaScript の仕様・文化に数多く  
+潜んでいます。
+
+これらのミスをどのようにしたら  
+防げるのでしょうか？
+
+
+ESLint や JSHint、 JSLint のような lint を  
+使いましょう。たとえば、ESLint を実行すると  
+下のような警告が出されます。これによって、  
+潜在的な不具合をだいぶ減らせるようになるのです。
+
+	Use the function form of "use strict".
+	（関数形式の "use strict" を使ってね）
+
+
+ミスを防ぐためには、「頑張る」とか  
+「注意する」のような精神論ではなく、  
+ lint によって防止することが必要です。  
+あなたが JavaScript にまだ精通していないので  
+あれば、真っ先にいれるべきは lint なのです。
+
+
+1. lint をかけてみる
+
+	ターミナルで下のコマンドを実行してください。
+	ESLint が実行されます。
+
+		gulp lint-stage1
+
+2. 構文ハイライトを効かせる
+
+	ほとんどのエディタは構文ハイライトを  
+	サポートしています。Vim のように  
+	構文ハイライトが選べるのであれば、  
+	よりミスのわかりやすい構文ハイライトを  
+	利用します。
+
+
+
 トレーニング
 ------------
 
@@ -235,7 +344,7 @@ Chrome のタブ名が書き変わりました。
 
 ### ステージ1
 
-意図した DOM 要素を取得するトレーニング
+DOM 要素を取得するトレーニング
 
 
 #### DOM とは
@@ -246,7 +355,7 @@ Web ページは HTML のタグによって
 [<img src="http://mixi-inc.github.io/JavaScriptTraining/images/github.png" height="300px">](http://mixi-inc.github.io/JavaScriptTraining/images/github.png)
 [<img src="http://mixi-inc.github.io/JavaScriptTraining/images/github-elements.png" height="300px">](http://mixi-inc.github.io/JavaScriptTraining/images/github-elements.png)
 
-この 3D ビューを見ると、複数の HTML タグから
+この 3D ビューを見ると、複数の HTML タグから  
 Web ページが構成されていることがよくわかります。
 
 
@@ -322,11 +431,11 @@ CSS セレクタがあります。
 var div = document.querySelector('#foo');
 ```
 
-というように、ID の先頭に ID セレクタ `#`  
-をつけることで、取得したい DOM 要素を指示します。
+というように、ID の先頭に `#` をつけた  
+IDセレクタ `#foo` で、取得したい DOM 要素を指示します。
 
 
-この方法の利点は、複雑な目印を使って DOM 要素を  
+この方法の利点は、複雑な位置にある DOM 要素を  
 取得することができるということでしょう。  
 
 下の HTML の bar を包む `div` タグにあたる  
@@ -373,8 +482,7 @@ CSS セレクタについては、[MDN のCSS リファレンス](https://develo
 
 ### ステージ2
 
-意図通りに DOM 要素のスタイルを  
-変更するトレーニング
+DOM 要素のスタイルを変更するトレーニング
 
 
 #### DOM 要素のスタイル
@@ -447,7 +555,7 @@ HTML/JavaScript/CSS 分業の基本です。
 
 ### ステージ3
 
-意図通りに DOM の構造を変更するトレーニング
+DOM の構造を変更するトレーニング
 
 
 #### DOM の構造
@@ -460,7 +568,8 @@ HTML/JavaScript/CSS 分業の基本です。
 DOM の構造を変更する必要性を考えてみます。
 
 
-書籍検索サービスは、検索結果を下のように返したとしましょう。
+書籍検索サービスの API は、検索結果を  
+下のように返したとしましょう。
 
 ```javascript
 [
@@ -529,7 +638,7 @@ DOM 構造の操作が重要なのです。
 
 ### ステージ4
 
-意図通りに DOM イベントを利用するトレーニング
+DOM イベントを利用するトレーニング
 
 
 ### DOM イベント解説編
@@ -705,7 +814,139 @@ button.addEventListener('click', function(event) {
 
 ### ステージ5
 
-意図通りにサーバーと通信するトレーニング
+サーバーと通信するトレーニング
+
+
+#### サーバーとの通信
+
+JavaScript にはサーバーと通信するための API が  
+用意されています。
+
+- [fetch API](http://www.hcn.zaq.ne.jp/___/WEB/Fetch-ja.html)
+
+	現在策定中の新しい標準仕様
+
+- [XMLHttpRequest](https://developer.mozilla.org/ja/docs/Web/API/XMLHttpRequest)
+
+	jQuery.ajax のようなショートハンドが使われる  
+	ことが多く、実際手で書くことはほとんどない
+
+
+今回は、JavaScript の将来を見据えて、  
+fetch API によるサーバーとの通信を  
+トレーニングします。
+
+
+#### fetch API
+
+fetch API は下のように書きます。  
+このコードは、`/users.json` を  
+取得します。
+
+```javascript
+fetch('/users.json')
+  .then(function(response) {
+    return response.json()
+  })
+  .then(function(json) {
+    console.log('parsed json', json)
+  })
+  .catch(function(error) {
+    console.log('parsing failed', error)
+  });
+```
+
+`.then`、`.catch` という不思議なメソッドで  
+つながっています。
+
+
+#### Promise を使った非同期処理
+
+さきほどの `.then`、`.catch` は、非同期処理の  
+結果を、引数に渡した関数で受け取るために  
+用意されています。
+
+たとえば、`.then` を使うと、正常にレスポンスが  
+受け取れた場合に関数を実行できます。
+
+```javascript
+fetch('/users.json')
+  .then(function(response) {
+
+    // /users.json を正常に取得できたときに、  
+    // response をログに出力する
+    console.log(response);
+  });
+```
+
+エラーがあった場合は、ログ出力は実行されません。
+
+
+また、`.catch` を使うと、エラーが発生した場合に  
+関数を実行できます。
+
+```javascript
+fetch('/users.json')
+  .catch(function(errror) {
+
+    // /users.json の取得時にエラーがでたときに、
+    // error をログに出力する
+    console.log(error);
+  });
+```
+
+こちらは、正常にレスポンスを受け取れた場合は、
+ログ出力は実行されません。
+
+なお、先ほどの例のように `.then` と `.catch` を  
+同時につけることもできます。
+
+
+サーバーと通信するだけなのに、  
+なんか複雑すぎるような…？
+
+
+実はこの Promsie という複雑な仕組みを使う理由は、  
+
+- 並行非同期処理
+- 直列非同期処理
+
+を書きやすくする、ということなのです。
+
+
+#### Promise による平行非同期処理
+
+`Promise.all` を使います。
+
+```javascript
+// 2つの Web API からレスポンスが欲しい！
+
+Promise.all([
+  fetch('/api/foo'),
+  fetch('/api/bar')
+])
+.then(function(responses) {
+  var responseFoo = responses[0];
+  var responseBar = responses[1];
+  doSomething(responseFoo, responseBar);
+});
+```
+
+
+#### Promise による直列非同期処理
+
+`.then` で次々に処理を連結できます。
+
+```javascript
+// Web API の結果を利用して別の API を実行したい！
+
+fetch('/api/foo')
+  .then(doSomething)
+  .then(function() { return fetch('/api/bar'); })
+  .then(doSomething)
+  .then(function() { return fetch('/api/buz'); })
+  .then(doSomething);
+```
 
 
 #### 実習
@@ -717,10 +958,18 @@ button.addEventListener('click', function(event) {
 [http://localhost:8000/stage5/](http://localhost:8000/stage5/)
 
 
+#### 参考になる資料
+
+- [Promise に関する参考情報](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+- [Promise 参考情報（重量級）](http://azu.github.io/promises-book/)
+- [fetch API に関する参考情報](https://github.com/github/fetch)
+- [Github API に関する参考情報](https://developer.github.com/v3/search/)
+
+
 
 ### ステージ6
 
-意図通りにモジュールを実装するトレーニング
+モジュールを実装するトレーニング
 
 
 #### 実習
@@ -745,3 +994,167 @@ button.addEventListener('click', function(event) {
 修正してください。
 
 [http://localhost:8000/stage6/](http://localhost:8000/stage6/)
+
+
+
+付録
+----
+
+
+### Promise について
+
+
+#### Promise による平行非同期処理
+
+Promise による平行非同期処理を通常のやりかたと、
+Promise らしいやり方とでやってみました。
+
+コードを比較してみてください。
+
+
+```javascript
+// 2つの Web API からレスポンスが欲しい！
+
+var done = { foo: false, bar: false };
+var responses = { foo: null, bar: false };
+fetch('/api/foo').then(function(responseFoo) {
+  if (!done.bar) {
+    done.foo = true;
+    responses.foo = responseFoo;
+    return;
+  }
+  doSomething(responseFoo, responses.bar);
+});
+fetch('/api/bar').then(function(responseBar) {
+  if (!done.foo) {
+    done.bar = true;
+    responses.bar = responseFoo;
+    return;
+  }
+  doSomething(responses.foo, responseBar);
+});
+```
+
+レスポンス取得の待ち合わせ処理があり、  
+状態を複数もつ厄介なコードにしあがっていますね。
+
+
+```javascript
+// 2つの Web API からレスポンスが欲しい！
+
+Promise.all([
+  fetch('/api/foo'),
+  fetch('/api/bar')
+])
+.then(function(responses) {
+  var responseFoo = responses[0];
+  var responseBar = responses[1];
+  doSomething(responseFoo, responseBar);
+});
+```
+
+`Promise.all` を使うと、待ち合わせ処理が  
+なくスッキリ！
+
+
+#### Promise による直列非同期処理
+
+直列非同期処理についても、通常のやり方と、  
+Promise らしいやり方でやってみました。
+
+コードを比較してみてください。
+
+
+```javascript
+// Web API の結果を利用して別の API を実行したい！
+
+fetch('/api/foo').then(function(responseFoo) {
+  doSomething(responseFoo);
+  fetch('/api/bar').then(function(responseBar) {
+    doSomething(responseBar);
+    fetch('/api/buz').then(function(responseBuz) {
+      doSomething(responseBuz);
+    });
+  });
+});
+```
+
+コードがネストしているので、後ろの方の  
+関数のスコープが深くなってしまっています。
+変数を追跡するのに手間がかかりそうです。
+
+
+ネストの外に出すだけならば、終了コールバックを  
+呼び出す[継続渡しスタイル](http://ja.wikipedia.org/wiki/%E7%B6%99%E7%B6%9A%E6%B8%A1%E3%81%97%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB) で  
+書くことができます。
+
+```javascript
+// Web API の結果を利用して別の API を実行したい！
+
+fetch('/api/foo').then(callbackFoo);
+
+function callbackFoo(responseFoo) {
+  doSomething(responseFoo);
+  fetchBar(callbackBar);
+}
+
+function fetchBar(callback) {
+  fetch('/api/bar').then(callback);
+}
+
+function callbackBar(responseBar) {
+  doSomething(responseBar);
+  fetchBuz(callbackBuz);
+}
+
+function fetchBuz(callback) {
+  fetch('/api/buz').then(callback);
+}
+
+function callbackBuz(responseBuz) {
+  doSomething(responseBuz);
+}
+```
+
+流れが追いづらい！
+
+クロージャー + 継続渡しスタイルを使うと…
+
+```javascript
+// Web API の結果を利用して別の API を実行したい！
+
+fetch('/api/foo').then(fetchBar(fetchBuz(doSomething)));
+
+function fetchBar(callback) {
+  return function(responseFoo) {
+    doSomething(responseFoo);
+    fetchBar(callback);
+  };
+}
+
+function fetchBuz(callback) {
+  return function(responseBar) {
+    doSomething(responseBar);
+    fetchBuz(callback);
+  };
+}
+```
+
+これはこれで美しい…&#x1f60c;
+
+（JS に慣れるまではちょっと読みづらいと思います）
+
+
+Promise らしいやり方をとると `.then` で  
+次々に処理を連結できます。
+
+```javascript
+// Web API の結果を利用して別の API を実行したい！
+
+fetch('/api/foo')
+  .then(doSomething)
+  .then(fetch('/api/bar'))
+  .then(doSomething)
+  .then(fetch('/api/buz'))
+  .then(doSomething);
+```

@@ -19,6 +19,13 @@ app.get('/api/heavy', function(req, res) {
   }, 1000);
 });
 
+var friendMap = require('./server/response/friendsmap.json');
+
+app.get('/api/friends/:username([\\w.-]+)', function(req, res) {
+  var username = req.params.username;
+  res.json(friendMap[username]);
+});
+
 
 
 var PORT = process.env.PORT;

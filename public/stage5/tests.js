@@ -1,7 +1,104 @@
 'use strict';
 
 describe('ステージ5（意図通りに非同期処理を利用できる）', function() {
-  describe('通信編', function() {
+  describe('Promise 編', function() {
+    it('resolve ハンドラーを書ける', function(testDone){
+      var promise = Promise.resolve('resolved!');
+
+      // チュートリアル
+      //
+      // ここに下記のコードを記述してください。
+      //
+      // promise.then(function(msg) {
+      //   expect(msg).to.equal('resolved!');
+      //   testDone();
+      // });
+    });
+
+
+    it('reject ハンドラーを書ける', function(testDone){
+      var promise = Promise.reject('rejected!');
+
+      // reject ハンドラーを使って、下の assertion が promise の
+      // エラー値を検証できるように記述してください。
+      //
+      // expect(msg).to.equal('rejected!');
+      // testDone();
+
+      // ここにコードを記述してください。
+
+
+    });
+
+
+    it('複数の promise すべての完了を待つ promise を作成できる', function(){
+      var messageFragments = ['あなたと', 'java', '今すぐダウンロード'];
+      var promise1 = createWaitPromise(messageFragments[0], 10);
+      var promise2 = createWaitPromise(messageFragments[1], 20);
+      var promise3 = createWaitPromise(messageFragments[2], 30);
+
+      // 作成した promise を promise 変数に代入してください。
+      var promise;
+
+
+      return expect(promise).to.eventually.deep.equal(messageFragments);
+    });
+
+
+    it('複数の promise のうち最も速く解決された値をもつ promise を作成できる', function(){
+      var messageFragments = ['30億の', 'デバイスで', '走るjava'];
+      var promise1 = createWaitPromise(messageFragments[0], 30);
+      var promise2 = createWaitPromise(messageFragments[1], 10);
+      var promise3 = createWaitPromise(messageFragments[2], 30);
+
+      // 作成した promise を promise 変数に代入してください。
+      var promise;
+
+
+      return expect(promise).to.eventually.equal(messageFragments[1]);
+    });
+  });
+
+
+  describe('fetch API 編', function() {
+    it('/api/friends API を使って Shen の友人を取得できる', function(){
+      var api = '/api/friends/Shen';
+
+      // 作成した promise を promisedFriends 変数に代入してください。
+      var promisedFriends;
+
+
+      return expect(promisedFriends).to.eventually.deep.equal(
+        ['jisp', 'TeJaS']
+      );
+    });
+
+
+    it('/api/friends API を使って Shen の友人の友人を取得できる', function(){
+      var api = '/api/friends/Shen';
+
+      // 作成した promise を promisedFriends 変数に代入してください。
+      var promisedFriends;
+
+
+      return expect(promisedFriends).to.eventually.deep.equal(['TypeScript']);
+    });
+
+
+    it.skip('/api/friends API を使って CoffeeScript の友人を再帰的に取得できる', function(){
+      // 難易度高いので、自信のある人だけ挑戦してください。
+      // it.skip の .skip を消せば、テストが走るようになります。
+
+      // 作成した promise を promisedFriends 変数に代入してください。
+      var promisedFriends;
+
+
+      return expect(promisedFriends).to.eventually.deep.equal(
+        ['Taijilang', 'purescript', 'Wind.js', 'ScriptBlocks', 'jangaroo']
+      );
+    });
+
+
     it('Github の mixi-inc の organization の情報を取得できる', function() {
       var mixiOrg;
 
@@ -24,13 +121,15 @@ describe('ステージ5（意図通りに非同期処理を利用できる）', 
 
     it('Github API を使って、mixi-inc/JavaScriptTraining の情報を取得できる', function(){
       var repositry = 'mixi-inc/JavaScriptTraining';
+
+      // 作成した promise を mixiRepo 変数に代入してください。
       var mixiRepo;
 
-      // コードをここに記述してください。
 
+      return expect(mixiRepo).to.eventually.have.property('full_name', repositry);
 
-      return expect(mixiRepo).to.eventually.have.property(
-        'full_name', repositry);
+      // Github API に関する参考情報
+      // https://developer.github.com/v3/orgs
     });
 
 
@@ -39,24 +138,20 @@ describe('ステージ5（意図通りに非同期処理を利用できる）', 
       var languages = [ 'VimL', '"Emacs Lisp"' ];
       var mostPopularRepos;
 
-      // コードをここに記述してください。
-      // なお、 mostPopularRepos は Promise インスタンスであることを
-      // 意図しています。
+      // 作成した promise を mostPopularRepos 変数に代入してください。
 
 
       return expect(mostPopularRepos).to.eventually.have.length(2);
 
-      // fetch API に関する参考情報
-      // https://github.com/github/fetch
-      //
       // Github API に関する参考情報
-      // https://developer.github.com/v3/search/
-      //
-      // Promise に関する参考情報
-      // https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Promise
-      //
-      // Promise 参考情報（重量級）
-      // http://azu.github.io/promises-book/
+      // https://developer.github.com/v3/search
     });
   });
+
+
+  function createWaitPromise(value, msec) {
+    return new Promise(function(resolve) {
+      setTimeout(resolve, msec, value);
+    });
+  }
 });
