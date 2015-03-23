@@ -975,11 +975,214 @@ fetch('/api/foo')
 モジュールを実装するトレーニング
 
 
+#### モジュール
+
+JavaScript は言語機能としてモジュールの  
+仕組みをもっていません。
+
+言語機能としてのモジュールシステムを利用するには  
+[ECMAScript 6](https://developer.mozilla.org/ja/docs/Web/JavaScript/ECMAScript_6_support_in_Mozilla) を待たなければなりません。
+
+
+とはいっても、みんなモジュールを使いたかったので、  
+さまざまなモジュールシステムとそれに付随する  
+エコシステムが開発されてきました。
+
+
+[エコシステムの例](https://github.com/wilmoore/frontend-packagers)
+
+
+あ…めっちゃ多い…&#x1f635;
+
+
+今回は、利用方法がシンプルな「[bower](http://bower.io)」を使います。
+
+
+#### bower
+
+bower は、JavaScript、HTML、CSS等の、  
+フロントエンドリソースのエコシステムです。
+
+ただ、モジュールローディングの仕組みを  
+もたないため、この部分は RequireJS などの  
+外部モジュールシステムに頼ることになります。  
+どのモジュールシステムに対応するかという選択は、
+bower によって読み込まれるパッケージ側に  
+裁量（責務）があります。
+
+
+これを、[公式ドキュメント](http://bower.io/#getting-started)は端的に  
+言い表しています。
+
+> How you use packages is up to you.
+>
+> （どのようにしてパッケージを使うのかはあなた次第です）
+
+
+bower の使い方は簡単です。
+
+bower で管轄したいファイルのディレクトリを開き、
+
+	bower init
+
+です。あとは説明に従って選択していくと、bower の  
+パッケージ設定ファイル `bower.json` が作成されます。
+
+
+##### 1. name
+
+このパッケージの名前を指定します。
+
+パッケージとして公開する場合には、既に同じ  
+パッケージ名が存在していないか確かめる必要が  
+あります。
+
+この研修では、公開/非公開を問わないので、  
+お好きな名前をつけてください。
+
+
+##### 2. version
+
+このパッケージのバージョンを指定します。
+
+バージョンの形式は [Semantic Versioning](http://semver.org/lang/ja/) に  
+準拠しています。
+
+この形式は、一般的に `X.Y.Z` と記述されます。
+
+- `X` は major version（後方互換性がなくなる変更）
+- `Y` は minor version（前方互換性がなくなる変更）
+- `Z` は patch version（バグ修正など）
+
+今回は開発版なので、0.0.0 にしておきましょう  
+（major versionの 0 は開発版であることを示します）。
+
+
+##### 3. description
+
+パッケージの簡単な概要を記述します。
+
+有名どころの説明をみてみます。
+
+- bootstrap: The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.
+- angular-latest: HTML enhanced for web apps
+- less.js: Leaner CSS
+
+
+##### 4. main file
+
+このパッケージが外部のパッケージに公開したい  
+ファイルを指定します。文字列と配列が指定できます。  
+今回は空で問題ありません。
+
+
+##### 5. what types of module does this package expose?
+
+このパッケージが外部にエンドポイントを公開する  
+方法を明示します。
+
+- amd: [Asynchronouse Module Definition](https://github.com/amdjs/amdjs-api/wiki/AMD) ([参考資料](http://www.matzmtok.com/blog/?p=845))
+- es6: [EcmaScript 6](http://wiki.ecmascript.org/lib/exe/fetch.php?id=harmony%3Aspecification_drafts&cache=cache&media=harmony:ecma-262_edition_6_03-17-15-releasecandidate3.pdf) ([参考資料](https://www.xenophy.com/javascript/8447#run-time-renaissance))
+- globals: グローバル変数経由でエンドポイント公開
+- node: [Node.js](https://nodejs.org/api/modules.html)
+- yui: [YUI](http://yuilibrary.com/yui/docs/yui/create.html) (メンテ停止したのでもうやめましょう)
+
+今回は何も選択しないで問題ありません。
+
+
+##### 6. keywords
+
+このパッケージを検索でヒットさせるための  
+キーワードを指定します。
+
+
+##### 7. authors
+
+このパッケージの作者を指定します。
+
+
+##### 7. license
+
+好きなライセンスを選ぶとよいです。
+
+デフォルトは [MIT ライセンス](http://sourceforge.jp/projects/opensource/wiki/licenses%2FMIT_license)です。
+
+
+##### 8. homepage
+
+このパッケージの情報が見られる URL を記述します。
+
+
+##### 9. set currenttly installed components as dependencies?
+
+既に `bower_components` に含まれている  
+コンポーネントをパッケージ設定に  
+含まれるようにするかどうかを指定します。
+
+n で構いません。
+
+
+##### 10. add commonly ignored files to ignore list?
+
+`.gitignore` などのファイルから、  
+パッケージに含めないファイルの指定を  
+読み込むかどうか指定します。
+
+y で読み込ませます。
+
+
+##### 11. would you like to mark this package as private which prevents it from being accidentaly published to the registry?
+
+bower のレジストリへ登録できないようにするか  
+どうか指定します。
+
+y でレジストリへの公開ができないように設定します。
+
+
+##### 12. Looks good?
+
+この設定で問題なければ y を入力します。
+
+
+##### bower install
+
+あとは、使いたいモジュールを追加していきます  
+（`--save` はパッケージ設定に依存ファイルを  
+追記する効果があります）。
+
+	bower install --save fetch
+
+このコマンドによって、fetch パッケージが、
+`bower_components` 以下に配置されます。
+
+また、ここで設定に記載されたモジュールは、  
+`bower install` で取得することが  
+できるようになります。
+
+
+今回は、簡単のために script タグで直接  
+`bower_components` 以下の JavaScript/CSS を  
+読み込みます。
+
+
+パッケージは [Search Bower packages](http://bower.io/search/) で  
+検索することができます。
+
+
 #### 実習
 
-下のテストが green になるように、  
-`public/stage6/tests.js` を  
-修正してください。
+まず、bower を実行することを体験してみます。
+
+	cd public/stage6/sample
+	bower init
+	bower install Buttons
+
+
+今回の実習はテスト駆動形式ではありません。
+
+満足のいく Web アプリケーションが書けたら、
+`qualityOfYourAppliation` に `true` を  
+代入してください。
 
 [http://localhost:8000/stage6/](http://localhost:8000/stage6/)
 
