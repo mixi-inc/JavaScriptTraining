@@ -1,10 +1,5 @@
-.js-training-playground {
-  box-sizing: border-box;
-  padding: 80px 0;
-  height: 250px;
-}
-
-.js-training-button {
-  display: block;
-  margin: 0 auto;
+.js-training-sample-link {
+	display: block;
+	margin: 10px auto;
+	text-align: center;
 }
