@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>mixi JS Training</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="http://img.mixi.net/img/basic/favicon.ico" type="image/vnd.microsoft.icon" rel="icon">
+  <link href="http://img.mixi.net/img/basic/favicon.ico" type="image/vnd.microsoft.icon" rel="shortcut icon">
+  <link rel="stylesheet" href="/bower_components/mocha/mocha.css" media="all">
+  <link rel="stylesheet" href="/common/mocha-patch.css" media="all">
+  <link rel="stylesheet" href="style.css" media="all">
+</head>
+<body>
+  <div id="mocha"></div>
+  <script src="/bower_components/mocha/mocha.js"></script>
+  <script src="/bower_components/chai/chai.js"></script>
+  <script src="/bower_components/chai-as-promised/lib/chai-as-promised.js"></script>
+  <script src="/bower_components/fetch/fetch.js"></script>
+  <script>
+    mocha.ui('bdd');
+    mocha.reporter('html');
+    expect = chai.expect;
+  </script>
+  <script>mocha.setup('bdd')</script>
+  <script src="tests.js"></script>
+  <script>
+    if (window.mochaPhantomJS) { mochaPhantomJS.run(); }
+    else { mocha.run(); }
+  </script>
+</body>
+</html>
