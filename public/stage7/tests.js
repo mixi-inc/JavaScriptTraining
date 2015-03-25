@@ -99,7 +99,7 @@ describe('ステージ7（よくあるJSのイディオムを読める）', func
 });
 
 
-describe('闇', function() {
+describe.skip('闇', function() {
   it('== 演算子', function(){
     expect('10' == 10)
       .to.equal(/* ここに値を書き込んでください */);
