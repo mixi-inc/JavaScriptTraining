@@ -817,13 +817,21 @@ button.addEventListener('click', function(event) {
 
 ### ステージ5
 
-サーバーと通信するトレーニング
+非同期処理のトレーニング
 
 
 #### サーバーとの通信
 
-JavaScript にはサーバーと通信するための API が  
-用意されています。
+非同期処理の代表例といえばサーバーとの通信です。
+
+サーバーとの通信はネットワークを通過するため、  
+かなりの時間がかかります。そこで、レスポンスが  
+返ってくるまでの間に、別の処理をおこなうことに  
+よって、時間を有効活用することが重要になります。
+
+
+JavaScript にはサーバーと非同期に通信するための 
+API が用意されています。
 
 - [fetch API](http://www.hcn.zaq.ne.jp/___/WEB/Fetch-ja.html)
 
@@ -855,7 +863,7 @@ fetch('/users.json')
     console.log('parsed json', json)
   })
   .catch(function(error) {
-    console.log('parsing failed', error)
+    console.error('parsing failed', error)
   });
 ```
 
@@ -894,7 +902,7 @@ fetch('/users.json')
 
     // /users.json の取得時にエラーがでたときに、
     // error をログに出力する
-    console.log(error);
+    console.error(error);
   });
 ```
 
@@ -1101,19 +1109,19 @@ bower で管轄したいファイルのディレクトリを開き、
 このパッケージの作者を指定します。
 
 
-##### 7. license
+##### 8. license
 
 好きなライセンスを選ぶとよいです。
 
 デフォルトは [MIT ライセンス](http://sourceforge.jp/projects/opensource/wiki/licenses%2FMIT_license)です。
 
 
-##### 8. homepage
+##### 9. homepage
 
 このパッケージの情報が見られる URL を記述します。
 
 
-##### 9. set currenttly installed components as dependencies?
+##### 10. set currenttly installed components as dependencies?
 
 既に `bower_components` に含まれている  
 コンポーネントをパッケージ設定に  
@@ -1122,7 +1130,7 @@ bower で管轄したいファイルのディレクトリを開き、
 n で構いません。
 
 
-##### 10. add commonly ignored files to ignore list?
+##### 11. add commonly ignored files to ignore list?
 
 `.gitignore` などのファイルから、  
 パッケージに含めないファイルの指定を  
@@ -1131,7 +1139,7 @@ n で構いません。
 y で読み込ませます。
 
 
-##### 11. would you like to mark this package as private which prevents it from being accidentaly published to the registry?
+##### 12. would you like to mark this package as private which prevents it from being accidentaly published to the registry?
 
 bower のレジストリへ登録できないようにするか  
 どうか指定します。
@@ -1139,7 +1147,7 @@ bower のレジストリへ登録できないようにするか
 y でレジストリへの公開ができないように設定します。
 
 
-##### 12. Looks good?
+##### 13. Looks good?
 
 この設定で問題なければ y を入力します。
 
