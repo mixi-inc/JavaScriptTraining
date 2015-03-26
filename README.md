@@ -1,13 +1,19 @@
-JavaScript Training
-===================
+2日でできる JavaScriptTraining
+==============================
 
 JavaScript 初心者が JS の未来を見据えつつ、  
 基礎をひととおり身に付けるための資料です。
 
 
 
+この README は `npm run presentation` で  
+再生することができます。
+
+
+
 セットアップ
 ------------
+
 
 
 ### 1. 環境をセットアップ
@@ -19,12 +25,16 @@ JavaScript 初心者が JS の未来を見据えつつ、
 こちらも上のリンクからインストールしてください。
 
 
+
 ### 2. JavaScriptTraining を fork
 
 JavaScriptTraining の学習履歴を残すために、  
 JavaScriptTraining リポジトリを fork します。
 
 画面右上にある fork ボタンを押してください。
+
+[<img src="http://mixi-inc.github.io/JavaScriptTraining/images/fork-button.png" height="300px" style="background-color: white">](http://mixi-inc.github.io/JavaScriptTraining/images/fork-button.png)
+
 
 
 ### 3. 必要なものをダウンロード
@@ -36,12 +46,14 @@ JavaScriptTraining リポジトリを fork します。
 	git clone コピーしたURL
 
 
+
 ### 4. セットアップ
 
 下のコマンドをターミナルで実行してください。
 
 	cd JavaScriptTraining
 	npm run setup
+
 
 
 ### 5. webサーバーを立ち上げる
@@ -52,6 +64,7 @@ JavaScriptTraining リポジトリを fork します。
 終了しないでください。
 
 	npm run serve
+
 
 
 ### 6. トップページにアクセスする
@@ -67,6 +80,7 @@ JavaScriptTraining リポジトリを fork します。
 ------------------------
 
 
+
 ### JavaScript とは
 
 > JavaScript はウェブの言語です。
@@ -78,6 +92,7 @@ JavaScriptTraining リポジトリを fork します。
 > (JavaScript パターン, O'Reilly)
 
 
+
 ### JavaScript のすごいところ
 
 > クラスというものがなく、  
@@ -87,6 +102,7 @@ JavaScriptTraining リポジトリを fork します。
 > (JavaScript パターン, O'Reilly)
 
 
+
 > Java や PHP が追加しはじめた  
 > クロージャーや無名関数といった  
 > 機能は、JavaScript 開発者が  
@@ -94,6 +110,7 @@ JavaScriptTraining リポジトリを fork します。
 > あるのが当然だと思われていました。
 >
 > (JavaScript パターン, O'Reilly)
+
 
 
 ### 楽しんできた機能？？？
@@ -107,6 +124,7 @@ JavaScriptTraining リポジトリを fork します。
 （クロージャーはトレーニングで扱います）
 
 
+
 ### JavaScript はどこで動くのか
 
 - Web ブラウザ
@@ -116,6 +134,7 @@ JavaScript の特色のひとつは、ブラウザ上で
 動作するということです。ブラウザ上で動作できる  
 言語はいくつかありますが、一般的に  
 JavaScript がよく使われます。
+
 
 
 ### いつ JavaScript を使うのか
@@ -131,6 +150,7 @@ JavaScript がよく使われます。
 	（タスクランナーとかパッケージマネージャ）
 
 
+
 ### JavaScript を使うと…
 
 - アニメーションの例: [Si digital](http://sidigital.co/)
@@ -141,6 +161,7 @@ JavaScript がよく使われます。
 
 JavaScript に会いにいこう
 -------------------------
+
 
 
 ### 1. 開発ツールを開く
@@ -156,6 +177,7 @@ Web ページの適当な場所で
 - Windows の人：Ctrl + Shift + i
 
 
+
 ### 2. Console を開く
 
 開発ツールを選択し、Esc キーを  
@@ -165,6 +187,9 @@ Web ページの適当な場所で
 この Console から、JavaScript を  
 実行することができます。
 
+[<img src="http://mixi-inc.github.io/JavaScriptTraining/images/console.png" height="300px" style="background-color: white">](http://mixi-inc.github.io/JavaScriptTraining/images/console.png)
+
+
 
 ### 3. 何か実行してみる
 
@@ -173,9 +198,11 @@ Web ページの適当な場所で
 アラートポップアップが表示されます。
 
 
+
 ### 4. 計算させてみる
 
 `1 + 1` や `'Foo' + 'Bar'` なども実行できますね。
+
 
 
 ### 5. 変数代入・参照してみる
@@ -188,7 +215,8 @@ foo;
 ```
 
 
-### 6. ブラウザオブジェクトをいじってみる
+
+### 6. ブラウザオブジェクトをいじる
 
 ブラウザオブジェクトもいじってみましょう。
 
@@ -199,6 +227,7 @@ document.title = 'あなたとjava 今すぐダウンロード';
 Chrome のタブ名が書き変わりました。
 
 
+
 ### 7. ページを再読み込みすると戻る
 
 ページを再読み込みしてみてください。
@@ -206,6 +235,7 @@ Chrome のタブ名が書き変わりました。
 これまでの変更はすべてリセットされます。  
 （つまり、この方法で本番リリースは  
 できないということですね！）
+
 
 
 ### 8. JavaScript とここで会える
@@ -234,18 +264,25 @@ Chrome のタブ名が書き変わりました。
 （あるいはポエム）
 
 
+
 JavaScript を効率的に書けるようにするために  
 最低限の開発環境を整えます。
+
 
 
 JavaScript に精通していない人に  
 「どんなツールを使ったらいいですか？」と  
 聞かれることがよくあります。
 
-私は、「構文ハイライトと lint を使うといいですよ」、  
+私は「構文ハイライトと lint を使うといいですよ」、  
 と答えることにしています。
 
 [<img src="http://mixi-inc.github.io/JavaScriptTraining/images/syntax-error.png" width="600px">](http://mixi-inc.github.io/JavaScriptTraining/images/syntax-error.png)
+
+
+
+ひとつエピソードを紹介します。
+
 
 
 JavaScript には静的型検査がないことや、  
@@ -253,10 +290,12 @@ JavaScript には静的型検査がないことや、
 ミスを犯しやすい言語の一つです。
 
 
+
 たとえば、JavaScript には `"use strict"` という  
 宣言があります。この宣言は JavaScript の  
 まずい仕様の一部をエラーにすることで修正を  
 促す効果があり、よく記述を推奨される宣言です。
+
 
 
 あるプロジェクトで気を利かした  
@@ -273,11 +312,13 @@ JavaScript には静的型検査がないことや、
 するよい方法です！
 
 
+
 しかし、リリース後、新しいスクリプトとは  
 関係ないはずの JavaScript による  
 メニューが動作しなくなっていました。
 
 なぜでしょうか？
+
 
 
 これは、パフォーマンスチューニングの一環で  
@@ -292,10 +333,12 @@ JavaScript には静的型検査がないことや、
 なってしまっていたのでした。
 
 
-このミスは、いわゆる**初見殺し**です。
 
-「何それどうしてそんな仕様なの&#x1f631;」というのが  
-正常なプログラマの反応だと思います。
+このエピソードは、いわゆる**初見殺し**です。
+
+「何それどうしてそんな仕様なの&#x1f631;」  
+と言いたくなりますね。
+
 
 
 悲しいことに、このような落とし穴は  
@@ -306,8 +349,11 @@ JavaScript の仕様・文化に数多く
 防げるのでしょうか？
 
 
-ESLint や JSHint、 JSLint のような lint を  
-使いましょう。たとえば、ESLint を実行すると  
+
+[ESLint](http://eslint.org/) や [JSHint](http://jshint.com/)、 [JSLint](http://www.jslint.com/) のような lint を  
+使いましょう。
+
+たとえば、ESLint を実行すると  
 下のような警告が出されます。これによって、  
 潜在的な不具合をだいぶ減らせるようになるのです。
 
@@ -315,11 +361,13 @@ ESLint や JSHint、 JSLint のような lint を
 	（関数形式の "use strict" を使ってね）
 
 
+
 ミスを防ぐためには、「頑張る」とか  
 「注意する」のような精神論ではなく、  
  lint によって防止することが必要です。  
 あなたが JavaScript にまだ精通していないので  
 あれば、真っ先にいれるべきは lint なのです。
+
 
 
 1. lint をかけてみる
@@ -349,6 +397,7 @@ ESLint や JSHint、 JSLint のような lint を
 DOM 要素を取得するトレーニング
 
 
+
 #### DOM とは
 
 Web ページは HTML のタグによって  
@@ -361,6 +410,7 @@ Web ページは HTML のタグによって
 Web ページが構成されていることがよくわかります。
 
 
+
 この HTML タグは下のような木構造をとっています。
 
 [<img src="http://mixi-inc.github.io/JavaScriptTraining/images/github-elements.png" height="300px">](http://mixi-inc.github.io/JavaScriptTraining/images/github-elements.png)
@@ -371,11 +421,13 @@ Web ページが構成されていることがよくわかります。
 構造を確認してみてください。
 
 
+
 DOM (Document Object Model) は、この HTML のタグを  
 JavaScript の世界で操作することができる API です。
 
 HTML タグは、JavaScript の世界で  
 DOM 要素というオブジェクトとして扱われます。
+
 
 
 [<img src="http://mixi-inc.github.io/JavaScriptTraining/images/github-tree.png" height="300px" style="background-color: white">](http://mixi-inc.github.io/JavaScriptTraining/images/github-tree.png)
@@ -386,6 +438,7 @@ JavaScript の世界へと取ってこなければなりません。
 
 このステージでは、HTML から DOM 要素を  
 取得するという操作について学びます。
+
 
 
 HTML タグには、目印となるいくつかの情報が  
@@ -404,18 +457,14 @@ var div = document.getElementById('foo');
 ```
 
 
-他にも CSS クラスやタグ名、
+
+他にも CSS クラスやタグ名、その他の属性から、  
+DOM 要素を取得することができます。
 
 ```html
 <div class="foo">foo</div>
 ```
 
-その他の属性から、DOM 要素を取得することが  
-できます。
-
-```html
-<a href="foo">foo</a>
-```
 
 
 #### CSS セレクタについて
@@ -435,6 +484,7 @@ var div = document.querySelector('#foo');
 
 というように、ID の先頭に `#` をつけた  
 IDセレクタ `#foo` で、取得したい DOM 要素を指示します。
+
 
 
 この方法の利点は、複雑な位置にある DOM 要素を  
@@ -461,15 +511,17 @@ var div = document.querySelector('.foo div:last-child');
 という操作になります。
 
 
+
 図にすると、このようになります。
 
 [<img src="http://mixi-inc.github.io/JavaScriptTraining/images/css-selector-example.png" height="300px" style="background-color: white">](http://mixi-inc.github.io/JavaScriptTraining/images/css-selector-example.png)
 
-CSS セレクタについては、[MDN のCSS リファレンス](https://developer.mozilla.org/ja/docs/Web/CSS/Reference#Selectors) が
+CSS セレクタについては、[MDN のCSS リファレンス](https://developer.mozilla.org/ja/docs/Web/CSS/Reference#Selectors) が  
 参考になります。
 
 仕様を見ないと我慢ならぬ！という立派な方は、  
 [セレクタ Level 3 仕様](http://standards.mitsue.co.jp/resources/w3c/TR/css3-selectors/) を見るとよいでしょう。
+
 
 
 #### 実習
@@ -487,6 +539,7 @@ CSS セレクタについては、[MDN のCSS リファレンス](https://develo
 DOM 要素のスタイルを変更するトレーニング
 
 
+
 #### DOM 要素のスタイル
 
 DOM 要素には、
@@ -501,6 +554,7 @@ DOM 要素には、
 参照してください）
 
 
+
 このうち、スタイル属性を編集すると、DOM 要素の  
 見た目を変化させることができます。
 
@@ -508,6 +562,7 @@ DOM 要素には、
 style.color 属性を変更してみました。
 
 [<img src="http://mixi-inc.github.io/JavaScriptTraining/images/octocats.png" width="600px" style="background-color: white">](http://mixi-inc.github.io/JavaScriptTraining/images/octocats.png)
+
 
 
 このスタイル属性は CSS の仕様と対応するように  
@@ -524,6 +579,7 @@ JavaScript は見た目の変更のきっかけを
 HTML/JavaScript/CSS 分業の基本です。
 
 
+
 残念なお知らせですが、  
 今回のトレーニングは CSS を  
 書けるようになることが目的ではないので、  
@@ -531,7 +587,9 @@ HTML/JavaScript/CSS 分業の基本です。
 学びます。
 
 
+
 レガシー…  &#x1f631;
+
 
 
 まあ、肩を落とさないでください。
@@ -543,6 +601,7 @@ HTML/JavaScript/CSS 分業の基本です。
 ちなみに、「レガシー？帰らせていただきます」は  
 フロントエンドエンジニアとして大切な感覚ですので  
 大事にしてください。
+
 
 
 #### 実習
@@ -560,6 +619,7 @@ HTML/JavaScript/CSS 分業の基本です。
 DOM の構造を変更するトレーニング
 
 
+
 #### DOM の構造
 
 このステージでは、DOM のスタイルではなく、  
@@ -568,6 +628,7 @@ DOM の構造を変更するトレーニング
 たとえば、書籍を検索する Web API を使って、  
 書籍検索サービスを開発することを例に、  
 DOM の構造を変更する必要性を考えてみます。
+
 
 
 書籍検索サービスの API は、検索結果を  
@@ -592,6 +653,7 @@ DOM の構造を変更する必要性を考えてみます。
 ```
 
 
+
 このとき、画面に表示するために下のような HTML を  
 追加することになります。
 
@@ -614,6 +676,7 @@ DOM の構造を変更する必要性を考えてみます。
 ```
 
 
+
 サーバー側で上のような HTML を  
 生成してもよいのですが、  
 JavaScript による DOM 構造の操作に  
@@ -623,9 +686,11 @@ JavaScript による DOM 構造の操作に
 （ページのリロードが必要ないからですね！）
 
 
+
 このように、Web サービスの使いやすさを  
 追求するためには、JavaScript による  
 DOM 構造の操作が重要なのです。
+
 
 
 #### 実習
@@ -643,6 +708,7 @@ DOM 構造の操作が重要なのです。
 DOM イベントを利用するトレーニング
 
 
+
 ### DOM イベント解説編
 
 ユーザーがボタンを押したり、  
@@ -653,6 +719,7 @@ DOM イベントをうけとることができます。
 引きがねとして、DOM 構造を書き換えます。
 
 <div style="font-size:200%"><button style="font-size:inherit" onclick="this.parentNode.textContent='\uD83C\uDF63'">Click me</button></div>
+
 
 
 click イベント以外にも多様なイベントがあります：
@@ -670,13 +737,21 @@ click イベント以外にも多様なイベントがあります：
 参照するとよいでしょう。
 
 
+
 試しに、このページを制御する JavaScript が  
 監視しているイベントを見てみましょう。
 
 開発ツールを開き、Elements タブの中段にある  
 Event Listeners タブを開いてみてください。
 
+
+
 [<img src="http://mixi-inc.github.io/JavaScriptTraining/images/chrome-dev-tool-event-debugging.png" height="300px" style="background-color: white">](http://mixi-inc.github.io/JavaScriptTraining/images/chrome-dev-tool-event-debugging.png)
+
+たくさんのイベントが登録されていますね。
+
+では、これらのイベントの使い方を解説していきます。
+
 
 
 #### DOM イベント実装編
@@ -709,6 +784,7 @@ DOM のイベントを JavaScript 側で監視するには、
 	```
 
 
+
 このうち、 `addEventListener` スタイルが  
 お行儀のよい方法だといわれ、  
 推奨されてきました。
@@ -721,7 +797,8 @@ button.addEventListener('click', function(event) {
 ```
 
 
-しかし、AngularJS という最近の  
+
+しかし、[AngularJS](https://angularjs.org/) という最近の  
 フレームワークでイベント属性スタイルを  
 積極的に採用する動きもあります。
 
@@ -738,10 +815,12 @@ button.addEventListener('click', function(event) {
 従うとよいでしょう。
 
 
+
 ### DOM イベント伝搬の仕組み
 
 次に、DOM のイベント伝搬（propagation）  
 について解説します。
+
 
 
 下のようなボタンを例に、伝搬の必要性を  
@@ -752,12 +831,13 @@ button.addEventListener('click', function(event) {
 <button><img src="icon.png">Click me</button>
 ```
 
-この button 要素の click イベントを  
+この button 要素の `click` イベントを  
 監視することを考えます。
 
-button 要素に addEventListener すればよいように  
+button 要素に `addEventListener` すればよいように  
 見えますが、アイコン画像をクリックされた場合  
 どうなるのでしょうか？
+
 
 
 実は、子要素で発生した DOM イベントは  
@@ -766,8 +846,13 @@ button 要素に addEventListener すればよいように
 この仕組みが DOM イベントの伝搬です。
 
 
+
+[<img src="http://www.w3.org/TR/DOM-Level-3-Events/eventflow.svg" style="background-color:white" height="500px">](http://www.w3.org/TR/DOM-Level-3-Events/#event-flow)
+
+
+
 `addEventListener` の引数で  
-1-2-4 か 1-3-4 を選べます。
+1-2-4 か 1-3-4 のどちらかを選べます。
 
 1. capturing フェーズ
 
@@ -786,8 +871,6 @@ button 要素に addEventListener すればよいように
 	リンクなどによる画面遷移がおこなわれる
 
 
-[<img src="http://www.w3.org/TR/DOM-Level-3-Events/eventflow.svg" style="background-color:white" height="500px">](http://www.w3.org/TR/DOM-Level-3-Events/#event-flow)
-
 
 先ほどのボタンの例では、img 要素の  
 click イベントは bubbling によって  
@@ -805,6 +888,7 @@ button.addEventListener('click', function(event) {
 ```
 
 
+
 #### 実習
 
 下のテストが green になるように、  
@@ -820,6 +904,39 @@ button.addEventListener('click', function(event) {
 非同期処理のトレーニング
 
 
+
+JavaScript の美しい機能のひとつに  
+非同期処理があります。
+
+下のコードは 1 秒まったあとに  
+`console.log(1)` を実行するコードです。
+
+```javascript
+setTimeout(function() {
+  console.log(1);
+}, 0);
+
+console.log(2);
+```
+
+このコードを実行すると、`1` と `2` の  
+どちらか先に表示されるでしょうか。
+
+
+
+答えは、`2` です。`setTimeout` に登録された  
+関数はいま実行途中のすべての関数が終了してから  
+呼び出されます（[JavaScriptのsetTimeoutを理解する](http://blog.mouten.info/2014/09/20/article/)）。
+
+ここでは、関数を実行するタイミングを  
+後回しにすることによって、待っている間に  
+別のことができる、ということを覚えてください。
+
+この待ち時間の間に別の処理を実行する  
+やり方を非同期処理と呼びます。
+
+
+
 #### サーバーとの通信
 
 非同期処理の代表例といえばサーバーとの通信です。
@@ -830,7 +947,8 @@ button.addEventListener('click', function(event) {
 よって、時間を有効活用することが重要になります。
 
 
-JavaScript にはサーバーと非同期に通信するための 
+
+JavaScript にはサーバーと非同期に通信するための  
 API が用意されています。
 
 - [fetch API](http://www.hcn.zaq.ne.jp/___/WEB/Fetch-ja.html)
@@ -843,9 +961,11 @@ API が用意されています。
 	ことが多く、実際手で書くことはほとんどない
 
 
+
 今回は、JavaScript の将来を見据えて、  
 fetch API によるサーバーとの通信を  
 トレーニングします。
+
 
 
 #### fetch API
@@ -871,6 +991,7 @@ fetch('/users.json')
 つながっています。
 
 
+
 #### Promise を使った非同期処理
 
 さきほどの `.then`、`.catch` は、非同期処理の  
@@ -893,6 +1014,7 @@ fetch('/users.json')
 エラーがあった場合は、ログ出力は実行されません。
 
 
+
 また、`.catch` を使うと、エラーが発生した場合に  
 関数を実行できます。
 
@@ -913,8 +1035,10 @@ fetch('/users.json')
 同時につけることもできます。
 
 
+
 サーバーと通信するだけなのに、  
 なんか複雑すぎるような…？
+
 
 
 実はこの Promsie という複雑な仕組みを使う理由は、  
@@ -923,6 +1047,7 @@ fetch('/users.json')
 - 直列非同期処理
 
 を書きやすくする、ということなのです。
+
 
 
 #### Promise による平行非同期処理
@@ -944,6 +1069,7 @@ Promise.all([
 ```
 
 
+
 #### Promise による直列非同期処理
 
 `.then` で次々に処理を連結できます。
@@ -960,6 +1086,7 @@ fetch('/api/foo')
 ```
 
 
+
 #### 実習
 
 下のテストが green になるように、  
@@ -967,6 +1094,7 @@ fetch('/api/foo')
 修正してください。
 
 [http://localhost:8000/stage5/](http://localhost:8000/stage5/)
+
 
 
 #### 参考になる資料
@@ -983,6 +1111,7 @@ fetch('/api/foo')
 モジュールを実装するトレーニング
 
 
+
 #### モジュール
 
 JavaScript は言語機能としてモジュールの  
@@ -992,34 +1121,45 @@ JavaScript は言語機能としてモジュールの
 [ECMAScript 6](https://developer.mozilla.org/ja/docs/Web/JavaScript/ECMAScript_6_support_in_Mozilla) を待たなければなりません。
 
 
+
 とはいっても、みんなモジュールを使いたかったので、  
 さまざまなモジュールシステムとそれに付随する  
 エコシステムが開発されてきました。
 
 
+
 [エコシステムの例](https://github.com/wilmoore/frontend-packagers)
+
 
 
 あ…めっちゃ多い…&#x1f635;
 
 
+
 今回は、利用方法がシンプルな「[bower](http://bower.io)」を使います。
+
 
 
 #### bower
 
-bower は、JavaScript、HTML、CSS等の、  
-フロントエンドリソースのエコシステムです。
+bower は、JavaScript、HTML、CSSなどを  
+共有して使えるようにするフロントエンドの  
+エコシステムです。
 
-ただ、モジュールローディングの仕組みを  
-もたないため、この部分は RequireJS などの  
-外部モジュールシステムに頼ることになります。  
+他の人が作ったモジュールを利用することや、  
+自分が作ったモジュールを公開することも  
+できます。
+
+ただ、JavaScript の場合モジュールの仕組みを  
+もたないため、この部分を RequireJS などの  
+モジュールシステムに頼ることになります。  
 どのモジュールシステムに対応するかという選択は、
 bower によって読み込まれるパッケージ側に  
 裁量（責務）があります。
 
 
-これを、[公式ドキュメント](http://bower.io/#getting-started)は端的に  
+
+この方針を[公式ドキュメント](http://bower.io/#getting-started)は端的に  
 言い表しています。
 
 > How you use packages is up to you.
@@ -1027,14 +1167,21 @@ bower によって読み込まれるパッケージ側に
 > （どのようにしてパッケージを使うのかはあなた次第です）
 
 
-bower の使い方は簡単です。
 
-bower で管轄したいファイルのディレクトリを開き、
+#### 実習
 
+まず、bower を実行することを体験してみます。  
+bower の設定ファイル bower.json を対話的に  
+作成します。
+
+	cd public/stage6/sample
 	bower init
 
-です。あとは説明に従って選択していくと、bower の  
+
+
+あとは説明に従って選択していくと、bower の  
 パッケージ設定ファイル `bower.json` が作成されます。
+
 
 
 ##### 1. name
@@ -1047,6 +1194,7 @@ bower で管轄したいファイルのディレクトリを開き、
 
 この研修では、公開/非公開を問わないので、  
 お好きな名前をつけてください。
+
 
 
 ##### 2. version
@@ -1066,6 +1214,7 @@ bower で管轄したいファイルのディレクトリを開き、
 （major versionの 0 は開発版であることを示します）。
 
 
+
 ##### 3. description
 
 パッケージの簡単な概要を記述します。
@@ -1077,11 +1226,13 @@ bower で管轄したいファイルのディレクトリを開き、
 - less.js: Leaner CSS
 
 
+
 ##### 4. main file
 
 このパッケージが外部のパッケージに公開したい  
 ファイルを指定します。文字列と配列が指定できます。  
 今回は空で問題ありません。
+
 
 
 ##### 5. what types of module does this package expose?
@@ -1098,15 +1249,18 @@ bower で管轄したいファイルのディレクトリを開き、
 今回は何も選択しないで問題ありません。
 
 
+
 ##### 6. keywords
 
 このパッケージを検索でヒットさせるための  
 キーワードを指定します。
 
 
+
 ##### 7. authors
 
 このパッケージの作者を指定します。
+
 
 
 ##### 8. license
@@ -1116,9 +1270,11 @@ bower で管轄したいファイルのディレクトリを開き、
 デフォルトは [MIT ライセンス](http://sourceforge.jp/projects/opensource/wiki/licenses%2FMIT_license)です。
 
 
+
 ##### 9. homepage
 
 このパッケージの情報が見られる URL を記述します。
+
 
 
 ##### 10. set currenttly installed components as dependencies?
@@ -1130,6 +1286,7 @@ bower で管轄したいファイルのディレクトリを開き、
 n で構いません。
 
 
+
 ##### 11. add commonly ignored files to ignore list?
 
 `.gitignore` などのファイルから、  
@@ -1137,6 +1294,7 @@ n で構いません。
 読み込むかどうか指定します。
 
 y で読み込ませます。
+
 
 
 ##### 12. would you like to mark this package as private which prevents it from being accidentaly published to the registry?
@@ -1147,43 +1305,46 @@ bower のレジストリへ登録できないようにするか
 y でレジストリへの公開ができないように設定します。
 
 
+
 ##### 13. Looks good?
 
 この設定で問題なければ y を入力します。
 
 
+
 ##### bower install
 
-あとは、使いたいモジュールを追加していきます  
-（`--save` はパッケージ設定に依存ファイルを  
-追記する効果があります）。
+いよいよ、パッケージを追加していきます。
 
-	bower install --save fetch
+パッケージは [Search Bower packages](http://bower.io/search/) で  
+検索することができます。
 
-このコマンドによって、fetch パッケージが、
+
+
+では、試しに [Buttons](https://github.com/alexwolfe/Buttons) パッケージを  
+追加してみましょう。
+
+下のコマンドによって、Buttons パッケージが、
 `bower_components` 以下に配置されます。
 
-また、ここで設定に記載されたモジュールは、  
-`bower install` で取得することが  
-できるようになります。
+	bower install --save Buttons
+
+
+
+`--save` はパッケージ設定に依存ファイルを  
+追記する効果があります（`bower.json` の  
+内容が変化しているので、見てみてください）。
+
+ここで設定に追記されたパッケージは、  
+次回から `bower install` でまとめて  
+取得することができるようになります。
+
 
 
 今回は、簡単のために script タグで直接  
 `bower_components` 以下の JavaScript/CSS を  
 読み込みます。
 
-
-パッケージは [Search Bower packages](http://bower.io/search/) で  
-検索することができます。
-
-
-#### 実習
-
-まず、bower を実行することを体験してみます。
-
-	cd public/stage6/sample
-	bower init
-	bower install Buttons
 
 
 今回の実習はテスト駆動形式ではありません。
@@ -1198,14 +1359,16 @@ y でレジストリへの公開ができないように設定します。
 
 ### ステージ7
 
-よくあるイディオムを読み書きするトレーニング
+よくあるイディオムを読むトレーニング
+
 
 
 このステージでは、よくある JavaScript の  
 不思議な書き方を学びます。
 
-なお、今回はヒントがありません！
+なお、今回はヒントがありません！  
 ぜひ自分で調べて、結果を確かめてみてください！
+
 
 
 なお、興味のある方は、ステージ「闇」に  
@@ -1213,6 +1376,7 @@ y でレジストリへの公開ができないように設定します。
 
 `.skip` を削除すれば挑戦できるようにに  
 なります。
+
 
 
 #### 実習
@@ -1229,7 +1393,9 @@ y でレジストリへの公開ができないように設定します。
 ----
 
 
+
 ### Promise について
+
 
 
 #### Promise による平行非同期処理
@@ -1238,6 +1404,7 @@ Promise による平行非同期処理を通常のやりかたと、
 Promise らしいやり方とでやってみました。
 
 コードを比較してみてください。
+
 
 
 ```javascript
@@ -1267,6 +1434,7 @@ fetch('/api/bar').then(function(responseBar) {
 状態を複数もつ厄介なコードにしあがっていますね。
 
 
+
 ```javascript
 // 2つの Web API からレスポンスが欲しい！
 
@@ -1285,12 +1453,14 @@ Promise.all([
 なくスッキリ！
 
 
+
 #### Promise による直列非同期処理
 
 直列非同期処理についても、通常のやり方と、  
 Promise らしいやり方でやってみました。
 
 コードを比較してみてください。
+
 
 
 ```javascript
@@ -1310,6 +1480,7 @@ fetch('/api/foo').then(function(responseFoo) {
 コードがネストしているので、後ろの方の  
 関数のスコープが深くなってしまっています。
 変数を追跡するのに手間がかかりそうです。
+
 
 
 ネストの外に出すだけならば、終了コールバックを  
@@ -1347,6 +1518,7 @@ function callbackBuz(responseBuz) {
 流れが追いづらい！
 
 
+
 クロージャー + 継続渡しスタイルを使うと…
 
 ```javascript
@@ -1370,9 +1542,11 @@ function fetchBuz(callback) {
 ```
 
 
+
 これはこれで美しい…&#x1f60c;
 
 （JS に慣れるまではちょっと読みづらいと思います）
+
 
 
 Promise らしいやり方をとると `.then` で  
