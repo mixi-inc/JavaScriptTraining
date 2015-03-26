@@ -79,9 +79,14 @@ describe('ステージ1（意図した DOM 要素を取得できるようにな�
 
       // チュートリアル
       //
-      // 調べたい要素の上で右クリック > 要素の検証
+      // ここからは、開発ツールを使って目印となる ID やクラス名を調べてみましょう。
       //
-      // 'change me!' を書き換えてください。
+      // 調べたい要素の上で右クリック > 要素の検証をクリックします。
+      //
+      // すると、開発ツール上で <li id="brown">... が選択されます。
+      // このことから、7 番の赤色の要素の ID は brown だということがわかります。
+      //
+      // 'change me!' を document.getElementById('brown') に書き換えてください。
       var element = 'change me!';
 
       expect(element).to.have.property(secret('vq'), secret('oebja'));
@@ -134,14 +139,16 @@ describe('ステージ1（意図した DOM 要素を取得できるようにな�
 
       // チュートリアル
       //
+      // 次に、document.querySelector ファミリを使って、DOM 要素を取得します。
+      //
       // 'change me!' を document.querySelector('#firebrick'); に
       // 書き換えてください。
       var element = 'change me!';
 
+      expect(element).to.have.property(secret('vq'), secret('sveroevpx'));
+
       // 参考資料
       // https://developer.mozilla.org/ja/docs/DOM/Locating_DOM_elements_using_selectors
-
-      expect(element).to.have.property(secret('vq'), secret('sveroevpx'));
     });
 
 
@@ -150,10 +157,10 @@ describe('ステージ1（意図した DOM 要素を取得できるようにな�
       // 'change me!' を書き換えてください。
       var element = 'change me!';
 
+      expect(element).to.have.property(secret('vq'), secret('pubpbyngr'));
+
       // 参考資料
       // https://developer.mozilla.org/ja/docs/Web/CSS/Reference#Selectors
-
-      expect(element).to.have.property(secret('vq'), secret('pubpbyngr'));
     });
 
 
@@ -245,6 +252,7 @@ describe('ステージ1（意図した DOM 要素を取得できるようにな�
 
       // チュートリアル
       //
+      // jQuery を使って要素を取得する方法も学んでおきましょう。
       // 基本的な使い方は document.querySelectorAll と同じです。
       //
       // 'change me!' を $('#brown') に書き換えてください。
