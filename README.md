@@ -1,8 +1,12 @@
-JavaScript Training
-===================
+2日でできる JavaScriptTraining
+==============================
 
 JavaScript 初心者が JS の未来を見据えつつ、  
 基礎をひととおり身に付けるための資料です。
+
+
+この README は `npm run presentation` で  
+再生することができます。
 
 
 
@@ -25,6 +29,8 @@ JavaScriptTraining の学習履歴を残すために、
 JavaScriptTraining リポジトリを fork します。
 
 画面右上にある fork ボタンを押してください。
+
+[<img src="http://mixi-inc.github.io/JavaScriptTraining/images/fork-button.png" height="300px" style="background-color: white">](http://mixi-inc.github.io/JavaScriptTraining/images/fork-button.png)
 
 
 ### 3. 必要なものをダウンロード
@@ -165,6 +171,8 @@ Web ページの適当な場所で
 この Console から、JavaScript を  
 実行することができます。
 
+[<img src="http://mixi-inc.github.io/JavaScriptTraining/images/console.png" height="300px" style="background-color: white">](http://mixi-inc.github.io/JavaScriptTraining/images/console.png)
+
 
 ### 3. 何か実行してみる
 
@@ -188,7 +196,7 @@ foo;
 ```
 
 
-### 6. ブラウザオブジェクトをいじってみる
+### 6. ブラウザオブジェクトをいじる
 
 ブラウザオブジェクトもいじってみましょう。
 
@@ -242,10 +250,13 @@ JavaScript に精通していない人に
 「どんなツールを使ったらいいですか？」と  
 聞かれることがよくあります。
 
-私は、「構文ハイライトと lint を使うといいですよ」、  
+私は「構文ハイライトと lint を使うといいですよ」、  
 と答えることにしています。
 
 [<img src="http://mixi-inc.github.io/JavaScriptTraining/images/syntax-error.png" width="600px">](http://mixi-inc.github.io/JavaScriptTraining/images/syntax-error.png)
+
+
+ひとつエピソードを紹介します。
 
 
 JavaScript には静的型検査がないことや、  
@@ -292,10 +303,10 @@ JavaScript には静的型検査がないことや、
 なってしまっていたのでした。
 
 
-このミスは、いわゆる**初見殺し**です。
+このエピソードは、いわゆる**初見殺し**です。
 
-「何それどうしてそんな仕様なの&#x1f631;」というのが  
-正常なプログラマの反応だと思います。
+「何それどうしてそんな仕様なの&#x1f631;」  
+と言いたくなりますね。
 
 
 悲しいことに、このような落とし穴は  
@@ -306,8 +317,10 @@ JavaScript の仕様・文化に数多く
 防げるのでしょうか？
 
 
-ESLint や JSHint、 JSLint のような lint を  
-使いましょう。たとえば、ESLint を実行すると  
+[ESLint](http://eslint.org/) や [JSHint](http://jshint.com/)、 [JSLint](http://www.jslint.com/) のような lint を  
+使いましょう。
+
+たとえば、ESLint を実行すると  
 下のような警告が出されます。これによって、  
 潜在的な不具合をだいぶ減らせるようになるのです。
 
@@ -404,17 +417,11 @@ var div = document.getElementById('foo');
 ```
 
 
-他にも CSS クラスやタグ名、
+他にも CSS クラスやタグ名、その他の属性から、  
+DOM 要素を取得することができます。
 
 ```html
 <div class="foo">foo</div>
-```
-
-その他の属性から、DOM 要素を取得することが  
-できます。
-
-```html
-<a href="foo">foo</a>
 ```
 
 
@@ -676,7 +683,12 @@ click イベント以外にも多様なイベントがあります：
 開発ツールを開き、Elements タブの中段にある  
 Event Listeners タブを開いてみてください。
 
+
 [<img src="http://mixi-inc.github.io/JavaScriptTraining/images/chrome-dev-tool-event-debugging.png" height="300px" style="background-color: white">](http://mixi-inc.github.io/JavaScriptTraining/images/chrome-dev-tool-event-debugging.png)
+
+たくさんのイベントが登録されていますね。
+
+では、これらのイベントの使い方を解説していきます。
 
 
 #### DOM イベント実装編
@@ -721,7 +733,7 @@ button.addEventListener('click', function(event) {
 ```
 
 
-しかし、AngularJS という最近の  
+しかし、[AngularJS](https://angularjs.org/) という最近の  
 フレームワークでイベント属性スタイルを  
 積極的に採用する動きもあります。
 
@@ -752,10 +764,10 @@ button.addEventListener('click', function(event) {
 <button><img src="icon.png">Click me</button>
 ```
 
-この button 要素の click イベントを  
+この button 要素の `click` イベントを  
 監視することを考えます。
 
-button 要素に addEventListener すればよいように  
+button 要素に `addEventListener` すればよいように  
 見えますが、アイコン画像をクリックされた場合  
 どうなるのでしょうか？
 
@@ -766,8 +778,11 @@ button 要素に addEventListener すればよいように
 この仕組みが DOM イベントの伝搬です。
 
 
+[<img src="http://www.w3.org/TR/DOM-Level-3-Events/eventflow.svg" style="background-color:white" height="500px">](http://www.w3.org/TR/DOM-Level-3-Events/#event-flow)
+
+
 `addEventListener` の引数で  
-1-2-4 か 1-3-4 を選べます。
+1-2-4 か 1-3-4 のどちらかを選べます。
 
 1. capturing フェーズ
 
@@ -784,9 +799,6 @@ button 要素に addEventListener すればよいように
 4. ブラウザ既定の処理がおこなわれるフェーズ
 
 	リンクなどによる画面遷移がおこなわれる
-
-
-[<img src="http://www.w3.org/TR/DOM-Level-3-Events/eventflow.svg" style="background-color:white" height="500px">](http://www.w3.org/TR/DOM-Level-3-Events/#event-flow)
 
 
 先ほどのボタンの例では、img 要素の  
@@ -820,6 +832,36 @@ button.addEventListener('click', function(event) {
 非同期処理のトレーニング
 
 
+JavaScript の美しい機能のひとつに  
+非同期処理があります。
+
+下のコードは 1 秒まったあとに  
+`console.log(1)` を実行するコードです。
+
+```javascript
+setTimeout(function() {
+  console.log(1);
+}, 0);
+
+console.log(2);
+```
+
+このコードを実行すると、`1` と `2` の  
+どちらか先に表示されるでしょうか。
+
+
+答えは、`2` です。`setTimeout` に登録された  
+関数はいま実行途中のすべての関数が終了してから  
+呼び出されます（[JavaScriptのsetTimeoutを理解する](http://blog.mouten.info/2014/09/20/article/)）。
+
+ここでは、関数を実行するタイミングを  
+後回しにすることによって、待っている間に  
+別のことができる、ということを覚えてください。
+
+この待ち時間の間に別の処理を実行する  
+やり方を非同期処理と呼びます。
+
+
 #### サーバーとの通信
 
 非同期処理の代表例といえばサーバーとの通信です。
@@ -830,7 +872,7 @@ button.addEventListener('click', function(event) {
 よって、時間を有効活用することが重要になります。
 
 
-JavaScript にはサーバーと非同期に通信するための 
+JavaScript にはサーバーと非同期に通信するための  
 API が用意されています。
 
 - [fetch API](http://www.hcn.zaq.ne.jp/___/WEB/Fetch-ja.html)
@@ -1008,18 +1050,23 @@ JavaScript は言語機能としてモジュールの
 
 #### bower
 
-bower は、JavaScript、HTML、CSS等の、  
-フロントエンドリソースのエコシステムです。
+bower は、JavaScript、HTML、CSSなどを  
+共有して使えるようにするフロントエンドの  
+エコシステムです。
 
-ただ、モジュールローディングの仕組みを  
-もたないため、この部分は RequireJS などの  
-外部モジュールシステムに頼ることになります。  
+他の人が作ったモジュールを利用することや、  
+自分が作ったモジュールを公開することも  
+できます。
+
+ただ、JavaScript の場合モジュールの仕組みを  
+もたないため、この部分を RequireJS などの  
+モジュールシステムに頼ることになります。  
 どのモジュールシステムに対応するかという選択は、
 bower によって読み込まれるパッケージ側に  
 裁量（責務）があります。
 
 
-これを、[公式ドキュメント](http://bower.io/#getting-started)は端的に  
+この方針を[公式ドキュメント](http://bower.io/#getting-started)は端的に  
 言い表しています。
 
 > How you use packages is up to you.
@@ -1027,13 +1074,17 @@ bower によって読み込まれるパッケージ側に
 > （どのようにしてパッケージを使うのかはあなた次第です）
 
 
-bower の使い方は簡単です。
+#### 実習
 
-bower で管轄したいファイルのディレクトリを開き、
+まず、bower を実行することを体験してみます。  
+bower の設定ファイル bower.json を対話的に  
+作成します。
 
+	cd public/stage6/sample
 	bower init
 
-です。あとは説明に従って選択していくと、bower の  
+
+あとは説明に従って選択していくと、bower の  
 パッケージ設定ファイル `bower.json` が作成されます。
 
 
@@ -1154,36 +1205,33 @@ y でレジストリへの公開ができないように設定します。
 
 ##### bower install
 
-あとは、使いたいモジュールを追加していきます  
-（`--save` はパッケージ設定に依存ファイルを  
-追記する効果があります）。
-
-	bower install --save fetch
-
-このコマンドによって、fetch パッケージが、
-`bower_components` 以下に配置されます。
-
-また、ここで設定に記載されたモジュールは、  
-`bower install` で取得することが  
-できるようになります。
-
-
-今回は、簡単のために script タグで直接  
-`bower_components` 以下の JavaScript/CSS を  
-読み込みます。
-
+いよいよ、パッケージを追加していきます。
 
 パッケージは [Search Bower packages](http://bower.io/search/) で  
 検索することができます。
 
 
-#### 実習
+では、試しに [Buttons](https://github.com/alexwolfe/Buttons) パッケージを  
+追加してみましょう。
 
-まず、bower を実行することを体験してみます。
+下のコマンドによって、Buttons パッケージが、
+`bower_components` 以下に配置されます。
 
-	cd public/stage6/sample
-	bower init
-	bower install Buttons
+	bower install --save Buttons
+
+
+`--save` はパッケージ設定に依存ファイルを  
+追記する効果があります（`bower.json` の  
+内容が変化しているので、見てみてください）。
+
+ここで設定に追記されたパッケージは、  
+次回から `bower install` でまとめて  
+取得することができるようになります。
+
+
+今回は、簡単のために script タグで直接  
+`bower_components` 以下の JavaScript/CSS を  
+読み込みます。
 
 
 今回の実習はテスト駆動形式ではありません。
@@ -1198,13 +1246,13 @@ y でレジストリへの公開ができないように設定します。
 
 ### ステージ7
 
-よくあるイディオムを読み書きするトレーニング
+よくあるイディオムを読むトレーニング
 
 
 このステージでは、よくある JavaScript の  
 不思議な書き方を学びます。
 
-なお、今回はヒントがありません！
+なお、今回はヒントがありません！  
 ぜひ自分で調べて、結果を確かめてみてください！
 
 

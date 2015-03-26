@@ -165,7 +165,7 @@ describe.skip('闇', function() {
   });
 
 
-  it('with文', function(){
+  it('with 文', function(){
     var obj = { 'foo': undefined, 'undefined': true };
 
     with (obj) {

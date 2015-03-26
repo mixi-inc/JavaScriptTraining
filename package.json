@@ -7,7 +7,7 @@
     "setup": "npm install; (cd public; bower install)",
     "help": "$(npm bin)/gulp help",
     "serve": "$(npm bin)/gulp serve",
-    "presentation": "$(npm bin)/reveal-md README.md --separator '^\\n\\n\\n' --verticalSeparator '^\\n\\n'"
+    "presentation": "$(npm bin)/reveal-md README.md --theme solarized --separator '^\\n\\n\\n' --verticalSeparator '^\\n\\n'"
   },
   "repository": {
     "type": "git",
