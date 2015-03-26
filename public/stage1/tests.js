@@ -1,16 +1,14 @@
 'use strict';
 
-
-
 describe('ステージ1（意図した DOM 要素を取得できるようになる）', function(){
   describe('DOM インターフェース編', function() {
     it('1 番の赤色の要素（ID は "firebrick"）が1つ取得できる', function(){
-      var elementId = 'firebrick';
 
       // チュートリアル
       //
       // 'change me!' を document.getElementById(elementId); に
       // 書き換えてください。
+      var elementId = 'firebrick';
       var element = 'change me!';
 
       expect(element).to.be.instanceof(HTMLElement);
@@ -19,65 +17,59 @@ describe('ステージ1（意図した DOM 要素を取得できるようにな�
 
 
     it('2 番の橙色の要素（ID は "chocolate"）が1つ取得できる', function(){
-      var elementId = 'chocolate';
 
       // 'change me!' を書き換えてください。
+      var elementId = 'chocolate';
       var element = 'change me!';
-
-      // 参考資料
-      // https://developer.mozilla.org/ja/docs/Web/API/Document/getElementById
 
       expect(element).to.be.instanceof(HTMLElement);
       expect(element).to.have.property('id', elementId);
+
+      // 参考資料
+      // https://developer.mozilla.org/ja/docs/Web/API/Document/getElementById
     });
 
 
     it('3 番の緑色の要素（CSS クラス名は "mediumseagreen"）が1つ取得できる', function(){
-      var elementClassName = 'mediumseagreen';
 
       // 'change me!' を書き換えてください。
+      var elementClassName = 'mediumseagreen';
       var elements = 'change me!';
-
-      // 参考資料
-      // https://developer.mozilla.org/ja/docs/Web/API/Document/getElementsByClassName
 
       expect(elements).to.have.length(1);
       expect(elements[0]).to.have.property('className', elementClassName);
+
+      // 参考資料
+      // https://developer.mozilla.org/ja/docs/Web/API/Document/getElementsByClassName
     });
 
 
     it('4 番の水色の要素（CSS クラス名は "turquoise"）が2つ取得できる', function(){
-      var elementClassName = 'turquoise';
 
       // 'change me!' を書き換えてください。
+      var elementClassName = 'turquoise';
       var elements = 'change me!';
-
-      // 参考資料
-      // https://developer.mozilla.org/ja/docs/Web/API/Document/getElementsByClassName
 
       expect(elements).to.have.length(2);
       expect(elements[0]).to.have.property('className', elementClassName);
       expect(elements[1]).to.have.property('className', elementClassName);
+
+      // 参考資料
+      // https://developer.mozilla.org/ja/docs/Web/API/Document/getElementsByClassName
     });
 
 
     it('5 番の青色の要素（タグ名は "blockquote"）が1つ取得できる', function(){
-      var elementTagName = 'blockquote';
 
       // 'change me!' を書き換えてください。
+      var elementTagName = 'blockquote';
       var elements = 'change me!';
-
-      // 参考資料
-      // https://developer.mozilla.org/ja/docs/Web/API/Document/getElementsByTagName
 
       expect(elements).to.have.length(1);
       expect(elements[0]).to.have.property('tagName', elementTagName.toUpperCase());
-    });
 
-
-    it.skip('6 番の紫色の要素（data-js-training 属性の値は "blueviolet"）が1つ取得できる', function(){
-      // document.querySelector を学ばないと取得することができません！
-      // 次に進んでください。
+      // 参考資料
+      // https://developer.mozilla.org/ja/docs/Web/API/Document/getElementsByTagName
     });
   });
 
@@ -133,12 +125,6 @@ describe('ステージ1（意図した DOM 要素を取得できるようにな�
 
       expect(elements).to.have.length(1);
       expect(elements[0]).to.have.property(secret('gntAnzr'), secret('C'));
-    });
-
-
-    it.skip('12 番の紫色の要素が1つ取得できる', function(){
-      // document.querySelector を学ばないと取得することができません！
-      // 次に進んでください。
     });
   });
 
@@ -231,12 +217,12 @@ describe('ステージ1（意図した DOM 要素を取得できるようにな�
       // 'change me!' を書き換えてください。
       var selector = 'change me!';
 
-      // 参考資料
-      // https://developer.mozilla.org/ja/docs/Web/CSS/Reference#Selectors
-
       var element = document.querySelector(selector);
       expect(selector).to.not.have.string('#');
       expect(element).to.have.property(secret('vq'), secret('qnexbenatr'));
+
+      // 参考資料
+      // https://developer.mozilla.org/ja/docs/Web/CSS/Reference#Selectors
     });
 
 
@@ -274,11 +260,11 @@ describe('ステージ1（意図した DOM 要素を取得できるようにな�
       // 'change me!' を書き換えてください。
       var $element = 'change me!';
 
-      // 参考情報（英語）
-      // http://api.jquery.com/jQuery/#jQuery1
-
       expect($element).to.be.instanceof(jQuery);
       expect($element).to.have.id(secret('qnexbenatr'));
+
+      // 参考情報（英語）
+      // http://api.jquery.com/jQuery/#jQuery1
     });
 
 
