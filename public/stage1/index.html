@@ -41,9 +41,6 @@
     </script>
     <script>mocha.setup('bdd')</script>
     <script src="analytics.js"></script>
-    <script>
-      describe.skipWhenPhantomJS = window.mochaPhantomJS ? describe.skip : describe;
-    </script>
     <script src="tests.js"></script>
     <script>
       if (window.mochaPhantomJS) { mochaPhantomJS.run(); }
