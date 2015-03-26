@@ -1,6 +1,5 @@
 'use strict';
 
-var util = require('util');
 var path = require('path');
 var gulp = require('gulp-help')(require('gulp'));
 var merge = require('merge-stream');
@@ -31,18 +30,6 @@ var tasks = [
     help: 'よくあるイディオムを読み書きできているかテストします'
   }
 ];
-
-
-tasks.forEach(function(task) {
-  var run = require('gulp-run');
-  var url = util.format('http://localhost:%d/%s/', serve.PORT, task.id);
-
-  gulp.task(task.id, task.help, ['lint-' + task.id], function() {
-    // We expected that mocha-phantomjs print colorized results, but it isn't.
-    // So, I take a fast way that is using gulp-run.
-    return run('$(npm bin)/mocha-phantomjs ' + url + ' || true').exec();
-  });
-});
 
 
 tasks.forEach(function(task) {

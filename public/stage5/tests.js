@@ -31,28 +31,28 @@ describe('ステージ5（意図通りに非同期処理を利用できる）', 
     });
 
 
-    it('複数の promise すべての完了を待つ promise を作成できる', function(){
+    it('複数の promise すべての完了を待つ promise を作成できる', function() {
       var messageFragments = ['あなたと', 'java', '今すぐダウンロード'];
       var promise1 = createWaitPromise(messageFragments[0], 10);
       var promise2 = createWaitPromise(messageFragments[1], 20);
       var promise3 = createWaitPromise(messageFragments[2], 30);
 
       // 作成した promise を promise 変数に代入してください。
-      var promise;
+      var promise = 'change me!';
 
 
       return expect(promise).to.eventually.deep.equal(messageFragments);
     });
 
 
-    it('複数の promise のうち最も速く解決された値をもつ promise を作成できる', function(){
+    it('複数の promise のうち最も速く解決された値をもつ promise を作成できる', function() {
       var messageFragments = ['30億の', 'デバイスで', '走るjava'];
       var promise1 = createWaitPromise(messageFragments[0], 30);
       var promise2 = createWaitPromise(messageFragments[1], 10);
       var promise3 = createWaitPromise(messageFragments[2], 30);
 
       // 作成した promise を promise 変数に代入してください。
-      var promise;
+      var promise = 'change me!';
 
 
       return expect(promise).to.eventually.equal(messageFragments[1]);
@@ -61,7 +61,7 @@ describe('ステージ5（意図通りに非同期処理を利用できる）', 
 
 
   describe('fetch API 編', function() {
-    it('/api/friends API を使って Sugar の友人を取得できる', function(){
+    it('/api/friends API を使って Sugar の友人を取得できる', function() {
       var api = '/api/friends/';
       var username = 'Sugar';
 
@@ -78,12 +78,12 @@ describe('ステージ5（意図通りに非同期処理を利用できる）', 
     });
 
 
-    it('/api/friends API を使って Shen の友人を取得できる', function(){
+    it('/api/friends API を使って Shen の友人を取得できる', function() {
       var api = '/api/friends/';
       var username = 'Shen';
 
       // 作成した promise を promisedFriends 変数に代入してください。
-      var promisedFriends;
+      var promisedFriends = 'change me!';
 
 
       return expect(promisedFriends).to.eventually.deep.equal(
@@ -92,24 +92,24 @@ describe('ステージ5（意図通りに非同期処理を利用できる）', 
     });
 
 
-    it('/api/friends API を使って Shen の友人の友人を取得できる', function(){
+    it('/api/friends API を使って Shen の友人の友人を取得できる', function() {
       var api = '/api/friends/';
       var username = 'Shen';
 
       // 作成した promise を promisedFriends 変数に代入してください。
-      var promisedFriends;
+      var promisedFriends = 'change me!';
 
 
       return expect(promisedFriends).to.eventually.deep.equal(['TypeScript']);
     });
 
 
-    it.skip('/api/friends API を使って CoffeeScript の友人を再帰的に取得できる', function(){
+    it.skip('/api/friends API を使って CoffeeScript の友人を再帰的に取得できる', function() {
       // 難易度高いので、自信のある人だけ挑戦してください。
       // it.skip の .skip を消せば、テストが走るようになります。
 
       // 作成した promise を promisedFriends 変数に代入してください。
-      var promisedFriends;
+      var promisedFriends = 'change me!';
 
 
       return expect(promisedFriends).to.eventually.deep.equal(
@@ -121,7 +121,7 @@ describe('ステージ5（意図通りに非同期処理を利用できる）', 
     it('Github の mixi-inc の organization の情報を取得できる', function() {
 
       // 作成した promise を mixiOrg 変数に代入してください。
-      var mixiOrg;
+      var mixiOrg = 'change me!';
 
       return expect(mixiOrg).to.eventually.have.property('id', 1089312);
 
@@ -130,11 +130,11 @@ describe('ステージ5（意図通りに非同期処理を利用できる）', 
     });
 
 
-    it('Github API を使って、mixi-inc/JavaScriptTraining の情報を取得できる', function(){
+    it('Github API を使って、mixi-inc/JavaScriptTraining の情報を取得できる', function() {
       var repositry = 'mixi-inc/JavaScriptTraining';
 
       // 作成した promise を mixiRepo 変数に代入してください。
-      var mixiRepo;
+      var mixiRepo = 'change me!';
 
 
       return expect(mixiRepo).to.eventually.have.property('full_name', repositry);
@@ -145,9 +145,9 @@ describe('ステージ5（意図通りに非同期処理を利用できる）', 
 
 
     it('Github API を使って、VimL、Emacs Lisp でスターが最も多いプロダクト名を' +
-       'それぞれ 1 つずつ取得できる', function(){
+       'それぞれ 1 つずつ取得できる', function() {
       var languages = [ 'VimL', '"Emacs Lisp"' ];
-      var mostPopularRepos;
+      var mostPopularRepos = 'change me!';
 
       // 作成した promise を mostPopularRepos 変数に代入してください。
 

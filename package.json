@@ -31,10 +31,8 @@
     "gulp-eslint": "^0.6.0",
     "gulp-help": "^1.3.3",
     "gulp-nodemon": "^1.0.5",
-    "gulp-run": "^1.6.6",
     "gulp-util": "^3.0.4",
     "merge-stream": "^0.1.7",
-    "mocha-phantomjs": "^3.5.3",
     "stream-combiner2": "^1.0.2"
   },
   "dependencies": {
