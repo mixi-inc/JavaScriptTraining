@@ -100,7 +100,7 @@ describe('ステージ7（よくあるJSのイディオムを読める）', func
 
 
 describe.skip('闇', function() {
-  it('== 演算子', function(){
+  it('== 演算子', function() {
     expect('10' == 10)
       .to.equal(/* ここに値を書き込んでください */);
 
@@ -121,7 +121,7 @@ describe.skip('闇', function() {
   });
 
 
-  it('new 演算子', function(){
+  it('new 演算子', function() {
     expect(Boolean(false) ? true : false)
     .to.equal(/* ここに値を書き込んでください */);
 
@@ -151,21 +151,21 @@ describe.skip('闇', function() {
   });
 
 
-  it('暗黙のキャスト', function(){
+  it('暗黙のキャスト', function() {
     expect(+'10' === '10').to.equal()/* ここに値を書き込んでください */;
 
     expect(10 === (10 + '')).to.equal(/* ここに値を書き込んでください */);
   });
 
 
-  it('Array コンストラクタ', function(){
+  it('Array コンストラクタ', function() {
     expect(Array(3)).to.deep.equal(/* ここに値を書き込んでください */);
 
     expect(Array(1, 2, 3)).to.deep.equal(/* ここに値を書き込んでください */);
   });
 
 
-  it('with 文', function(){
+  it('with 文', function() {
     var obj = { 'foo': undefined, 'undefined': true };
 
     with (obj) {
@@ -175,7 +175,7 @@ describe.skip('闇', function() {
   });
 
 
-  it('typeof 演算子', function(){
+  it('typeof 演算子', function() {
     expect(typeof 0).to.equal(/* ここに値を書き込んでください */);
 
     expect(typeof true).to.equal(/* ここに値を書き込んでください */);
