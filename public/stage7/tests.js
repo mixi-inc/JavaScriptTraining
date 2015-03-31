@@ -152,7 +152,7 @@ describe.skip('闇', function() {
 
 
   it('暗黙のキャスト', function() {
-    expect(+'10' === '10').to.equal()/* ここに値を書き込んでください */;
+    expect(+'10' === '10').to.equal(/* ここに値を書き込んでください */);
 
     expect(10 === (10 + '')).to.equal(/* ここに値を書き込んでください */);
   });

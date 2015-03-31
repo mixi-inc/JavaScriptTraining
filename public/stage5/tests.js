@@ -126,21 +126,21 @@ describe('ステージ5（意図通りに非同期処理を利用できる）', 
       return expect(mixiOrg).to.eventually.have.property('id', 1089312);
 
       // Github API に関する参考情報
-      // https://developer.github.com/v3/repos/
+      // https://developer.github.com/v3/orgs
     });
 
 
     it('Github API を使って、mixi-inc/JavaScriptTraining の情報を取得できる', function() {
-      var repositry = 'mixi-inc/JavaScriptTraining';
+      var repository = 'mixi-inc/JavaScriptTraining';
 
       // 作成した promise を mixiRepo 変数に代入してください。
       var mixiRepo = 'change me!';
 
 
-      return expect(mixiRepo).to.eventually.have.property('full_name', repositry);
+      return expect(mixiRepo).to.eventually.have.property('full_name', repository);
 
       // Github API に関する参考情報
-      // https://developer.github.com/v3/orgs
+      // https://developer.github.com/v3/repos/
     });
 
 
