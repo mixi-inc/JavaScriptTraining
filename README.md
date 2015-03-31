@@ -1129,8 +1129,6 @@ fetch('/api/foo')
 
 
 
-#### モジュール
-
 JavaScript は言語機能としてモジュールの  
 仕組みをもっていません。
 
@@ -1145,7 +1143,16 @@ JavaScript は言語機能としてモジュールの
 
 
 
-[エコシステムの例](https://github.com/wilmoore/frontend-packagers)
+- bower
+- component
+- jam
+- volo
+- npm with browserify
+- spm
+- jspm
+- duo
+
+(source: [wilmoore/frontend-packagers](https://github.com/wilmoore/frontend-packagers))
 
 
 
@@ -1167,9 +1174,14 @@ bower は、JavaScript、HTML、CSSなどを
 自分が作ったモジュールを公開することも  
 できます。
 
-ただ、JavaScript の場合モジュールの仕組みを  
-もたないため、この部分を RequireJS などの  
+
+
+ただ、bower はモジュール読み込みの  
+仕組みを提供していません。
+
+この部分は RequireJS など、別の  
 モジュールシステムに頼ることになります。  
+
 どのモジュールシステムに対応するかという選択は、
 bower によって読み込まれるパッケージ側に  
 裁量（責務）があります。
