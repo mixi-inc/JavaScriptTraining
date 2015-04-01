@@ -69,7 +69,7 @@ JavaScriptTraining リポジトリを fork します。
 下のコマンドをターミナルで実行してください。
 
 	cd JavaScriptTraining
-	npm run setup
+	npm install
 
 
 
