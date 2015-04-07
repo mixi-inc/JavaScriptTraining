@@ -1,13 +1,6 @@
 {
-  "env": {
-    "browser": true,
-    "mocha": true
-  },
   "globals": {
-    "$": false,
-    "jQuery": false,
     "fetch": false,
-    "Promise": false,
-    "HTMLCollection": false
+    "Promise": false
   }
 }
