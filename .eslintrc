@@ -10,6 +10,9 @@
     "no-use-before-define": [2, "nofunc"],
 
     "//": "この形式のキャストはくっついていないと読みづらい",
-    "space-infix-ops": [2, { "int32Hint": false }]
+    "space-infix-ops": [2, { "int32Hint": false }],
+
+    "//": "ガード節の読みやすさを重視して、一行の場合のみ許可する",
+    "curly": [2, "multi-line"]
   }
 }
