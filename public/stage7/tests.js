@@ -187,6 +187,12 @@ describe.skip('あなたの闇のJS力', function() {
     });
 
 
+    it('true == 10 の振る舞いがわかる', function() {
+      expect(true == 10)
+        .to.equal(/* ここに値を書き込んでください */);
+    });
+
+
     it('[0, 1] == 0 の振る舞いがわかる', function() {
       expect([0, 1] == 0)
         .to.equal(/* ここに値を書き込んでください */);
