@@ -11,7 +11,8 @@ describe('ステージ2（意図した通りに DOM 要素の属性・テキス�
       //
       // var element = document.getElementById('firebrick');
       // element.textContent = element.textContent + element.textContent;
-      var element = 'change me!';
+      var element = document.getElementById('firebrick');
+      element.textContent = element.textContent + element.textContent;
 
 
       expect(element).to.have.property(secret('vq'), secret('sveroevpx'));
@@ -24,7 +25,24 @@ describe('ステージ2（意図した通りに DOM 要素の属性・テキス�
 
       // ここにコードを記述してください。
       // 変更した DOM 要素は element 変数に代入してください。
-      var element = 'change me!';
+      var element = document.getElementById('chocolate');
+
+      /**
+       * 文字列を指定回数繰り返した文字列を返す。
+       * @param {string} str 繰り返したい文字列。
+       * @param {number} num 繰り返す回数。
+       * @return {string} 生成された文字列。
+       */
+      function repeat(str, num) {
+        // JavaScript には文字列繰り返し演算子がないので、このように
+        // 文字列繰り返しをおこなう関数を定義することがよく見かけられます。
+        return Array(num + 1).join(str);
+
+        // ちなみに、上の書き方でなぜ文字列繰り返しになるのか、不思議だと
+        // 思いませんか？余裕があれば、どうしてこの書き方でうまくいくのか
+        // 考えてみてください！
+      }
+      element.textContent = repeat(element.textContent, 2);
 
 
       expect(element).to.have.property(secret('vq'), secret('pubpbyngr'));
@@ -40,7 +58,15 @@ describe('ステージ2（意図した通りに DOM 要素の属性・テキス�
 
       // ここにコードを記述してください。
       // 変更した DOM 要素は element 変数に代入してください。
-      var element = 'change me!';
+      var element = document.getElementsByClassName('mediumseagreen')[0];
+
+      // HTMLElement#style#backgroundColor によって、背景色を指定することが
+      // できます。指定できる形式はいろいろありますが、今回はカラーキーワードを
+      // 使う問題になっています。
+      //
+      // 色の形式いろいろ:
+      // https://developer.mozilla.org/ja/docs/Web/CSS/color_value
+      element.style.backgroundColor = 'limegreen';
 
 
       expect(element).to.have.property(
@@ -58,7 +84,11 @@ describe('ステージ2（意図した通りに DOM 要素の属性・テキス�
 
       // ここにコードを記述してください。
       // 変更した DOM 要素は element 変数に代入してください。
-      var element = 'change me!';
+      var element = document.getElementsByClassName('turquoise')[0];
+
+      // HTMLElement#style#opacity によって、要素の不透明度を指定することが
+      // できます。
+      element.style.opacity = 0.5;
 
 
       expect(element).to.have.property(
@@ -76,7 +106,11 @@ describe('ステージ2（意図した通りに DOM 要素の属性・テキス�
 
       // ここにコードを記述してください。
       // 変更した DOM 要素は element 変数に代入してください。
-      var element = 'change me!';
+      var element = document.getElementsByTagName('blockquote')[0];
+
+      // transform に指定できる要素はいろいろありますが、今回は rotate を使うの
+      // がよさそうです。
+      element.style.transform = 'rotate(10deg)';
 
 
       expect(element).to.have.property(
@@ -95,10 +129,34 @@ describe('ステージ2（意図した通りに DOM 要素の属性・テキス�
       // ここにコードを記述してください。
       // 変更した DOM 要素は element 変数に代入してください。
       //
-      // なお、上に 20px 移動させる方法は複数ありますが、今回は top 属性を
+      // なお、上に 20px 移動させる方法は複数ありますが、今回は top プロパティを
       // 使う方法を使ってください。
-      var element = 'change me!';
+      var element = document.querySelector('[data-js-training="blueviolet"]');
 
+      // top プロパティの指定は、数値ではないので注意が必要です。
+      element.style.top = '-20px';
+
+      // しかし、上の top 指定だけだと、要素が動いてくれません！
+      // なぜでしょうか？そういうときは、まず MDN で検索してみましょう。
+      //
+      // top - CSS | MDN
+      // https://developer.mozilla.org/ja/docs/Web/CSS/top
+      //
+      // ここには下のように書かれています。
+      //
+      // > CSS の top プロパティは、位置指定された要素 (positioned elements) の
+      // > 位置を定義します。位置指定されていない要素には効力を持ちません。
+      //
+      // なるほど、position を設定していなかったからかもしれません。
+      //
+      // > 相対位置指定要素（ position が relative である要素）では、
+      // > 通常位置からの下方への移動量を定義します。
+      //
+      // position が relative であれば、下への移動量で指定できるということですね。
+      // ということで、relative を指定します。
+      element.style.position = 'relative';
+
+      // 動きました！
 
       expect(element).to.have.deep.property(
         secret('qngnfrg.wfGenvavat'), secret('oyhrivbyrg'));
@@ -127,7 +185,8 @@ describe('ステージ2（意図した通りに DOM 要素の属性・テキス�
       //
       // var $element = $('#brown');
       // $element.text($element.text() + $element.text());
-      var $element = 'change me!';
+      var $element = $('#brown');
+      $element.text($element.text() + $element.text());
 
 
       expect($element).to.be.instanceof(jQuery);
@@ -140,7 +199,14 @@ describe('ステージ2（意図した通りに DOM 要素の属性・テキス�
 
       // ここにコードを記述してください。
       // 変更した DOM 要素は $element 変数に代入してください。
-      var $element = 'change me!';
+      var $element = $('#darkorange');
+
+      // またまた登場です！
+      function repeat(str, num) {
+        return Array(num + 1).join(str);
+      }
+
+      $element.text(repeat($element.text(), 2));
 
 
       expect($element).to.be.instanceof(jQuery);
@@ -156,7 +222,13 @@ describe('ステージ2（意図した通りに DOM 要素の属性・テキス�
 
       // ここにコードを記述してください。
       // 変更した DOM 要素は $element 変数に代入してください。
-      var $element = 'change me!';
+
+      // jQuery#css によって、style 属性の値を操作することができます。
+      // 指定の方法はいろいろあります:
+      //
+      // - $('.limegreen').css('backgroundColor', 'mediumseagreen');
+      // - $('.limegreen').css('background-color', 'mediumseagreen');
+      var $element = $('.limegreen').css({ backgroundColor: 'mediumseagreen' });
 
 
       expect($element).to.be.instanceof(jQuery);
@@ -173,7 +245,7 @@ describe('ステージ2（意図した通りに DOM 要素の属性・テキス�
 
       // ここにコードを記述してください。
       // 変更した DOM 要素は $element 変数に代入してください。
-      var $element = 'change me!';
+      var $element = $('.mediumturquoise').css({ opacity: 0.5 });
 
 
       expect($element).to.be.instanceof(jQuery);
@@ -186,7 +258,7 @@ describe('ステージ2（意図した通りに DOM 要素の属性・テキス�
 
       // ここにコードを記述してください。
       // 変更した DOM 要素は $element 変数に代入してください。
-      var $element = 'change me!';
+      var $element = $('p').css({ transform: 'rotate(10deg)' });
 
 
       expect($element).to.be.instanceof(jQuery);
@@ -205,7 +277,10 @@ describe('ステージ2（意図した通りに DOM 要素の属性・テキス�
       //
       // なお、上に 20px 移動させる方法は複数ありますが、今回は top 属性を
       // 使う方法を使ってください。
-      var $element = 'change me!';
+      var $element = $('[data-js-training="darkorchid"]').css({
+        top: '-20px',
+        position: 'relative'
+      });
 
 
       expect($element).to.be.instanceof(jQuery);

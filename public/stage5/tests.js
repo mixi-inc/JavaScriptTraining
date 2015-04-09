@@ -13,6 +13,11 @@ describe('ステージ5（意図通りに非同期処理を利用できる）', 
       //   expect(msg).to.equal('resolved!');
       //   testDone();
       // });
+
+      promise.then(function(msg) {
+        expect(msg).to.equal('resolved!');
+        testDone();
+      });
     });
 
 
@@ -27,7 +32,10 @@ describe('ステージ5（意図通りに非同期処理を利用できる）', 
 
       // ここにコードを記述してください。
 
-
+      promise.catch(function(msg) {
+        expect(msg).to.equal('rejected!');
+        testDone();
+      });
     });
 
 
@@ -38,7 +46,11 @@ describe('ステージ5（意図通りに非同期処理を利用できる）', 
       var promise3 = createWaitPromise(messageFragments[2], 30);
 
       // 作成した promise を promise 変数に代入してください。
-      var promise = 'change me!';
+      var promise = Promise.all([
+        promise1,
+        promise2,
+        promise3
+      ]);
 
 
       return expect(promise).to.eventually.deep.equal(messageFragments);
@@ -52,7 +64,11 @@ describe('ステージ5（意図通りに非同期処理を利用できる）', 
       var promise3 = createWaitPromise(messageFragments[2], 30);
 
       // 作成した promise を promise 変数に代入してください。
-      var promise = 'change me!';
+      var promise = Promise.race([
+        promise1,
+        promise2,
+        promise3
+      ]);
 
 
       return expect(promise).to.eventually.equal(messageFragments[1]);
@@ -73,6 +89,10 @@ describe('ステージ5（意図通りに非同期処理を利用できる）', 
       //   return res.json();
       // });
 
+      var promisedFriends = fetch(api + username).then(function(res) {
+        return res.json();
+      });
+
 
       return expect(promisedFriends).to.eventually.have.length(1)
         .and.have.members(['PYXC-PJ']);
@@ -84,7 +104,10 @@ describe('ステージ5（意図通りに非同期処理を利用できる）', 
       var username = 'Shen';
 
       // 作成した promise を promisedFriends 変数に代入してください。
-      var promisedFriends = 'change me!';
+      var promisedFriends = fetch(api + username)
+        .then(function(res) {
+          return res.json();
+        });
 
 
       return expect(promisedFriends).to.eventually.have.length(2)
@@ -97,7 +120,41 @@ describe('ステージ5（意図通りに非同期処理を利用できる）', 
       var username = 'Shen';
 
       // 作成した promise を promisedFriends 変数に代入してください。
-      var promisedFriends = 'change me!';
+
+      /**
+       * 友人を取得する。
+       * @param {string} usernameToFetch 友人の取得対象のユーザー名。
+       * @return {Thenable<Array<string>>} 友人の配列。
+       */
+      function getFriends(usernameToFetch) {
+        return fetch(api + usernameToFetch)
+          .then(function(response) {
+            return response.json();
+          });
+      }
+
+
+      /**
+       * 配列を平たくする。
+       * @param {Array<Array<T>>} arrayOfArray 配列の配列。
+       * @return {Array<T>} 平たくなった配列。
+       * @template T
+       */
+      function flatMap(arrayOfArray) {
+        return arrayOfArray.reduce(function(flatArray, array) {
+          return flatArray.concat(array);
+        }, []);
+      }
+
+      var promisedFriends = getFriends(username)
+        .then(function(friends) {
+          return Promise.all(friends.map(getFriends));
+        })
+        .then(function(friendsArray) {
+          // [[friendName, ...], [friendName, ...], ...] という形式の構造に
+          // なっているので、平たい配列に整形してあげる必要があります。
+          return flatMap(friendsArray);
+        });
 
 
       return expect(promisedFriends).to.eventually.have.length(1)
@@ -105,12 +162,77 @@ describe('ステージ5（意図通りに非同期処理を利用できる）', 
     });
 
 
-    it.skip('/api/friends API を使って CoffeeScript の友人を再帰的に取得できる', function() {
+    it('/api/friends API を使って CoffeeScript の友人を再帰的に取得できる', function() {
       // 難易度高いので、自信のある人だけ挑戦してください。
       // it.skip の .skip を消せば、テストが走るようになります。
+      var api = '/api/friends/';
+
+      /**
+       * 友人を取得する。
+       * @param {string} usernameToFetch 友人の取得対象のユーザー名。
+       * @return {Thenable<Array<string>>} 友人の配列。
+       */
+      function getFriends(usernameToFetch) {
+        return fetch(api + usernameToFetch)
+          .then(function(response) {
+            return response.json();
+          });
+      }
+
+      /**
+       * 配列または配列をもつ promise を展開し、平たい配列をもつ promise を
+       * 返す。
+       * @param {Array<Thenable<T>|T>} arrayOfPromisedArray promise または、
+       *     オブジェクトの配列。
+       * @return {Thenable<Array<T>>} 平たい配列をもつ promise。
+       * @template T
+       */
+      function flatMap(arrayOfPromisedArray) {
+        return Promise.all(arrayOfPromisedArray)
+          .then(function(arrayOfArray) {
+            return arrayOfArray.reduce(function(flatArray, array) {
+              // JavaScript には破壊的な配列結合がないので、
+              // Array#push を悪用することが多いです。
+              Array.prototype.push.apply(flatArray, array);
+              return flatArray;
+            }, []);
+          });
+      }
+
+      /**
+       * 配列を結合する関数を返す。この関数の実行前に、結合する配列の片方を
+       * 指定する必要がある。
+       * @param {Array<T>} arrayA 関数の実行前に指定する、結合したい配列。
+       * @return {function(Array<T>): Array<T>} arrayA と arrayB を結合する関数。
+       * @template T
+       */
+      function concat(arrayA) {
+        return function(arrayB) {
+          return arrayA.concat(arrayB);
+        };
+      }
+
+      /**
+       * 友人を再帰的に取得する。
+       * @param {string} usernameToFetch 友人の取得対象の名前。
+       * @return {Thenable<Array<string>>} 友人名の配列をもつ promise。
+       */
+      function getFriendsRecursively(usernameToFetch) {
+        return getFriends(usernameToFetch)
+          .then(function(friends) {
+            if (friends.length === 0) return friends;
+
+            var promisedFriendsOfFriends = Promise.all(
+              friends.map(getFriendsRecursively));
+
+            return promisedFriendsOfFriends
+              .then(flatMap)
+              .then(concat(friends));
+          });
+      }
 
       // 作成した promise を promisedFriends 変数に代入してください。
-      var promisedFriends = 'change me!';
+      var promisedFriends = getFriendsRecursively('CoffeeScript');
 
 
       return expect(promisedFriends).to.eventually.have.length(5)
@@ -127,7 +249,10 @@ describe('ステージ5（意図通りに非同期処理を利用できる）', 
     it('Github の mixi-inc の organization の情報を取得できる', function() {
 
       // 作成した promise を mixiOrg 変数に代入してください。
-      var mixiOrg = 'change me!';
+      var mixiOrg = fetch('https://api.github.com/orgs/mixi-inc')
+        .then(function(response) {
+          return response.json();
+        });
 
       return expect(mixiOrg).to.eventually.have.property('id', 1089312);
 
@@ -140,7 +265,10 @@ describe('ステージ5（意図通りに非同期処理を利用できる）', 
       var repository = 'mixi-inc/JavaScriptTraining';
 
       // 作成した promise を mixiRepo 変数に代入してください。
-      var mixiRepo = 'change me!';
+      var mixiRepo = fetch('https://api.github.com/repos/' + repository)
+        .then(function(response) {
+          return response.json();
+        });
 
 
       return expect(mixiRepo).to.eventually.have.property('full_name', repository);
@@ -153,9 +281,45 @@ describe('ステージ5（意図通りに非同期処理を利用できる）', 
     it('Github API を使って、VimL、Emacs Lisp でスターが最も多いプロダクト名を' +
        'それぞれ 1 つずつ取得できる', function() {
       var languages = [ 'VimL', '"Emacs Lisp"' ];
-      var mostPopularRepos = 'change me!';
+
+      /**
+       * オブジェクトから、query string を作成する。
+       * @param {Object<string, string>} queryMap パラメーターの辞書オブジェクト。
+       * @return {string} query string。
+       */
+      function buildQueryString(queryMap) {
+        return Object.keys(queryMap)
+          .map(function(key) {
+            return encodeURIComponent(key) + '=' + encodeURIComponent(queryMap[key]);
+          })
+          .join('&');
+      }
+
+      /**
+       * 指定された言語でもっともスターが多いリポジトリ名を返す。
+       * @param {string} lang 言語名。
+       * @return {Thenable<string>} もっともスター数が多いリポジトリ名をもつ
+       *     promise。
+       */
+      function searchMostPoluarRepoByLanguage(lang) {
+        var queryString = buildQueryString({
+          q: 'language:' + lang,
+          sort: 'stars'
+        });
+
+        return fetch('https://api.github.com/search/repositories?' + queryString)
+          .then(function(response) {
+            return response.json();
+          })
+          .then(function(result) {
+            return result.items[0].full_name;
+          });
+      }
+
 
       // 作成した promise を mostPopularRepos 変数に代入してください。
+      var mostPopularRepos = Promise.all(
+        languages.map(searchMostPoluarRepoByLanguage));
 
 
       return expect(mostPopularRepos).to.eventually.have.length(2)
