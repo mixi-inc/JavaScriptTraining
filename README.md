@@ -1429,6 +1429,12 @@ y でレジストリへの公開ができないように設定します。
 
 
 
+### 解答・解説について
+
+解答は [2015-example-solution](https://github.com/mixi-inc/JavaScriptTraining/compare/2015...2015-example-solution) で見られます！
+
+
+
 ### Promise について
 
 
