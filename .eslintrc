@@ -3,7 +3,13 @@
     "node": true
   },
   "rules": {
-    "quotes": [2, "single"],
-    "no-use-before-define": 0
+    "//": "single quote に統一",
+    "quotes": [2, "single", "avoid-escape"],
+
+    "//": "関数宣言文以外は hoisting 避けのため禁止",
+    "no-use-before-define": [2, "nofunc"],
+
+    "//": "この形式のキャストはくっついていないと読みづらい",
+    "space-infix-ops": [2, { "int32Hint": false }]
   }
 }
