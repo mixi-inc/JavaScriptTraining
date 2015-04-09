@@ -159,7 +159,10 @@ describe('ステージ5（意図通りに非同期処理を利用できる）', 
 
 
       return expect(mostPopularRepos).to.eventually.have.length(2)
-        .and.satisfy(function(name) { return typeof name === 'string'; });
+        .and.satisfy(function(names) {
+          return typeof names[0] === 'string' &&
+            typeof names[1] === 'string';
+        });
 
       // Github API に関する参考情報
       // https://developer.github.com/v3/search
