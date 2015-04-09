@@ -74,7 +74,8 @@ describe('ステージ5（意図通りに非同期処理を利用できる）', 
       // });
 
 
-      return expect(promisedFriends).to.eventually.deep.equal(['PYXC-PJ']);
+      return expect(promisedFriends).to.eventually.have.length(1)
+        .and.have.members(['PYXC-PJ']);
     });
 
 
@@ -86,9 +87,8 @@ describe('ステージ5（意図通りに非同期処理を利用できる）', 
       var promisedFriends = 'change me!';
 
 
-      return expect(promisedFriends).to.eventually.deep.equal(
-        ['jisp', 'TeJaS']
-      );
+      return expect(promisedFriends).to.eventually.have.length(2)
+        .and.have.members(['jisp', 'TeJaS']);
     });
 
 
@@ -100,7 +100,8 @@ describe('ステージ5（意図通りに非同期処理を利用できる）', 
       var promisedFriends = 'change me!';
 
 
-      return expect(promisedFriends).to.eventually.deep.equal(['TypeScript']);
+      return expect(promisedFriends).to.eventually.have.length(1)
+        .and.have.members(['TypeScript']);
     });
 
 
@@ -112,9 +113,14 @@ describe('ステージ5（意図通りに非同期処理を利用できる）', 
       var promisedFriends = 'change me!';
 
 
-      return expect(promisedFriends).to.eventually.deep.equal(
-        ['Taijilang', 'purescript', 'Wind.js', 'ScriptBlocks', 'jangaroo']
-      );
+      return expect(promisedFriends).to.eventually.have.length(5)
+        .and.have.members([
+          'Taijilang',
+          'purescript',
+          'Wind.js',
+          'ScriptBlocks',
+          'jangaroo'
+        ]);
     });
 
 
@@ -152,7 +158,8 @@ describe('ステージ5（意図通りに非同期処理を利用できる）', 
       // 作成した promise を mostPopularRepos 変数に代入してください。
 
 
-      return expect(mostPopularRepos).to.eventually.have.length(2);
+      return expect(mostPopularRepos).to.eventually.have.length(2)
+        .and.satisfy(function(name) { return typeof name === 'string'; });
 
       // Github API に関する参考情報
       // https://developer.github.com/v3/search
