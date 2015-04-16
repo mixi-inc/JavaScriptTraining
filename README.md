@@ -1014,7 +1014,7 @@ console.log(2);
 JavaScript にはサーバーと非同期に通信するための  
 API が用意されています。
 
-- [fetch API](http://www.hcn.zaq.ne.jp/___/WEB/Fetch-ja.html)
+- [Fetch API](http://www.hcn.zaq.ne.jp/___/WEB/Fetch-ja.html)
 
 	現在策定中の新しい標準仕様
 
@@ -1026,14 +1026,14 @@ API が用意されています。
 
 
 今回は、JavaScript の将来を見据えて、  
-fetch API によるサーバーとの通信を  
+Fetch API によるサーバーとの通信を  
 トレーニングします。
 
 
 
-#### fetch API
+#### Fetch API
 
-fetch API は下のように書きます。  
+Fetch API は下のように書きます。  
 このコードは、`/users.json` を  
 取得します。
 
@@ -1164,7 +1164,7 @@ fetch('/api/foo')
 
 - [Promise に関する参考情報](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 - [Promise 参考情報（重量級）](http://azu.github.io/promises-book/)
-- [fetch API に関する参考情報](https://github.com/github/fetch)
+- [Fetch API に関する参考情報](https://github.com/github/fetch)
 - [Github API に関する参考情報](https://developer.github.com/v3/)
 
 
