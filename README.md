@@ -1404,6 +1404,11 @@ y でレジストリへの公開ができないように設定します。
 パッケージは [Search Bower packages](http://bower.io/search/) で  
 検索することができます。
 
+もしくは
+
+  bower search Buttons
+
+でも検索することができます。
 
 
 では、試しに [Buttons](https://github.com/alexwolfe/Buttons) パッケージを  
