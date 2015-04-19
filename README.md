@@ -1640,14 +1640,14 @@ fetch('/api/foo').then(fetchBar(fetchBuz(doSomething)));
 function fetchBar(callback) {
   return function(responseFoo) {
     doSomething(responseFoo);
-    fetchBar(callback);
+    fetch('/api/bar').then(callback);
   };
 }
 
 function fetchBuz(callback) {
   return function(responseBar) {
     doSomething(responseBar);
-    fetchBuz(callback);
+    fetch('/api/buz').then(callback);
   };
 }
 ```
