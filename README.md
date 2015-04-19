@@ -905,7 +905,7 @@ button 要素に `addEventListener` すればよいように
 
 
 `addEventListener` の引数で  
-1-2-4 か 1-3-4 のどちらかを選べます。
+1-2-4 か 2-3-4 のどちらかを選べます。
 
 1. capturing フェーズ
 
@@ -1646,14 +1646,14 @@ fetch('/api/foo').then(fetchBar(fetchBuz(doSomething)));
 function fetchBar(callback) {
   return function(responseFoo) {
     doSomething(responseFoo);
-    fetchBar(callback);
+    fetch('/api/bar').then(callback);
   };
 }
 
 function fetchBuz(callback) {
   return function(responseBar) {
     doSomething(responseBar);
-    fetchBuz(callback);
+    fetch('/api/buz').then(callback);
   };
 }
 ```
