@@ -905,7 +905,7 @@ button 要素に `addEventListener` すればよいように
 
 
 `addEventListener` の引数で  
-1-2-4 か 1-3-4 のどちらかを選べます。
+1-2-4 か 2-3-4 のどちらかを選べます。
 
 1. capturing フェーズ
 
