@@ -786,7 +786,7 @@ click イベント以外にも多様なイベントがあります：
 - offline: ブラウザがオフラインになったとき
 
 ここに載っていないイベントの一覧は  
-[MDN DOM イベントリファレンス](https://developer.mozilla.org/ja/docs/Web2/Reference/Events) を  
+[MDN DOM イベントリファレンス](https://developer.mozilla.org/ja/docs/Web/Reference/Events) を  
 参照するとよいでしょう。
 
 
