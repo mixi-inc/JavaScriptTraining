@@ -4,10 +4,10 @@
   "description": "Training course repository for JavaScript by mixi",
   "main": "index.js",
   "scripts": {
-    "postinstall": "(cd public; $(npm bin)/bower install)",
-    "help": "$(npm bin)/gulp help",
-    "serve": "$(npm bin)/gulp serve",
-    "presentation": "$(npm bin)/reveal-md README.md --theme solarized --separator '^\\n\\n\\n' --verticalSeparator '^\\n\\n'"
+    "postinstall": "bower install",
+    "help": "gulp help",
+    "serve": "gulp serve",
+    "presentation": "reveal-md README.md --theme solarized --separator '^\\n\\n\\n' --verticalSeparator '^\\n\\n'"
   },
   "repository": {
     "type": "git",
