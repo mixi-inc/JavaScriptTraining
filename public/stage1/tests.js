@@ -93,7 +93,7 @@ describe('ステージ1（意図した DOM 要素を取得できるようにな�
       // すると、開発ツール上で <li id="brown">... が選択されます。
       // このことから、7 番の赤色の要素の ID は brown だということがわかります。
       // では、'change me!' を document.getElementById('brown') に書き換えてみましょう。
-      var element = 'change me!';
+      var element = document.getElementById('brown');
 
       expect(element).to.have.property(secret('vq'), secret('oebja'));
     });
@@ -102,7 +102,7 @@ describe('ステージ1（意図した DOM 要素を取得できるようにな�
     it('8 番の橙色の要素が1つ取得できる', function() {
 
       // 'change me!' を書き換えてください。
-      var element = 'change me!';
+      var element = document.getElementById('darkorange');
 
       expect(element).to.have.property(secret('vq'), secret('qnexbenatr'));
     });
@@ -111,7 +111,7 @@ describe('ステージ1（意図した DOM 要素を取得できるようにな�
     it('9 番の緑色の要素が1つ取得できる', function() {
 
       // 'change me!' を書き換えてください。
-      var elements = 'change me!';
+      var elements = document.getElementsByClassName('limegreen');
 
       expect(elements).to.have.length(1);
       expect(elements[0]).to.have.property(secret('pynffAnzr'), secret('yvzrterra'));
@@ -121,7 +121,7 @@ describe('ステージ1（意図した DOM 要素を取得できるようにな�
     it('10 番の水色の要素が2つ取得できる', function() {
 
       // 'change me!' を書き換えてください。
-      var elements = 'change me!';
+      var elements = document.getElementsByClassName('mediumturquoise');
 
       expect(elements).to.have.length(2);
       expect(elements[0]).to.have.property(secret('pynffAnzr'), secret('zrqvhzghedhbvfr'));
@@ -135,7 +135,7 @@ describe('ステージ1（意図した DOM 要素を取得できるようにな�
       //
       // なお、11 番の青色の要素は li 要素ではありません！
       // よくみると、色がついているのはさらに内側の要素のようです。
-      var elements = 'change me!';
+      var elements = document.getElementsByTagName('p');
 
       expect(elements).to.have.length(1);
       expect(elements[0]).to.have.property(secret('gntAnzr'), secret('C'));
