@@ -12,7 +12,7 @@ describe('ステージ1（意図した DOM 要素を取得できるようにな�
       // 'change me!' を document.getElementById(elementId) に
       // 書き換え、ブラウザをリロードしてみてください。
       var elementId = 'firebrick';
-      var element = 'change me!';
+      var element = document.getElementById(elementId);
 
       expect(element).to.be.instanceof(HTMLElement);
       expect(element).to.have.property('id', elementId);
@@ -27,7 +27,7 @@ describe('ステージ1（意図した DOM 要素を取得できるようにな�
 
       // 'change me!' を書き換えてください。
       var elementId = 'chocolate';
-      var element = 'change me!';
+      var element = document.getElementById(elementId);
 
       expect(element).to.be.instanceof(HTMLElement);
       expect(element).to.have.property('id', elementId);
@@ -41,7 +41,7 @@ describe('ステージ1（意図した DOM 要素を取得できるようにな�
 
       // 'change me!' を書き換えてください。
       var elementClassName = 'mediumseagreen';
-      var elements = 'change me!';
+      var elements = document.getElementsByClassName(elementClassName);
 
       expect(elements).to.have.length(1);
       expect(elements[0]).to.have.property('className', elementClassName);
@@ -55,7 +55,7 @@ describe('ステージ1（意図した DOM 要素を取得できるようにな�
 
       // 'change me!' を書き換えてください。
       var elementClassName = 'turquoise';
-      var elements = 'change me!';
+      var elements = document.getElementsByClassName(elementClassName);
 
       expect(elements).to.have.length(2);
       expect(elements[0]).to.have.property('className', elementClassName);
@@ -70,7 +70,7 @@ describe('ステージ1（意図した DOM 要素を取得できるようにな�
 
       // 'change me!' を書き換えてください。
       var elementTagName = 'blockquote';
-      var elements = 'change me!';
+      var elements = document.getElementsByTagName(elementTagName);
 
       expect(elements).to.have.length(1);
       expect(elements[0]).to.have.property('tagName', elementTagName.toUpperCase());
