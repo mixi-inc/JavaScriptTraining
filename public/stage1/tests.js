@@ -220,7 +220,7 @@ describe('ステージ1（意図した DOM 要素を取得できるようにな�
       //
       // 'change me!' を '.js-training:nth-child(2) li'
       // に書き換えてください。
-      var selector = 'change me!';
+      var selector = '.js-training:nth-child(2) li';
 
       var element = document.querySelector(selector);
       expect(selector).to.not.have.string('#');
@@ -231,7 +231,8 @@ describe('ステージ1（意図した DOM 要素を取得できるようにな�
     it('8 番の橙色の要素を ID セレクタを使わずに1つ取得できる', function() {
 
       // 'change me!' を書き換えてください。
-      var selector = 'change me!';
+     // var selector = 'change me!';
+      var selector = '.js-training:nth-child(2) li';
 
       var element = document.querySelector(selector);
       expect(selector).to.not.have.string('#');
@@ -252,7 +253,7 @@ describe('ステージ1（意図した DOM 要素を取得できるようにな�
       expect(selector).to.not.have.string(':nth-child');
       expect(element).to.have.deep.property(secret('qngnfrg.wfGenvavat'),
                                             secret('qnexbepuvq'));
-    });
+   });
   });
 
 
@@ -265,7 +266,7 @@ describe('ステージ1（意図した DOM 要素を取得できるようにな�
       // 基本的な使い方は document.querySelectorAll と同じです。
       //
       // 'change me!' を $('#brown') に書き換えてください。
-      var $element = 'change me!';
+      var $element = $('#brown');
 
       expect($element).to.be.instanceof(jQuery);
       expect($element).to.have.id(secret('oebja'));
@@ -275,7 +276,7 @@ describe('ステージ1（意図した DOM 要素を取得できるようにな�
     it('8 番の橙色の要素を jQuery を使って1つ取得できる', function() {
 
       // 'change me!' を書き換えてください。
-      var $element = 'change me!';
+      var $element = $('#darkorange');
 
       expect($element).to.be.instanceof(jQuery);
       expect($element).to.have.id(secret('qnexbenatr'));
@@ -288,7 +289,7 @@ describe('ステージ1（意図した DOM 要素を取得できるようにな�
     it('9 番の緑色の要素を jQuery を使って1つ取得できる', function() {
 
       // 'change me!' を書き換えてください。
-      var $element = 'change me!';
+      var $element = $('.limegreen');
 
       expect($element).to.be.instanceof(jQuery);
       expect($element).to.have.class(secret('yvzrterra'));
@@ -298,7 +299,7 @@ describe('ステージ1（意図した DOM 要素を取得できるようにな�
     it('10 番の水色の要素を jQuery を使って2つ取得できる', function() {
 
       // 'change me!' を書き換えてください。
-      var $element = 'change me!';
+      var $element = $('.mediumturquoise');
 
       expect($element).to.be.instanceof(jQuery);
       expect($element).to.have.length(2);
@@ -309,7 +310,7 @@ describe('ステージ1（意図した DOM 要素を取得できるようにな�
     it('11 番の青色の要素を jQuery を使って1つ取得できる', function() {
 
       // 'change me!' を書き換えてください。
-      var $element = 'change me!';
+      var $element = $('p');
 
       expect($element).to.be.instanceof(jQuery);
       expect($element).to.have.length(1);
@@ -320,7 +321,7 @@ describe('ステージ1（意図した DOM 要素を取得できるようにな�
     it('12 番の紫色の要素を jQuery を使って1つ取得できる', function() {
 
       // 'change me!' を書き換えてください。
-      var $element = 'change me!';
+      var $element = $('[data-js-training="darkorchid"]');
 
       expect($element).to.be.instanceof(jQuery);
       expect($element).to.have.length(1);
