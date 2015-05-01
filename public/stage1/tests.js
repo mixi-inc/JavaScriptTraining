@@ -231,8 +231,7 @@ describe('ステージ1（意図した DOM 要素を取得できるようにな�
     it('8 番の橙色の要素を ID セレクタを使わずに1つ取得できる', function() {
 
       // 'change me!' を書き換えてください。
-     // var selector = 'change me!';
-      var selector = '.js-training:nth-child(2) li';
+      var selector = '.js-training:nth-child(2) li:nth-child(2)';
 
       var element = document.querySelector(selector);
       expect(selector).to.not.have.string('#');
@@ -246,7 +245,7 @@ describe('ステージ1（意図した DOM 要素を取得できるようにな�
     it('12 番の紫色の要素を、属性セレクタと :nth-child(N) セレクタを使わずに1つ取得できる', function() {
 
       // 'change me!' を書き換えてください。
-      var selector = 'change me!';
+      var selector = '[data-js-training="darkorchid"]';
 
       var element = document.querySelector(selector);
       expect(selector).to.not.match(/\[\s*name\s*[~\|\^\$\*]?=/);
