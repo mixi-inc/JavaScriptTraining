@@ -70,6 +70,7 @@ JavaScriptTraining リポジトリを fork します。
 
 	cd JavaScriptTraining
 	npm install
+	npm install -g gulp
 
 
 
