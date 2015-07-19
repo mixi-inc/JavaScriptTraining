@@ -11,6 +11,13 @@ JavaScript 初心者が JS の未来を見据えつつ、
 
 
 
+解答・解説について
+------------------
+
+解答は [2015-example-solution](https://github.com/mixi-inc/JavaScriptTraining/compare/2015...2015-example-solution) で見られます！
+
+
+
 トレーニングの目標
 ------------------
 
@@ -1503,12 +1510,6 @@ Lint をかけてみましょう。
 
 付録
 ----
-
-
-
-### 解答・解説について
-
-解答は [2015-example-solution](https://github.com/mixi-inc/JavaScriptTraining/compare/2015...2015-example-solution) で見られます！
 
 
 
