@@ -1,6 +1,6 @@
 {
   "rules": {
-    "//": "シャレオツコードの意図が undefined 代入だとわかりやすいので許可",
+    // シャレオツコードの意図が undefined 代入だとわかりやすいので許可
     "no-undef-init": 0
   },
   "globals": {

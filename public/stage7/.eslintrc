@@ -1,12 +1,12 @@
 {
   "rules": {
-    "//": "undefined 上書き問題のため、明示的な undefined 代入を許可",
+    // undefined 上書き問題のため、明示的な undefined 代入を許可
     "no-undef-init": 0,
 
-    "//": "== 演算子の振る舞いの問題の警告は誤警告",
+    // == 演算子の振る舞いの問題の警告は誤警告
     "yoda": 0,
 
-    "//": "truthy, falsey を判定する問題のため、定数式を許可",
+    // truthy, falsey を判定する問題のため、定数式を許可
     "no-constant-condition": 0
   },
   "globals": {

@@ -8,7 +8,7 @@
     "expect": false
   },
   "rules": {
-    "//": "chai の expect 構文が誤警告になるため無視",
+    // chai の expect 構文が誤警告になるため無視
     "no-unused-expressions": 0
   }
 }

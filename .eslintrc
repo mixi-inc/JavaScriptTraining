@@ -3,16 +3,16 @@
     "node": true
   },
   "rules": {
-    "//": "single quote に統一",
+    // single quote に統一
     "quotes": [2, "single", "avoid-escape"],
 
-    "//": "関数宣言文以外は hoisting 避けのため禁止",
+    // 関数宣言文以外は hoisting 避けのため禁止
     "no-use-before-define": [2, "nofunc"],
 
-    "//": "この形式のキャストはくっついていないと読みづらい",
+    // この形式のキャストはくっついていないと読みづらい
     "space-infix-ops": [2, { "int32Hint": false }],
 
-    "//": "ガード節の読みやすさを重視して、一行の場合のみ許可する",
+    // ガード節の読みやすさを重視して、一行の場合のみ許可する
     "curly": [2, "multi-line"]
   }
 }
