@@ -7,25 +7,25 @@ var serve = require('./gulp/serve.js');
 
 var tasks = [
   {
-    id: 'stage1',
+    id: 'stage-1',
     help: '意図した DOM を取得できているかテストします'
   }, {
-    id: 'stage2',
+    id: 'stage-2',
     help: '意図通りに DOM のスタイルが変更できているかテストします'
   }, {
-    id: 'stage3',
+    id: 'stage-3',
     help: '意図通りに DOM の構造が変更できているかテストします'
   }, {
-    id: 'stage4',
+    id: 'stage-4',
     help: '意図通りにイベントを利用できているかテストします'
   }, {
-    id: 'stage5',
+    id: 'stage-5',
     help: '意図通りに非同期処理ができているかテストします'
   }, {
-    id: 'stage6',
+    id: 'stage-6',
     help: '意図通りにモジュールを実装できているかテストします'
   }, {
-    id: 'stage7',
+    id: 'stage-7',
     help: 'よくあるイディオムを読み書きできているかテストします'
   }
 ];

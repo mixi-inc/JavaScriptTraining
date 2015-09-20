@@ -7,7 +7,14 @@
     "postinstall": "bower install",
     "help": "gulp help",
     "serve": "gulp serve",
-    "presentation": "reveal-md README.md --theme solarized --separator '^\\n\\n\\n' --verticalSeparator '^\\n\\n'"
+    "presentation": "reveal-md README.md --theme solarized --separator '^\\n\\n\\n' --verticalSeparator '^\\n\\n'",
+    "lint-stage-1": "gulp lint-stage-1",
+    "lint-stage-2": "gulp lint-stage-2",
+    "lint-stage-3": "gulp lint-stage-3",
+    "lint-stage-4": "gulp lint-stage-4",
+    "lint-stage-5": "gulp lint-stage-5",
+    "lint-stage-6": "gulp lint-stage-6",
+    "lint-stage-7": "gulp lint-stage-7"
   },
   "repository": {
     "type": "git",

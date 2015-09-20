@@ -77,7 +77,6 @@ JavaScriptTraining リポジトリを fork します。
 
 	cd JavaScriptTraining
 	npm install
-	npm install -g gulp
 
 
 
@@ -400,7 +399,7 @@ JavaScript の仕様・文化に数多く
 	ターミナルで下のコマンドを実行してください。
 	ESLint が実行されます。
 
-		gulp lint-stage1
+		npm run lint-stage-1
 
 2. 構文ハイライトを効かせる
 
@@ -563,7 +562,7 @@ CSS セレクタについては、[MDN のCSS リファレンス](https://develo
 
 Lint をかけてみましょう。
 
-    gulp lint-stage1
+    npm run lint-stage-1
 
 警告があれば、修正してみてください。
 
@@ -659,7 +658,7 @@ HTML/JavaScript/CSS 分業の基本です。
 
 Lint をかけてみましょう。
 
-    gulp lint-stage2
+    npm run lint-stage-2
 
 警告があれば、修正してみてください。
 
@@ -758,7 +757,7 @@ DOM 構造の操作が重要なのです。
 
 Lint をかけてみましょう。
 
-    gulp lint-stage3
+    npm run lint-stage-3
 
 警告があれば、修正してみてください。
 
@@ -964,7 +963,7 @@ button.addEventListener('click', function(event) {
 
 Lint をかけてみましょう。
 
-    gulp lint-stage4
+    npm run lint-stage-4
 
 警告があれば、修正してみてください。
 
@@ -1181,7 +1180,7 @@ fetch('/api/foo')
 
 Lint をかけてみましょう。
 
-    gulp lint-stage5
+    npm run lint-stage-5
 
 警告があれば、修正してみてください。
 
@@ -1460,7 +1459,7 @@ y でレジストリへの公開ができないように設定します。
 
 Lint をかけてみましょう。
 
-    gulp lint-stage6
+    npm run lint-stage-6
 
 警告があれば、修正してみてください。
 
@@ -1502,10 +1501,9 @@ Lint をかけてみましょう。
 
 Lint をかけてみましょう。
 
-    gulp lint-stage7
+    npm run lint-stage-7
 
 警告があれば、修正してみてください。
-
 
 
 付録
