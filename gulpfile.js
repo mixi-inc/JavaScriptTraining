@@ -2,7 +2,6 @@
 
 var path = require('path');
 var gulp = require('gulp-help')(require('gulp'));
-var merge = require('merge-stream');
 
 var serve = require('./gulp/serve.js');
 
@@ -36,23 +35,13 @@ tasks.forEach(function(task) {
   var stage = path.join('public', task.id);
   var js = path.join(stage, '**/*.js');
   var css = path.join(stage, '**/*.css');
-  var csslintrc = path.join(stage, '.csslintrc');
 
   gulp.task('lint-' + task.id, 'ミスのおこりやすいコード・可読性の低いコードがないか検査します', function() {
     var eslint = require('gulp-eslint');
-    var csslint = require('gulp-csslint');
 
-    var lints = merge(
-      gulp.src(css)
-        .pipe(csslint(csslintrc))
-        .pipe(csslint.reporter()),
-
-      gulp.src(js)
-        .pipe(eslint())
-        .pipe(eslint.format())
-    );
-
-    return lints;
+    return gulp.src(js)
+      .pipe(eslint())
+      .pipe(eslint.format())
   });
 });
 
