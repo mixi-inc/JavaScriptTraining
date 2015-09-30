@@ -1389,7 +1389,7 @@ y で読み込ませます。
 
 
 
-##### 12. would you like to mark this package as private which prevents it from being accidentaly published to the registry?
+##### 12. would you like to mark this package as private which prevents it from being accidentally published to the registry?
 
 bower のレジストリへ登録できないようにするか  
 どうか指定します。
