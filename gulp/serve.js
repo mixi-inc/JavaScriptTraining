@@ -46,6 +46,6 @@ var serve = function() {
 };
 
 
-serve.PORT = 8000;
+serve.PORT = process.env.PORT || 8000;
 
 module.exports = serve;
