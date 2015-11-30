@@ -11,11 +11,11 @@
 
     style.position = 'absolute';
     style.fontSize = '100px';
-    style.webkitAnimationName = 'moveHorizontal';
-    style.webkitAnimationDuration = '1s';
-    style.webkitAnimationIterationCount = 'infinite';
-    style.webkitAnimationDirection = 'alternate-reverse';
-    style.webkitAnimationFillMode = 'forwards';
+    style.animationName = 'moveHorizontal';
+    style.animationDuration = '1s';
+    style.animationIterationCount = 'infinite';
+    style.animationDirection = 'alternate-reverse';
+    style.animationFillMode = 'forwards';
   };
 
   var XFlyingSushiMonster = document.registerElement('x-flying-sushi-monster', {
