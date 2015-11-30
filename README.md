@@ -87,7 +87,7 @@ JavaScriptTraining リポジトリを fork します。
 なお、トレーニング中はこのコマンドを  
 終了しないでください。
 
-	npm run serve
+	npm start
 
 
 

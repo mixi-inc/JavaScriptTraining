@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "bower install",
     "help": "gulp help",
-    "serve": "gulp serve",
+    "start": "gulp serve",
     "presentation": "reveal-md README.md --theme solarized --separator '^\\n\\n\\n' --verticalSeparator '^\\n\\n'",
     "lint-stage-1": "gulp lint-stage-1",
     "lint-stage-2": "gulp lint-stage-2",
