@@ -103,8 +103,7 @@ describe('ステージ4（意図通りにイベントを利用できる）', fun
 
 function createClickEvent() {
   var event = document.createEvent('MouseEvents');
-  event.initMouseEvent('click', true, true, window,
-                       0, 0, 0, 80, 20, false, false, false, false, 0, null);
+  event.initEvent('click', false, true);
   return event;
 }
 
